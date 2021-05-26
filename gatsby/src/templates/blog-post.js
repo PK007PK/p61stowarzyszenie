@@ -3,9 +3,8 @@ import { Link, graphql } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image"
 
 import BlockContent from '@sanity/block-content-to-react';
-import Layout from '../components/Layout';
-
-import SEO from '../components/SEO';
+import Layout from 'src/components/Layout/Layout';
+import SEO from '../components/SEO/SEO';
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.sanityBlogPosts;

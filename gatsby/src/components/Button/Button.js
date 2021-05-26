@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import AppContext from '../AppProvider';
+import AppContext from 'src/AppProvider';
 
 const StyledButton = styled.button`
   color: var(--red);

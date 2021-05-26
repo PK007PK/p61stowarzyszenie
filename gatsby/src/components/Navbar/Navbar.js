@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { BootsContainer } from './BootsElements';
+import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 
 const NavStyle = styled.nav`
   ul {
