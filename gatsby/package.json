@@ -2,7 +2,7 @@
   "name": "gatsby-boilerplate",
   "version": "1.0.0",
   "private": true,
-  "description": "Gatsby boilerplate",
+  "description": "Gatsby / sanity boilerplate",
   "author": "Piotr Krasny",
   "keywords": [
     "gatsby"
@@ -12,7 +12,9 @@
     "develop": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
     "start": "npm run develop",
     "serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -27,6 +29,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "esm": "^3.2.25",
     "gatsby": "^3.7.2",
     "gatsby-plugin-feed": "^3.7.1",
@@ -36,6 +39,7 @@
     "gatsby-plugin-manifest": "^3.7.1",
     "gatsby-plugin-offline": "^4.7.1",
     "gatsby-plugin-react-helmet": "^4.7.1",
+    "gatsby-plugin-root-import": "^2.0.6",
     "gatsby-plugin-sharp": "^3.7.1",
     "gatsby-plugin-sitemap": "^4.3.1",
     "gatsby-plugin-styled-components": "^4.7.1",
@@ -60,7 +64,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-config-wesbos": "^1.0.1",
     "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.23.4",
@@ -68,7 +72,6 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gatsby-plugin-root-import": "^2.0.6",
     "prettier": "^2.3.1"
   }
 }

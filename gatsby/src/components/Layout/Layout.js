@@ -6,13 +6,13 @@ import Footer from 'src/components/Footer/Footer';
 import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 
 const Layout = ({ children }) => (
-  <>
-    <GlobalStyles />
-    <Typography />
-    <Navbar />
-    <BootsContainer>{children}</BootsContainer>
-    <Footer />
-  </>
+    <>
+        <GlobalStyles />
+        <Typography />
+        <Navbar />
+        <BootsContainer>{children}</BootsContainer>
+        <Footer />
+    </>
 );
 
 export default Layout;

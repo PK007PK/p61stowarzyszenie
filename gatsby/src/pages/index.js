@@ -5,24 +5,24 @@ import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/SEO/SEO';
 
 const IndexPage = ({ data }) => (
-  // const content = data.markdownRemark;
+    // const content = data.markdownRemark;
 
-  <Layout>
-    <SEO
-      // title={content.frontmatter.title}
-      // description={content.frontmatter.description || content.excerpt}
-    />
-    <main>
-      <header>
-        {/* <h1>{content.frontmatter.title}</h1>
+    <Layout>
+        <SEO
+        // title={content.frontmatter.title}
+        // description={content.frontmatter.description || content.excerpt}
+        />
+        <main>
+            <header>
+                {/* <h1>{content.frontmatter.title}</h1>
           <p>{content.frontmatter.description}</p> */}
-      </header>
-      {/* <section
+            </header>
+            {/* <section
           dangerouslySetInnerHTML={{ __html: content.html }}
           itemProp="articleBody"
         /> */}
-    </main>
-  </Layout>
+        </main>
+    </Layout>
 );
 // export const pageQuery = graphql`
 //   query PageBySlug {

@@ -29,8 +29,8 @@ export const BootsContainer = styled.div`
   
   ${({ theme }) => theme.media.xlAbove} {
     ${({ noXl }) =>
-      noXl &&
-      `
+        noXl &&
+        `
       {
         max-width: ${({ theme }) => theme.maxContainerWidth.lg}px;
       }
@@ -39,82 +39,82 @@ export const BootsContainer = styled.div`
 `;
 
 export const BootsRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0px -15px;
-  position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -15px;
+    position: relative;
 `;
 
 export const BootsColumn = styled.div`
-  width: 100%;
-  padding: 0 15px;
-  position: relative;
-  ${({ xxs }) =>
-    xxs &&
-    `
+    width: 100%;
+    padding: 0 15px;
+    position: relative;
+    ${({ xxs }) =>
+        xxs &&
+        `
       {
         max-width: ${(xxs / 12) * 100}%;
         flex: 0 0 ${(xxs / 12) * 100}%;
       }
     `}
 
-  ${({ theme }) => theme.media.xsAbove} {
-    ${({ xs }) =>
-      xs &&
-      `
+    ${({ theme }) => theme.media.xsAbove} {
+        ${({ xs }) =>
+            xs &&
+            `
       {
         max-width: ${(xs / 12) * 100}%;
         flex: 0 0 ${(xs / 12) * 100}%;
       }
     `}
-  }
-  ${({ theme }) => theme.media.smAbove} {
-    ${({ sm }) =>
-      sm &&
-      `
+    }
+    ${({ theme }) => theme.media.smAbove} {
+        ${({ sm }) =>
+            sm &&
+            `
       {
         max-width: ${(sm / 12) * 100}%;
         flex: 0 0 ${(sm / 12) * 100}%;
       }
     `}
-  }
-  ${({ theme }) => theme.media.mdAbove} {
-    ${({ md }) =>
-      md &&
-      `
+    }
+    ${({ theme }) => theme.media.mdAbove} {
+        ${({ md }) =>
+            md &&
+            `
       {
         max-width: ${(md / 12) * 100}%;
         flex: 0 0 ${(md / 12) * 100}%;
       }
     `}
-  }
-  ${({ theme }) => theme.media.lgAbove} {
-    ${({ lg }) =>
-      lg &&
-      `
+    }
+    ${({ theme }) => theme.media.lgAbove} {
+        ${({ lg }) =>
+            lg &&
+            `
       {
         max-width: ${(lg / 12) * 100}%;
         flex: 0 0 ${(lg / 12) * 100}%;
       }
     `}
-  }
-  ${({ theme }) => theme.media.xlAbove} {
-    ${({ xl }) =>
-      xl &&
-      `
+    }
+    ${({ theme }) => theme.media.xlAbove} {
+        ${({ xl }) =>
+            xl &&
+            `
       {
         max-width: ${(xl / 12) * 100}%;
         flex: 0 0 ${(xl / 12) * 100}%;
       }
     `}
-  }
+    }
 `;
 
 export const BootsPaper = styled.div`
-  margin-bottom: 24px;
+    margin-bottom: 24px;
 `;
 
 export const BodyWrapper = styled.div`
-  min-height: 100vh;
-  position: relative;
+    min-height: 100vh;
+    position: relative;
 `;

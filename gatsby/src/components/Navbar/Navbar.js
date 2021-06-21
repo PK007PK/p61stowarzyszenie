@@ -4,32 +4,32 @@ import styled from 'styled-components';
 import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 
 const NavStyle = styled.nav`
-  ul {
-    display: flex;
-  }
+    ul {
+        display: flex;
+    }
 
-  li {
-    list-style: none;
-    margin-right: 20px;
-  }
+    li {
+        list-style: none;
+        margin-right: 20px;
+    }
 `;
 
 export default function Navbar() {
-  return (
-    <NavStyle>
-      <BootsContainer>
-        <ul>
-          <li>
-            <Link to="/">Index</Link>
-          </li>
-          <li>
-            <Link to="/test">Test 1</Link>
-          </li>
-          <li>
-            <Link to="/blog/1">Blog</Link>{' '}
-          </li>
-        </ul>
-      </BootsContainer>
-    </NavStyle>
-  );
+    return (
+        <NavStyle>
+            <BootsContainer>
+                <ul>
+                    <li>
+                        <Link to="/">Index</Link>
+                    </li>
+                    <li>
+                        <Link to="/test">Test 1</Link>
+                    </li>
+                    <li>
+                        <Link to="/blog/1">Blog</Link>{' '}
+                    </li>
+                </ul>
+            </BootsContainer>
+        </NavStyle>
+    );
 }
