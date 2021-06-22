@@ -52,6 +52,8 @@
     "gatsby-source-sanity": "^7.0.7",
     "gatsby-transformer-remark": "^4.4.1",
     "gatsby-transformer-sharp": "^3.7.1",
+    "gsap": "^3.7.0",
+    "hamburger-react": "^2.4.1",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.23.0",
     "react": "^17.0.2",

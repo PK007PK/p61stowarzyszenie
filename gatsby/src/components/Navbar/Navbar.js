@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'gatsby';
+import AppContext from 'src/AppProvider';
 import styled from 'styled-components';
 import { BootsContainer } from 'src/components/BootsElements/BootsElements';
+import { Sling as Hamburger } from 'hamburger-react';
+import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
 
 const NavStyle = styled.nav`
     ul {
@@ -11,10 +14,12 @@ const NavStyle = styled.nav`
     li {
         list-style: none;
         margin-right: 20px;
+        z-index: 10;
     }
 `;
 
 export default function Navbar() {
+    const { toogleIsMenuActive, isMenuActive } = useContext(AppContext);
     return (
         <NavStyle>
             <BootsContainer>
@@ -28,7 +33,11 @@ export default function Navbar() {
                     <li>
                         <Link to="/blog/1">Blog</Link>{' '}
                     </li>
+                    <li>
+                        <Hamburger toggled={isMenuActive} toggle={toogleIsMenuActive} />
+                    </li>
                 </ul>
+                {isMenuActive && <MenuDropDown />}
             </BootsContainer>
         </NavStyle>
     );
