@@ -2,63 +2,64 @@ import path from 'path';
 import projectConfig from '../projectConfig';
 
 export async function turnCategoriesIntoPages({ graphql, actions }) {
-  // 1. Get the template
-  const categoryTemplate = path.resolve('./src/pages/blog.js');
+    // 1. Get the template
+    const categoryTemplate = path.resolve('./src/pages/blog.js');
 
-  // 2. query all the categories
-  const { data } = await graphql(`
-    query {
-      allSanityBlogPostsCategories {
-        nodes {
-          name
-          slug {
-            current
-          }
-        }
-      }
-    }
-  `);
-
-  // 3. createPage
-  data.allSanityBlogPostsCategories.nodes.forEach((category) => {
-    async function countPost() {
-      const selectCategory = `"${category.name}"`;
-
-      const categoryDetails = await graphql(`
-          query myQuery {
-            allSanityBlogPosts(
-            filter: {
-              categories: {elemMatch: {name: {eq: ${selectCategory}}}}})
-            {
-              totalCount
+    // 2. query all the categories
+    const { data } = await graphql(`
+        query {
+            allSanityBlogPostsCategories {
+                nodes {
+                    name
+                    slug {
+                        current
+                    }
+                }
             }
-          }
-        `);
-      return categoryDetails;
-    }
+        }
+    `);
 
-    countPost().then((result) => {
+    const allCategoriesDetails = data.allSanityBlogPostsCategories.nodes;
 
-      const pageSize = projectConfig.pagesAmountInSet;
-      const allPostsInCategory = result.data.allSanityBlogPosts.totalCount;
+    // 3. createPage
 
-      const pageCount = Math.ceil(allPostsInCategory / pageSize);
+    const createCategories = allCategoriesDetails.map(async (category) => {
+        async function findHowManyPostsInCategory() {
+            const selectCategory = `"${category.name}"`;
+            const dataWithAllPostsInCategory = await graphql(`
+                        query myQuery {
+                            allSanityBlogPosts(
+                                filter: {
+                                categories: {elemMatch: {name: {eq: ${selectCategory}}}}}
+                            )
+                            {
+                                totalCount
+                            }
+                        }
+                    `);
+            const numberOfPosts = dataWithAllPostsInCategory.data.allSanityBlogPosts.totalCount;
+            return numberOfPosts;
+        }
 
-      Array.from({ length: pageCount }).forEach((_, i) => {
-        actions.createPage({
-          path: `/${category.slug.current}/${i + 1}`,
-          component: categoryTemplate,
-          context: {
-            skip: i * pageSize,
-            currentPage: i + 1,
-            pageSize,
-            selectPosts: `/${category.slug.current}/i`,
-            selectionName: category.name,
-            pageType: 'allPostsInCategory',
-            dirName: `/${category.slug.current}`,
-          },
+        const numberOfPostsInCategory = await findHowManyPostsInCategory();
+        const pageSize = projectConfig.pagesAmountInSet;
+        const numberOfPages = Math.ceil(numberOfPostsInCategory / pageSize);
+
+        Array.from({ length: numberOfPages }).map((_, i) => {
+            actions.createPage({
+                path: `/${category.slug.current}/${i + 1}`,
+                component: categoryTemplate,
+                context: {
+                    skip: i * pageSize,
+                    currentPage: i + 1,
+                    pageSize,
+                    selectPosts: `/${category.slug.current}/i`,
+                    selectionName: category.name,
+                    pageType: 'allPostsInCategory',
+                    dirName: `/${category.slug.current}`,
+                },
+            });
         });
-      });
     });
-  });
+    await Promise.all(createCategories);
 }
