@@ -9,7 +9,12 @@ export default () =>
         .child(
           S.document().schemaType('siteSettings').documentId('siteSettings')
         ),
+      S.listItem()
+        .title('Site tech config')
+        .child(
+          S.document().schemaType('siteTechConfig').documentId('siteTechConfig')
+        ),
       ...S.documentTypeListItems().filter(
-        (item) => !['siteSettings'].includes(item.getId())
+        (item) => !['siteSettings', 'siteTechConfig'].includes(item.getId())
       ),
     ]);

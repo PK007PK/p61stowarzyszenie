@@ -13,6 +13,23 @@ export default {
       title: 'Title',
     },
     {
+      title: 'SVG logo',
+      name: 'svgLogo',
+      type: 'image',
+      options: {
+        hotspot: true, // <-- Defaults to false
+        accept: '.svg',
+      },
+    },
+    {
+      title: 'Site preview for social sharing',
+      name: 'sitePreviev',
+      type: 'image',
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
+    {
       name: 'lang',
       type: 'string',
       title: 'Language',
@@ -24,6 +41,11 @@ export default {
       description: 'Describe your blog for search engines and social media.',
     },
     {
+      name: 'copyright',
+      type: 'string',
+      title: "Copyright's name",
+    },
+    {
       name: 'keywords',
       type: 'array',
       title: 'Keywords',
@@ -33,12 +55,5 @@ export default {
         layout: 'tags',
       },
     },
-    // {
-    //   name: 'author',
-    //   type: 'reference',
-    //   description: 'Publish an author and set a reference to them here.',
-    //   title: 'Author',
-    //   to: [{ type: 'author' }],
-    // },
   ],
 };
