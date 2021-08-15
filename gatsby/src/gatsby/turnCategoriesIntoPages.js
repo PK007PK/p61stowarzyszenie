@@ -1,5 +1,4 @@
 import path from 'path';
-import projectConfig from '../projectConfig';
 
 export async function turnCategoriesIntoPages({ graphql, actions }) {
     // 1. Get the template
@@ -35,15 +34,19 @@ export async function turnCategoriesIntoPages({ graphql, actions }) {
                             {
                                 totalCount
                             }
+                            sanitySiteTechConfig {
+                                pagesInSet
+                            }
                         }
                     `);
             const numberOfPosts = dataWithAllPostsInCategory.data.allSanityBlogPosts.totalCount;
-            return numberOfPosts;
+            const numberOfPagesInSet = dataWithAllPostsInCategory.data.sanitySiteTechConfig.pagesInSet;
+            return { numberOfPosts, numberOfPagesInSet };
         }
 
-        const numberOfPostsInCategory = await findHowManyPostsInCategory();
-        const pageSize = projectConfig.pagesAmountInSet;
-        const numberOfPages = Math.ceil(numberOfPostsInCategory / pageSize);
+        const numberOfPostsAndPages = await findHowManyPostsInCategory();
+        const pageSize = numberOfPostsAndPages.numberOfPagesInSet;
+        const numberOfPages = Math.ceil(numberOfPostsAndPages.numberOfPosts / pageSize);
 
         Array.from({ length: numberOfPages }).map((_, i) => {
             actions.createPage({
