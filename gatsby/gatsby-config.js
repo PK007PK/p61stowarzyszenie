@@ -10,18 +10,19 @@ export default {
 
     flags: { DEV_SSR: true },
     plugins: [
-        'gatsby-plugin-root-import',
+        `gatsby-plugin-root-import`,
+        `gatsby-plugin-loadable-components-ssr`,
         `gatsby-plugin-image`,
-        'gatsby-plugin-styled-components',
+        `gatsby-plugin-styled-components`,
         {
             resolve: `gatsby-source-sanity`,
             options: {
-                projectId: `9311goma`,
+                projectId: process.env.SANITY_PROJECT_ID,
                 token: process.env.SANITY_TOKEN,
                 dataset: `production`,
                 watchMode: true,
-                apiVersion: '2021-04-01',
-                graphqlTag: 'default',
+                apiVersion: process.env.SANITY_API_VERSION,
+                graphqlTag: `default`,
             },
         },
         {
@@ -55,21 +56,43 @@ export default {
             },
         },
         `gatsby-remark-copy-linked-files`,
-        'gatsby-plugin-sharp',
-        'gatsby-plugin-react-helmet',
-        'gatsby-plugin-sitemap',
-        'gatsby-plugin-offline',
-        // {
-        //   resolve: "gatsby-plugin-manifest",
-        //   options: {
-        //     icon: "src/images/icon.png",
-        //   },
-        // },
-        'gatsby-transformer-sharp',
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-offline`,
+        `gatsby-plugin-perf-budgets`,
         {
-            resolve: 'gatsby-plugin-google-analytics',
+            resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
             options: {
-                trackingId: projectConfig.trackingGoogleId,
+                devMode: true,
+            },
+        },
+        `gatsby-plugin-sitemap`,
+        {
+            resolve: `gatsby-plugin-google-gtag`,
+            options: {
+                // You can add multiple tracking ids and a pageview event will be fired for all of them.
+                trackingIds: [
+                    process.env.TRACKING_GOOGLE_ID, // Google Analytics / GA
+                    // 'AW-CONVERSION_ID', // Google Ads / Adwords / AW
+                    // 'DC-FLOODIGHT_ID', // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+                ],
+                // This object gets passed directly to the gtag config command
+                // This config will be shared across all trackingIds
+                gtagConfig: {
+                    optimize_id: 'OPT_CONTAINER_ID',
+                    anonymize_ip: true,
+                    cookie_expires: 0,
+                },
+                // This object is used for configuration specific to this plugin
+                pluginConfig: {
+                    // Puts tracking script in the head instead of the body
+                    head: false,
+                    // Setting this parameter is also optional
+                    respectDNT: true,
+                    // Avoids sending pageview hits from custom paths
+                    exclude: ['/preview/**', '/do-not-track/me/too/'],
+                },
             },
         },
     ],

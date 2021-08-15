@@ -3,6 +3,7 @@ node_modules/
 public
 .pnp.js
 .eslintcache
+loadable-stats-build-javascript.json
 # testing
 /coverage
 
