@@ -14,7 +14,23 @@ export default () =>
         .child(
           S.document().schemaType('siteTechConfig').documentId('siteTechConfig')
         ),
+      S.listItem()
+        .title('Home page')
+        .child(
+          S.document().schemaType('pageDataHome').documentId('pageDataHome')
+        ),
+      S.listItem()
+        .title('Blog page')
+        .child(
+          S.document().schemaType('pageDataBlog').documentId('pageDataBlog')
+        ),
       ...S.documentTypeListItems().filter(
-        (item) => !['siteSettings', 'siteTechConfig'].includes(item.getId())
+        (item) =>
+          ![
+            'siteSettings',
+            'siteTechConfig',
+            'pageDataHome',
+            'pageDataBlog',
+          ].includes(item.getId())
       ),
     ]);

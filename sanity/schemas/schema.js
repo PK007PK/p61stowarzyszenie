@@ -6,6 +6,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 import siteSettings from './siteSettings';
 import siteTechConfig from './siteTechConfig';
+import pageDataHome from './pageDataHome';
+import pageDataBlog from './pageDataBlog';
 import blogPosts from './blogPosts';
 import blogPostsCategories from './blogPostsCategories';
 import blogPostsTags from './blogPostsTags';
@@ -18,6 +20,8 @@ export default createSchema({
   types: schemaTypes.concat([
     siteSettings,
     siteTechConfig,
+    pageDataHome,
+    pageDataBlog,
     blogPosts,
     blogPostsCategories,
     blogPostsTags,
