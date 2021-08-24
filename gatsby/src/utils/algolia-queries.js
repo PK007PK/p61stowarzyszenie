@@ -1,7 +1,7 @@
 const escapeStringRegexp = require('escape-string-regexp');
 
 // const pagePath = ``;
-const indexName = `BlogPagesIndex`;
+const indexName = `Pages`;
 const pageQuery = `{
   pages: allSanityBlogPosts {
     edges {
@@ -14,17 +14,27 @@ const pageQuery = `{
               text
             }
         }
+        slug {
+          current
+        }
       }
     }
   }
 }`;
 
-function pageToAlgoliaRecord({ node: { id, name, lead, ...rest } }) {
+function pageToAlgoliaRecord({
+    node: {
+        id,
+        name,
+        lead,
+        slug: { current },
+    },
+}) {
     return {
         objectID: id,
         name,
         lead,
-        ...rest,
+        slug: current,
     };
 }
 
