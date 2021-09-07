@@ -25,6 +25,7 @@
     }
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "@sanity/block-content-to-react": "^3.0.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "algoliasearch": "^4.10.4",

@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 import { Sling as Hamburger } from 'hamburger-react';
 import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
+import { WiSunset } from '@react-icons/all-files/wi/WiSunset';
+import Logo from 'src/components/Logo/Logo';
 
 const NavStyle = styled.nav`
     ul {
@@ -24,6 +26,7 @@ export default function Navbar() {
         <NavStyle>
             <BootsContainer>
                 <ul>
+                    <Logo />
                     <li>
                         <Link to="/">Index</Link>
                     </li>
