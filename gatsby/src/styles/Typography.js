@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 const Typography = createGlobalStyle`
 
-
   p, li {
     letter-spacing: 0.5px;
   }
