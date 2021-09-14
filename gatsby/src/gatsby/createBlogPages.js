@@ -23,25 +23,6 @@ export async function createBlogPages({ graphql, actions, reporter }) {
             }
         `
     );
-    // const { data } = await graphql(
-    //   `
-    //     {
-    //       allMarkdownRemark(
-    //         filter: { fileAbsolutePath: { regex: "/blog/i" } }
-    //         sort: { fields: [frontmatter___date], order: ASC }
-    //         limit: 1000
-    //       ) {
-    //         totalCount
-    //         nodes {
-    //           id
-    //           fields {
-    //             slug
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `
-    // );
 
     if (data.errors) {
         reporter.panicOnBuild(`There was an error loading your blog posts`, data.errors);
