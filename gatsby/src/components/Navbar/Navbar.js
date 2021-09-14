@@ -14,6 +14,7 @@ import Search from 'src/components/search';
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 const NavStyle = styled.nav`
+    background-color: var(--colorMediumGray);
     .innerWrapper {
         display: flex;
         justify-content: space-between;

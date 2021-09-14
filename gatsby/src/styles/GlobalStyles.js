@@ -1,13 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 const colors = `
-    --colorDark: #223549;
-    --colorLikeWhite: rgba(245, 245, 245, 0.2);
-    --colorGray: #CDD6DF;
-    --colorActive1: #17A2B8;
-    --colorActive2: #DC3545;
-    --colorWhite: white;
-    --colorBlack: black;
+    --colorWhite: #FFFFFF;
+    --colorLightGray: #F4F4F4;
+    --colorMediumGray: #E9ECEF;
+    --colorDarkGray: #343A40;
+    --colorActive: #D4AF37;
+    --colorBlack: #00000;
 `;
 
 const spacings = `
@@ -68,8 +67,9 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--black);
+    color: var(--colorBlack);
 }
+
 a:hover {
     text-decoration: underline;
 }
