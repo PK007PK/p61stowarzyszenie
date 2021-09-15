@@ -27,4 +27,13 @@ const IndexPage = ({ data }) => {
     );
 };
 
+export const data = graphql`
+    query HomeQuery {
+        sanityPageDataHome {
+            title
+            description
+        }
+    }
+`;
+
 export default IndexPage;
