@@ -7,6 +7,9 @@ import CategoryFilter from 'src/components/CategoryFilter/CategoryFilter';
 import TagsFilter from 'src/components/TagsFilter/TagsFilter';
 import Pagination from 'src/components/Pagination/Pagination';
 
+import SectionHero from 'src/components/SectionHero/SectionHero';
+import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
+
 const BlogPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
         pageContext.dirName = `/blog`;
@@ -31,6 +34,13 @@ const BlogPage = ({ data, pageContext }) => {
     }
 
     const { pagesInSet } = data.sanitySiteTechConfig;
+    const { title, description } = data.sanityPageDataHome;
+    const textBlock = () => (
+        <div>
+            <h1>Stowarzyszenie XYZ</h1>
+            <p className="lead">{description}</p>
+        </div>
+    );
 
     const DisplayPosts = () => (
         <ul style={{ listStyle: `none`, paddingLeft: 0 }}>
@@ -55,6 +65,8 @@ const BlogPage = ({ data, pageContext }) => {
                     pageContext.currentPage ? `| ${pageContext.currentPage}` : ''
                 }`}
             />
+            <SectionHero leftComponent={textBlock} />
+            <SectionOurProjects />
             <h1>Blog page</h1>
             <CategoryFilter />
             <TagsFilter />
@@ -74,6 +86,10 @@ export const pageQuery = graphql`
     query pagesQuery($selectionName: String, $skip: Int = 0, $pageSize: Int) {
         sanitySiteTechConfig {
             pagesInSet
+        }
+        sanityPageDataHome {
+            title
+            description
         }
         category: allSanityBlogPosts(
             limit: $pageSize
