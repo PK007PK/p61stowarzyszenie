@@ -59,15 +59,15 @@ export async function createBlogPages({ graphql, actions, reporter }) {
     // Loop from 1 to n and create the pages for them
     Array.from({ length: pageCount }).forEach((_, i) => {
         actions.createPage({
-            path: `/blog/${i + 1}`,
-            component: path.resolve('./src/pages/blog.js'),
+            path: `/${i + 1}`,
+            component: path.resolve('./src/pages/index.js'),
             // This data is pass to the template when we create it
             context: {
                 skip: i * pageSize,
                 currentPage: i + 1,
                 pageSize,
                 pageType: 'allPaginatedPosts',
-                dirName: `/blog`,
+                dirName: `/`,
             },
         });
     });
