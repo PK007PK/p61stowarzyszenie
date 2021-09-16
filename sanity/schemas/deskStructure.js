@@ -20,6 +20,13 @@ export default () =>
           S.document().schemaType('pageDataHome').documentId('pageDataHome')
         ),
       S.listItem()
+        .title('All projects data')
+        .child(
+          S.document()
+            .schemaType('allProjectsData')
+            .documentId('allProjectsData')
+        ),
+      S.listItem()
         .title('Blog page')
         .child(
           S.document().schemaType('pageDataBlog').documentId('pageDataBlog')
@@ -29,6 +36,7 @@ export default () =>
           ![
             'siteSettings',
             'siteTechConfig',
+            'allProjectsData',
             'pageDataHome',
             'pageDataBlog',
           ].includes(item.getId())
