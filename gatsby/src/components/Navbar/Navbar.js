@@ -68,7 +68,7 @@ export default function Navbar() {
                         </li>
                         <Search indices={searchIndices} />
                     </ul>
-                    <Hamburger toggled={isMenuActive} toggle={toogleIsMenuActive} />
+                    {/* <Hamburger toggled={isMenuActive} toggle={toogleIsMenuActive} /> */}
                     {isMenuActive && <MenuDropDown />}
                 </div>
             </BootsContainer>
