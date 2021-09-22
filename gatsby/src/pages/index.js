@@ -6,13 +6,13 @@ import SEO from 'src/components/SEO/SEO';
 import CategoryFilter from 'src/components/CategoryFilter/CategoryFilter';
 import TagsFilter from 'src/components/TagsFilter/TagsFilter';
 import Pagination from 'src/components/Pagination/Pagination';
-
+import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
-        pageContext.dirName = `/blog`;
+        pageContext.dirName = `/`;
     }
     const categories = data.category;
     const tags = data.tag;
@@ -67,17 +67,18 @@ const IndexPage = ({ data, pageContext }) => {
             />
             <SectionHero leftComponent={textBlock} />
             <SectionOurProjects />
-            <h1>Blog page</h1>
-            <CategoryFilter />
-            <TagsFilter />
-            <DisplayPosts />
-            <Pagination
-                pageSize={pagesInSet}
-                totalCount={postsToDisplay.totalCount}
-                currentPage={pageContext.currentPage || 1}
-                skip={pageContext.skip}
-                base={pageContext.dirName}
-            />
+            <BootsContainer>
+                <CategoryFilter />
+                <TagsFilter />
+                <DisplayPosts />
+                <Pagination
+                    pageSize={pagesInSet}
+                    totalCount={postsToDisplay.totalCount}
+                    currentPage={pageContext.currentPage || 1}
+                    skip={pageContext.skip}
+                    base={pageContext.dirName}
+                />
+            </BootsContainer>
         </Layout>
     );
 };
