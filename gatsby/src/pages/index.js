@@ -37,7 +37,7 @@ const IndexPage = ({ data, pageContext }) => {
     const { title, description } = data.sanityPageDataHome;
     const textBlock = () => (
         <div>
-            <h1>Stowarzyszenie XYZ</h1>
+            <h1>Stowarzyszenie EkoDoradztwo</h1>
             <p className="lead">{description}</p>
         </div>
     );

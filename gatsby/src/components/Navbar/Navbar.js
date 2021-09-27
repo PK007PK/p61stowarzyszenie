@@ -14,6 +14,7 @@ import Search from 'src/components/search';
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 const NavStyle = styled.nav`
+    padding-top: 20px;
     background-color: var(--colorMediumGray);
     .innerWrapper {
         display: flex;
@@ -50,7 +51,7 @@ export default function Navbar() {
             <BootsContainer>
                 <div className="innerWrapper">
                     <Link className="logoWrapper" to="/">
-                        <Logo /> Stowarzyszenie
+                        <Logo />
                     </Link>
 
                     <ul className="menuList">
@@ -62,9 +63,6 @@ export default function Navbar() {
                         </li>
                         <li>
                             <Link to="/test">Terminarz</Link>
-                        </li>
-                        <li>
-                            <Link to="/blog/1">Blog</Link>{' '}
                         </li>
                         <Search indices={searchIndices} />
                     </ul>

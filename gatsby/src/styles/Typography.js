@@ -12,7 +12,15 @@ const Typography = createGlobalStyle`
   }
 
   h1 {
-    font-size: 40px;
+    font-size: var(--fontSizeBig2);
+  }
+
+  h2 {
+    font-size: var(--fontSizeBig1);
+  }
+
+  h3 {
+    font-size: var(--fontSizeLead);
   }
 
   a {

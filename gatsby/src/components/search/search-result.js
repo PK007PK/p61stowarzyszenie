@@ -30,17 +30,13 @@ const HitsInIndex = ({ index }) => (
     </Index>
 );
 
-const SearchResult = ({ indices, className }) => {
-    console.log('indices', indices);
-
-    return (
-        <div className={className}>
-            {indices.map((index) => (
-                <HitsInIndex index={index} key={index.name} />
-            ))}
-            <PoweredBy />
-        </div>
-    );
-};
+const SearchResult = ({ indices, className }) => (
+    <div className={className}>
+        {indices.map((index) => (
+            <HitsInIndex index={index} key={index.name} />
+        ))}
+        <PoweredBy />
+    </div>
+);
 
 export default SearchResult;

@@ -1,7 +1,8 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import React from 'react';
+import React, { useContext } from 'react';
 import { BootsContainer } from 'src/components/BootsElements/BootsElements';
-import Heading from 'src/components/Heading/Heading';
+import MainHeading from 'src/components/MainHeading/MainHeading';
+import AppContext from 'src/AppProvider';
 import CardSimple from '../CardSimple/CardSimple';
 import { SectionOurProjectsStyles } from './SectionOurProjects.styles';
 
@@ -14,6 +15,10 @@ const SectionOurProjects = () => {
                         pageSlug
                         projectName
                         projectSubtitle
+                        tags {
+                            name
+                        }
+                        group
                     }
                 }
             }
@@ -21,17 +26,20 @@ const SectionOurProjects = () => {
     `);
 
     const { projectItems } = data.allSanityAllProjectsData.nodes[0];
+    const { group } = useContext(AppContext);
 
     return (
         <SectionOurProjectsStyles>
             <BootsContainer>
-                <Heading title="Projekty" subtitle="Realizowane działania" />
+                <MainHeading title="Projekty stowarzyszenia:" />
                 <div className="cardContainer">
-                    {projectItems.map((item, i) => (
-                        <Link key={i} to={item.pageSlug}>
-                            <CardSimple title={item.projectName} subtitle={item.projectSubtitle} />
-                        </Link>
-                    ))}
+                    {projectItems
+                        .filter((item) => item.group.includes(group))
+                        .map((item, i) => (
+                            <Link key={i} to={item.pageSlug}>
+                                <CardSimple title={item.projectName} subtitle={item.projectSubtitle} />
+                            </Link>
+                        ))}
                 </div>
             </BootsContainer>
         </SectionOurProjectsStyles>

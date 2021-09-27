@@ -23,7 +23,7 @@ const fontSizes = `
     --fontSizeSmall: 14px;
     --fontSizeRegular: 16px;
     --fontSizeLead: 20px;
-    --fontSizeBig1: 25px;
+    --fontSizeBig1: 32px;
     --fontSizeBig2: 40px;
     --fontSizeBig3: 50px;
 `;

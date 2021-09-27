@@ -24,12 +24,9 @@ export default function CategoryFilter() {
                 <h2>Aktualności</h2>
             </Link>
             {categories.map((category) => (
-                <>
-                    <Link to={`/${category.slug.current}/1`} activeStyle={{ color: 'red' }} key={category.slug.current}>
-                        {category.name}
-                    </Link>{' '}
-                    /{' '}
-                </>
+                <Link to={`/${category.slug.current}/1`} activeStyle={{ color: 'red' }} key={category.slug.current}>
+                    {category.name}
+                </Link>
             ))}
         </div>
     );
