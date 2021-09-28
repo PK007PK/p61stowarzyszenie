@@ -25,8 +25,9 @@ const Typography = createGlobalStyle`
 
   a {
     color: var(--black);
-    text-decoration-color: var(--red);
-    text-decoration-skip-ink: none;
+    /* text-decoration-color: var(--red); */
+    
+    text-decoration: none;
   }
 
   ul {

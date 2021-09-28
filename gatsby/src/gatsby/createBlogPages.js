@@ -67,7 +67,7 @@ export async function createBlogPages({ graphql, actions, reporter }) {
                 currentPage: i + 1,
                 pageSize,
                 pageType: 'allPaginatedPosts',
-                dirName: `/`,
+                dirName: `.`,
             },
         });
     });

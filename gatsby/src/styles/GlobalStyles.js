@@ -35,6 +35,10 @@ const fx = `
     --animationBasic: 0.4s;
 `;
 
+const cardVariables = `
+    --cardHeight: 400px;
+`;
+
 const GlobalStyles = createGlobalStyle`
 /* @font-face {
     font-family: 'radnika_next';
@@ -49,6 +53,7 @@ html {
     ${spacings}
     ${fontSizes}
     ${fx}
+    ${cardVariables}
     
     box-sizing: border-box;
     font-size: 10px;

@@ -6,9 +6,10 @@ import SEO from 'src/components/SEO/SEO';
 import CategoryFilter from 'src/components/CategoryFilter/CategoryFilter';
 import TagsFilter from 'src/components/TagsFilter/TagsFilter';
 import Pagination from 'src/components/Pagination/Pagination';
-import { BootsContainer } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
+import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
@@ -35,6 +36,7 @@ const IndexPage = ({ data, pageContext }) => {
 
     const { pagesInSet } = data.sanitySiteTechConfig;
     const { title, description } = data.sanityPageDataHome;
+
     const textBlock = () => (
         <div>
             <h1>Stowarzyszenie EkoDoradztwo</h1>
@@ -42,20 +44,19 @@ const IndexPage = ({ data, pageContext }) => {
         </div>
     );
 
-    const DisplayPosts = () => (
-        <ul style={{ listStyle: `none`, paddingLeft: 0 }}>
-            {postsToDisplay.nodes
-                .filter((post) => post.date !== null)
-                .map((post) => (
-                    <li key={post.slug.current}>
-                        <h3>{post.name}</h3>
-                        <p>{post.lead}</p>
-                        <Link to={`/${post.slug.current}`} itemProp="url">
-                            More
-                        </Link>
-                    </li>
-                ))}
-        </ul>
+    const blogSection = (
+        <>
+            <CategoryFilter />
+            <TagsFilter />
+            <Pagination
+                pageSize={pagesInSet}
+                totalCount={postsToDisplay.totalCount}
+                currentPage={pageContext.currentPage || 1}
+                skip={pageContext.skip}
+                base={pageContext.dirName}
+            />
+            <PostsToDisplay data={postsToDisplay.nodes.slice(0, pagesInSet)} />
+        </>
     );
 
     return (
@@ -68,16 +69,9 @@ const IndexPage = ({ data, pageContext }) => {
             <SectionHero leftComponent={textBlock} />
             <SectionOurProjects />
             <BootsContainer>
-                <CategoryFilter />
-                <TagsFilter />
-                <DisplayPosts />
-                <Pagination
-                    pageSize={pagesInSet}
-                    totalCount={postsToDisplay.totalCount}
-                    currentPage={pageContext.currentPage || 1}
-                    skip={pageContext.skip}
-                    base={pageContext.dirName}
-                />
+                <BootsRow>
+                    <BootsColumn md={8}>{blogSection}</BootsColumn>
+                </BootsRow>
             </BootsContainer>
         </Layout>
     );
@@ -100,12 +94,20 @@ export const pageQuery = graphql`
         ) {
             totalCount
             nodes {
+                name
+                lead
+                date(formatString: "")
                 slug {
                     current
                 }
-                date
-                name
-                lead
+                categories {
+                    name
+                }
+                image {
+                    asset {
+                        gatsbyImageData(width: 400)
+                    }
+                }
             }
         }
         tag: allSanityBlogPosts(
@@ -116,23 +118,39 @@ export const pageQuery = graphql`
         ) {
             totalCount
             nodes {
+                name
+                lead
+                date(formatString: "")
                 slug {
                     current
                 }
-                date
-                name
-                lead
+                categories {
+                    name
+                }
+                image {
+                    asset {
+                        gatsbyImageData(width: 400)
+                    }
+                }
             }
         }
         allPosts: allSanityBlogPosts(limit: $pageSize, skip: $skip, sort: { order: DESC, fields: date }) {
             totalCount
             nodes {
+                name
+                lead
+                date(formatString: "")
                 slug {
                     current
                 }
-                date
-                name
-                lead
+                categories {
+                    name
+                }
+                image {
+                    asset {
+                        gatsbyImageData(width: 400)
+                    }
+                }
             }
         }
     }

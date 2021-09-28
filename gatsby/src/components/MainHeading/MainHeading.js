@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import AppContext from 'src/AppProvider';
 import { MainHeadingStyle, StyledButton } from './MainHeading.style.js';
 
-const Heading = ({ title }) => {
+const MainHeading = ({ title, style }) => {
     const { group, setGroup } = useContext(AppContext);
 
     return (
-        <MainHeadingStyle>
+        <MainHeadingStyle style={style}>
             <h2 className="heading">{title}</h2>
             <div className="buttonsWrapper">
                 <StyledButton onClick={() => setGroup('mieszkańcy')} className="button" type="button">
@@ -19,9 +19,8 @@ const Heading = ({ title }) => {
                     Dla przedsiębiorców
                 </StyledButton>
             </div>
-            {group}
         </MainHeadingStyle>
     );
 };
 
-export default Heading;
+export default MainHeading;
