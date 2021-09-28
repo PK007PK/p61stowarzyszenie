@@ -59,7 +59,7 @@ export async function turnTagsIntoPages({ graphql, actions }) {
                     selectPosts: `/${tag.slug.current}/i`,
                     selectionName: tag.name,
                     pageType: 'allPostsInTag',
-                    dirName: `/${tag.slug.current}`,
+                    dirName: `/${tag.slug.current}/`,
                 },
             });
         });

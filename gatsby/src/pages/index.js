@@ -54,6 +54,7 @@ const IndexPage = ({ data, pageContext }) => {
                 currentPage={pageContext.currentPage || 1}
                 skip={pageContext.skip}
                 base={pageContext.dirName}
+                style={{ marginBottom: '25px' }}
             />
             <PostsToDisplay data={postsToDisplay.nodes.slice(0, pagesInSet)} />
         </>

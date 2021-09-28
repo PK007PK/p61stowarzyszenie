@@ -2,6 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 const CustomStyles = createGlobalStyle`
 
+
+.slick-slide {
+  padding-right: 5px;
+}
+
 .lead {
   font-size: 24px;
   letter-spacing: -5%;

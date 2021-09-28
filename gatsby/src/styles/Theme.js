@@ -21,6 +21,12 @@ theme.media = {
     xlBelow: `@media (max-width: ${theme.breakpoint.xl - 1}px)`,
 };
 
+theme.elevationSpecial = {
+    dp1: `0 2px 1px -1px rgba(214, 51, 132,.2), 0 1px 1px 0 rgba(214, 51, 132,.14), 0 1px 3px 0 rgba(214, 51, 132,.12);`,
+    dp4: `0 2px 4px -1px rgba(214, 51, 132,.2), 0 4px 5px 0 rgba(214, 51, 132,.14), 0 1px 10px 0 rgba(214, 51, 132,.12);`,
+    dp8: `0 5px 5px -3px rgba(214, 51, 132,.2), 0 8px 10px 1px rgba(214, 51, 132,.14), 0 3px 14px 2px rgba(214, 51, 132,.12);`,
+};
+
 theme.maxContainerWidth = {
     xs: 540,
     sm: 720,

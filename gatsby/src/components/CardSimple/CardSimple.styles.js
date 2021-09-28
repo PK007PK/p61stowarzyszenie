@@ -7,5 +7,4 @@ export const CardSimpleStyles = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin: 5px;
 `;

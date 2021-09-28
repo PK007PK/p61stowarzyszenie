@@ -59,7 +59,7 @@ export async function turnCategoriesIntoPages({ graphql, actions }) {
                     selectPosts: `/${category.slug.current}/i`,
                     selectionName: category.name,
                     pageType: 'allPostsInCategory',
-                    dirName: `/${category.slug.current}`,
+                    dirName: `/${category.slug.current}/`,
                 },
             });
         });

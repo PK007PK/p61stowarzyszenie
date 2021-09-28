@@ -22,7 +22,7 @@ const PaginationStyles = styled.div`
         &:hover,
         &[aria-current],
         &.current {
-            /* box-shadow: ${({ theme }) => theme.elevationSpecial.dp8}; */
+            box-shadow: ${({ theme }) => theme.elevationSpecial.dp8};
             background-color: var(--colorDarkGray);
             color: var(--colorWhite);
             border: none;
@@ -34,19 +34,20 @@ const PaginationStyles = styled.div`
     }
 `;
 
-export default function Pagination({ pageSize, totalCount, currentPage, skip, base, className }) {
+export default function Pagination({ pageSize, totalCount, currentPage, skip, base, className, style }) {
     // make some variables
     const totalPages = Math.ceil(totalCount / pageSize);
     const prevPage = currentPage - 1;
     const nextPage = currentPage + 1;
     const hasNextPage = nextPage <= totalPages;
     const hasPrevPage = prevPage >= 1;
+    console.log(base);
     return (
-        <PaginationStyles className={className}>
+        <PaginationStyles style={style} className={className}>
             {Array.from({ length: totalPages }).map((_, i) => (
                 <Link
                     className={currentPage === 1 && i === 0 ? 'current' : ''}
-                    to={`${base}/${i >= 0 ? i + 1 : ''}`}
+                    to={`${base}${i >= 0 ? i + 1 : ''}`}
                     key={`page${i}`}
                 >
                     {i + 1}
