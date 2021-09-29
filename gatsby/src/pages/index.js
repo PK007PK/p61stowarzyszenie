@@ -10,6 +10,9 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsEleme
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
+import SectionDuties from '../components/SectionDuties/SectionDuties';
+import SearchInput from '../components/SearchInput/SearchInput';
+import SectionBestPractices from '../components/SectionBestPractices/SectionBestPractices';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
@@ -57,6 +60,14 @@ const IndexPage = ({ data, pageContext }) => {
                 style={{ marginBottom: '25px' }}
             />
             <PostsToDisplay data={postsToDisplay.nodes.slice(0, pagesInSet)} />
+            <Pagination
+                pageSize={pagesInSet}
+                totalCount={postsToDisplay.totalCount}
+                currentPage={pageContext.currentPage || 1}
+                skip={pageContext.skip}
+                base={pageContext.dirName}
+                style={{ marginBottom: '25px' }}
+            />
         </>
     );
 
@@ -69,9 +80,14 @@ const IndexPage = ({ data, pageContext }) => {
             />
             <SectionHero leftComponent={textBlock} />
             <SectionOurProjects />
+            <SearchInput />
             <BootsContainer>
                 <BootsRow id="blog">
                     <BootsColumn md={8}>{blogSection}</BootsColumn>
+                    <BootsColumn md={4}>
+                        <SectionDuties />
+                        <SectionBestPractices />
+                    </BootsColumn>
                 </BootsRow>
             </BootsContainer>
         </Layout>

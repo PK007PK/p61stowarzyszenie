@@ -55,6 +55,7 @@ html {
     ${fx}
     ${cardVariables}
     
+    scroll-behavior: smooth;
     box-sizing: border-box;
     font-size: 10px;
 }
@@ -79,6 +80,9 @@ a:hover {
     text-decoration: underline;
 }
 
+button {
+    cursor: pointer;
+}
 
 
 `;

@@ -44,7 +44,6 @@ const CustomStyles = createGlobalStyle`
       transform: scaleX(1);
     }
   }
-
 `;
 
 export default CustomStyles;
