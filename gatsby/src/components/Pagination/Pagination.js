@@ -22,7 +22,7 @@ const PaginationStyles = styled.div`
         &:hover,
         &[aria-current],
         &.current {
-            box-shadow: ${({ theme }) => theme.elevationSpecial.dp8};
+            box-shadow: ${({ theme }) => theme.elevation.dp8};
             background-color: var(--colorDarkGray);
             color: var(--colorWhite);
             border: none;
@@ -41,13 +41,12 @@ export default function Pagination({ pageSize, totalCount, currentPage, skip, ba
     const nextPage = currentPage + 1;
     const hasNextPage = nextPage <= totalPages;
     const hasPrevPage = prevPage >= 1;
-    console.log(base);
     return (
         <PaginationStyles style={style} className={className}>
             {Array.from({ length: totalPages }).map((_, i) => (
                 <Link
                     className={currentPage === 1 && i === 0 ? 'current' : ''}
-                    to={`${base}${i >= 0 ? i + 1 : ''}`}
+                    to={`${base}${i >= 0 ? i + 1 : ''}#blog`}
                     key={`page${i}`}
                 >
                     {i + 1}

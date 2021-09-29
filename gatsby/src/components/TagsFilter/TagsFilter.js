@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+import { TagFilterStyle } from './TagFilter.style';
 
 export default function TagsFilter() {
     const data = useStaticQuery(graphql`
@@ -18,12 +19,12 @@ export default function TagsFilter() {
     const tags = data.allSanityBlogPostsTags.nodes;
 
     return (
-        <div>
+        <TagFilterStyle>
             {tags.map((tag) => (
-                <Link to={`/${tag.slug.current}/1`} activeStyle={{ color: 'red' }} key={tag.slug.current}>
+                <Link to={`/${tag.slug.current}/1#blog`} activeStyle={{ color: 'red' }} key={tag.slug.current}>
                     {tag.name}
                 </Link>
             ))}
-        </div>
+        </TagFilterStyle>
     );
 }

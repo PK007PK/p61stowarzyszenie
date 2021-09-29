@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import styled from 'styled-components';
+import { CategoryFilterStyle } from './CategoryFilter.style';
 
 export default function CategoryFilter() {
     const data = useStaticQuery(graphql`
@@ -19,15 +19,19 @@ export default function CategoryFilter() {
     const categories = data.allSanityBlogPostsCategories.nodes;
 
     return (
-        <div>
-            <Link to="/1" activeStyle={{ color: 'red' }}>
+        <CategoryFilterStyle>
+            <Link to="/1#blog">
                 <h2>Aktualności</h2>
             </Link>
             {categories.map((category) => (
-                <Link to={`/${category.slug.current}/1`} activeStyle={{ color: 'red' }} key={category.slug.current}>
+                <Link
+                    to={`/${category.slug.current}/1#blog`}
+                    activeStyle={{ color: 'red' }}
+                    key={category.slug.current}
+                >
                     {category.name}
                 </Link>
             ))}
-        </div>
+        </CategoryFilterStyle>
     );
 }

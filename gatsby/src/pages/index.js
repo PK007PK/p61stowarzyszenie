@@ -70,7 +70,7 @@ const IndexPage = ({ data, pageContext }) => {
             <SectionHero leftComponent={textBlock} />
             <SectionOurProjects />
             <BootsContainer>
-                <BootsRow>
+                <BootsRow id="blog">
                     <BootsColumn md={8}>{blogSection}</BootsColumn>
                 </BootsRow>
             </BootsContainer>

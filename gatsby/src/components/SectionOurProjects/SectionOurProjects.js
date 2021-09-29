@@ -1,7 +1,7 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import React, { useContext } from 'react';
 import { BootsContainer } from 'src/components/BootsElements/BootsElements';
-import MainHeading from 'src/components/MainHeading/MainHeading';
+import SelectGroup from 'src/components/SelectGroup/SelectGroup';
 import AppContext from 'src/AppProvider';
 import Slider from 'react-slick';
 import CardSimple from '../CardSimple/CardSimple';
@@ -67,7 +67,7 @@ export const SectionOurProjects = () => {
     return (
         <SectionOurProjectsStyles>
             <BootsContainer>
-                <MainHeading style={{ marginBottom: '20px' }} title="Projekty stowarzyszenia:" />
+                <SelectGroup style={{ marginBottom: '20px' }} title="Projekty stowarzyszenia:" />
 
                 <Slider {...settings}>
                     {projectItems

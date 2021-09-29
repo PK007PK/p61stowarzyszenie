@@ -25,8 +25,11 @@ const Typography = createGlobalStyle`
 
   a {
     color: var(--black);
-    /* text-decoration-color: var(--red); */
-    
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--black);
     text-decoration: none;
   }
 
