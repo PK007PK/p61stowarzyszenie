@@ -13,7 +13,15 @@ export default {
       title: 'Title',
     },
     {
-      title: 'SVG logo',
+      title: 'Website logo',
+      name: 'websiteLogo',
+      type: 'image',
+      options: {
+        hotspot: true, // <-- Defaults to false
+      },
+    },
+    {
+      title: 'SVG logo / SEO version',
       name: 'svgLogo',
       type: 'image',
       options: {

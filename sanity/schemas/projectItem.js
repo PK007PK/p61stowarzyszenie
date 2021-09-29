@@ -18,6 +18,17 @@ export default {
       name: 'pageSlug',
       type: 'string',
     },
+    {
+      title: 'Grupa',
+      name: 'group',
+      type: 'string',
+    },
+    {
+      name: 'tags',
+      title: 'Post tags',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'blogPostsTags' }] }],
+    },
   ],
   preview: {
     select: {
