@@ -18,24 +18,4 @@ export const CardBestPracticeStyle = styled.div`
         padding-left: var(--spacingRegular);
         padding-right: var(--spacingRegular);
     }
-
-    .button {
-        font-size: var(--fontSizeXSmall);
-        background-color: white;
-        border: 1px solid lightgray;
-        color: gray;
-        flex-grow: 1;
-
-        &:first-child {
-            border-radius: 0 0 0 10px;
-        }
-
-        &:last-child {
-            border-radius: 0 0 10px 0;
-        }
-
-        &:hover {
-            color: black;
-        }
-    }
 `;

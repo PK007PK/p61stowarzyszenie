@@ -43,6 +43,7 @@ export const BootsRow = styled.div`
     flex-wrap: wrap;
     margin: 0px -15px;
     position: relative;
+    justify-content: ${({ between }) => (between ? 'space-between' : null)};
 `;
 
 export const BootsColumn = styled.div`

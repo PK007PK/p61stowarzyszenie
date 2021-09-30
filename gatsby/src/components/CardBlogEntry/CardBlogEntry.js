@@ -13,17 +13,23 @@ const CardBlogEntry = ({ data }) => {
     } = data;
     return (
         <CardBlogEntryStyle>
-            <GatsbyImage
-                className="picture"
-                image={gatsbyImageData}
-                placeholder="blurred"
-                alt={name}
-                formats={['auto', 'webp']}
-                quality={50}
-            />
+            <div className="imageBar">
+                <GatsbyImage
+                    className="picture"
+                    image={gatsbyImageData}
+                    placeholder="blurred"
+                    alt={name}
+                    formats={['auto', 'webp']}
+                    quality={50}
+                />
+                <div className="titleBar">
+                    <h3 className="title">{name}</h3>
+                </div>
+                <time className="time" dateTime={date}>
+                    {date}
+                </time>
+            </div>
             <div className="txtBlock">
-                <h3 className="title">{name}</h3>
-                <time dateTime={date}>{date}</time>
                 <p className="description">{lead}</p>
             </div>
         </CardBlogEntryStyle>

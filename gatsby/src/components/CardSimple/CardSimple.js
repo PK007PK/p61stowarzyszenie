@@ -1,11 +1,42 @@
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { CardSimpleStyles } from './CardSimple.styles.js';
 
-const CardSimple = ({ title, subtitle }) => (
-    <CardSimpleStyles>
-        <h3 className="title">{title}</h3>
-        {/* <p className="description">{subtitle}</p> */}
-    </CardSimpleStyles>
-);
+const CardSimple = ({ data }) => {
+    const { projectName: title, projectImage, color, backgroundColor } = data;
+    const imgSource = projectImage?.asset?.gatsbyImageData;
+    return (
+        <CardSimpleStyles color={color} backgroundColor={backgroundColor}>
+            <GatsbyImage
+                className="picture"
+                image={imgSource}
+                placeholder="blurred"
+                alt={title}
+                formats={['auto', 'webp']}
+                quality={50}
+            />
+            <div className="textBlock">
+                <h3 className="title">{title}</h3>
+            </div>
+        </CardSimpleStyles>
+    );
+};
 
 export default CardSimple;
+
+/*
+projectName
+                        projectSubtitle
+                        projectImage {
+                            asset {
+                                gatsbyImageData(width: 400)
+                            }
+                        }
+                        backgroundColor
+                        color
+                        pageSlug
+                        group
+                        tags {
+                            name
+                        }
+*/

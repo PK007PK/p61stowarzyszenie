@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonSmall from 'src/components/ButtonSmall/ButtonSmall';
 import { CardBestPracticeStyle } from './CardBestPractice.style';
 
 const CardToDo = ({ selected }) => (
@@ -9,15 +10,15 @@ const CardToDo = ({ selected }) => (
         </h4>
 
         <div className="buttonBar">
-            <button type="button" className="button">
+            <ButtonSmall type="button" className="button">
                 Zrobione!
-            </button>
-            <button type="button" className="button">
+            </ButtonSmall>
+            <ButtonSmall type="button" className="button">
                 {selected ? 'Odepnij' : 'Usuń'}
-            </button>
-            <button type="button" className="button">
+            </ButtonSmall>
+            <ButtonSmall type="button" className="button">
                 Więcej
-            </button>
+            </ButtonSmall>
         </div>
     </CardBestPracticeStyle>
 );

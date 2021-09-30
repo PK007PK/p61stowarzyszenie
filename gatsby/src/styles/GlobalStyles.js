@@ -5,7 +5,7 @@ const colors = `
     --colorLightGray: #F4F4F4;
     --colorMediumGray: #E9ECEF;
     --colorDarkGray: #343A40;
-    --colorActive: #D4AF37;
+    --colorActive: #47894b;
     --colorBlack: #00000;
 `;
 
@@ -33,10 +33,13 @@ const fx = `
     --transitionBasic: 0.4s ease-out;
     --transitionSlow: 0.5s ease-out;
     --animationBasic: 0.4s;
+    --shadowBackground: rgb(0 0 0) 0 -200px 90px -110px inset;
+    --shadowBackground2: rgb(0 0 0) 0 -220px 90px -110px inset;
 `;
 
 const cardVariables = `
     --cardHeight: 400px;
+    --cardPadding: var(--spacingRegular);
 `;
 
 const GlobalStyles = createGlobalStyle`

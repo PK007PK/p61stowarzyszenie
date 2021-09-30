@@ -8,14 +8,14 @@ import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 import { Sling as Hamburger } from 'hamburger-react';
 import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
 
-import Logo from 'src/components/Logo/Logo';
+import Logo2 from 'src/components/Logo2/Logo2';
 import Search from 'src/components/search';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 const NavStyle = styled.nav`
     padding-top: 20px;
-    background-color: var(--colorMediumGray);
+    /* background-color: var(--colorMediumGray); */
     .innerWrapper {
         display: flex;
         justify-content: space-between;
@@ -50,8 +50,8 @@ export default function Navbar() {
         <NavStyle>
             <BootsContainer>
                 <div className="innerWrapper">
-                    <Link className="logoWrapper" to="/">
-                        <Logo />
+                    <Link style={{ textDecoration: 'none' }} className="logoWrapper" to="/">
+                        <Logo2 />
                     </Link>
 
                     <ul className="menuList">

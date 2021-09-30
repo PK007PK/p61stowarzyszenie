@@ -42,7 +42,7 @@ const IndexPage = ({ data, pageContext }) => {
 
     const textBlock = () => (
         <div>
-            <h1>Stowarzyszenie EkoDoradztwo</h1>
+            <h1>Stowarzyszenie EkoPartner</h1>
             <p className="lead">{description}</p>
         </div>
     );
@@ -82,8 +82,8 @@ const IndexPage = ({ data, pageContext }) => {
             <SectionOurProjects />
             <SearchInput />
             <BootsContainer>
-                <BootsRow id="blog">
-                    <BootsColumn md={8}>{blogSection}</BootsColumn>
+                <BootsRow id="blog" between>
+                    <BootsColumn md={7}>{blogSection}</BootsColumn>
                     <BootsColumn md={4}>
                         <SectionDuties />
                         <SectionBestPractices />
