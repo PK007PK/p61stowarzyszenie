@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
-import logoSign from '../../assets/images/logoSignSvg2.svg';
+import logoSign from '../../assets/images/logoSignSvg3.svg';
 
 const Logo = () => {
     // const data = useStaticQuery(graphql`
@@ -43,7 +43,7 @@ const Logo = () => {
             font-weight: 900;
             line-height: 33px;
             letter-spacing: -0.03em;
-            color: #e43b3b;
+            color: #134c0a;
 
             span {
                 /* color: #e43b3b; */
