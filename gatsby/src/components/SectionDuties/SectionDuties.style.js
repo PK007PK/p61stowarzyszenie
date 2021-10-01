@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const SectionDutiesStyle = styled.section`
-    padding-right: 10px;
     text-align: center;
 
     span {

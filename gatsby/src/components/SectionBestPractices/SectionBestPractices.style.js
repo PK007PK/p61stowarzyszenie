@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const SectionBestPracticesStyle = styled.section`
-    padding-right: 10px;
     text-align: center;
-    margin-top: 100px;
 
     span {
     }

@@ -8,7 +8,7 @@ export const CardNewsletterStyle = styled.button`
     text-align: center;
     cursor: pointer;
     width: 100%;
-    height: 130px;
+    height: 100px;
     /* background-color: orange; */
 
     &:hover,

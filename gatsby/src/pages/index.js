@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/SEO/SEO';
@@ -10,10 +10,8 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsEleme
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
-import SectionDuties from '../components/SectionDuties/SectionDuties';
 import SearchInput from '../components/SearchInput/SearchInput';
-import SectionBestPractices from '../components/SectionBestPractices/SectionBestPractices';
-import CardNewsletter from '../components/CardNewsletter/CardNewsletter';
+import AsideIndex from '../components/AsideIndex/AsideIndex';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
@@ -86,9 +84,7 @@ const IndexPage = ({ data, pageContext }) => {
                 <BootsRow id="blog" between>
                     <BootsColumn md={7}>{blogSection}</BootsColumn>
                     <BootsColumn md={4}>
-                        <CardNewsletter />
-                        <SectionDuties />
-                        <SectionBestPractices />
+                        <AsideIndex />
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>

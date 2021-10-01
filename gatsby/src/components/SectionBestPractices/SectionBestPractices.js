@@ -4,8 +4,8 @@ import CardBestPractice from '../CardBestPractice/CardBestPractice';
 import PaginationPlaceholder from '../PaginationPlaceholder/PaginationPlaceholder';
 import { SectionBestPracticesStyle } from './SectionBestPractices.style';
 
-const SectionBestPractices = () => (
-    <SectionBestPracticesStyle>
+const SectionBestPractices = ({ style, className }) => (
+    <SectionBestPracticesStyle style={style} className={className}>
         <div className="topBar">
             <h2>Dobre praktyki</h2>
             <div className="links">

@@ -1,12 +1,12 @@
-import Mailchimp from 'react-mailchimp-form';
+// import Mailchimp from 'react-mailchimp-form';
 import React from 'react';
-import { FormMailchimpStyles } from './FormMailchimpStyles';
+import { FormMailchimpStyles } from './FormMailchimp.style';
 
 export default function FormMailchimp(props) {
     return (
         <FormMailchimpStyles {...props}>
             <p className="info">Bądź na bieżąco z informacjami o naszej ofercie i możliwościach aplikowania o środki</p>
-            <Mailchimp
+            {/* <Mailchimp
                 action="https://masterprojekt.us1.list-manage.com/subscribe/post?u=782afe1fa00f8b7841829b048&amp;id=3da9210cca"
                 fields={[
                     {
@@ -27,7 +27,7 @@ export default function FormMailchimp(props) {
                 }}
                 // Add a personalized class
                 className="form"
-            />
+            /> */}
         </FormMailchimpStyles>
     );
 }

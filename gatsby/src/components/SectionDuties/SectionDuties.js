@@ -5,8 +5,8 @@ import CardToDo from '../CardToDo/CardToDo';
 import PaginationPlaceholder from '../PaginationPlaceholder/PaginationPlaceholder';
 import { SectionDutiesStyle } from './SectionDuties.style';
 
-const SectionDuties = () => (
-    <SectionDutiesStyle>
+const SectionDuties = ({ style, className }) => (
+    <SectionDutiesStyle style={style} className={className}>
         <div className="topBar">
             <h2>Twoje obowiązki</h2>
             <div className="links">
