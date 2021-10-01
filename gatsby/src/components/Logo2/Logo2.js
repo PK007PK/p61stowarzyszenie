@@ -22,11 +22,6 @@ const Logo = () => {
         font-family: Poppins;
         font-style: normal;
 
-        .sign {
-            color: #e43b3b;
-            fill: red;
-        }
-
         .textBlock {
             margin-left: 7px;
         }

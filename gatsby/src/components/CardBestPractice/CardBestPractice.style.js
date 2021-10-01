@@ -5,14 +5,12 @@ export const CardBestPracticeStyle = styled.div`
     padding: var(--spacingRegular);
     position: relative;
     box-shadow: ${({ theme }) => theme.elevation.dp1};
-    background-color: ${({ selected }) => (selected ? 'lightgray' : null)};
-    border-radius: 20px;
 
     .buttonBar {
         display: flex;
         justify-content: space-between;
         position: absolute;
-        bottom: -15px;
+        bottom: -21px;
         left: 0;
         width: 100%;
         padding-left: var(--spacingRegular);

@@ -6,6 +6,10 @@ export const ButtonSmallStyle = styled.button`
     border: 1px solid lightgray;
     color: gray;
     flex-grow: 1;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:first-child {
         border-radius: 0 0 0 10px;
@@ -16,8 +20,8 @@ export const ButtonSmallStyle = styled.button`
     }
 
     &:hover {
-        color: white;
-        background-color: black;
-        border: 1px solid black;
+        border-bottom: 1px solid var(--colorActive);
+        border-left: 1px solid var(--colorActive);
+        border-right: 1px solid var(--colorActive);
     }
 `;

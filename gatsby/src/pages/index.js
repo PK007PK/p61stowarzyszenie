@@ -42,7 +42,7 @@ const IndexPage = ({ data, pageContext }) => {
 
     const textBlock = () => (
         <div>
-            <h1>Stowarzyszenie EkoPartner</h1>
+            <h1>{title}</h1>
             <p className="lead">{description}</p>
         </div>
     );

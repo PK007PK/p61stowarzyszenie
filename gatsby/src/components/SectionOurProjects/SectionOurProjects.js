@@ -15,7 +15,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const StyledArrowLeft = styled.div`
     position: absolute;
     z-index: 1;
-    left: -40px;
+    left: -25px;
     top: 0;
     cursor: pointer;
 
@@ -29,7 +29,7 @@ const StyledArrowRight = styled.div`
     position: absolute;
     z-index: 1;
     top: 0;
-    right: -40px;
+    right: -25px;
     cursor: pointer;
 
     .arrowIco {
