@@ -16,8 +16,10 @@ const StyledArrowLeft = styled.div`
     position: absolute;
     z-index: 1;
     left: -25px;
-    top: 0;
+    top: 50px;
     cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
 
     .arrowIco {
         width: 40px;
@@ -28,9 +30,11 @@ const StyledArrowLeft = styled.div`
 const StyledArrowRight = styled.div`
     position: absolute;
     z-index: 1;
-    top: 0;
     right: -25px;
+    top: 50px;
     cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
 
     .arrowIco {
         width: 40px;

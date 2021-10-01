@@ -7,13 +7,13 @@ const CardToDo = ({ selected }) => (
         <h3>Wymiana pieców XYZ</h3>
         {selected ? 'Termin: 2022.01.01 - Pozostało: 233 dni' : 'Termin: 2022.01.01'}
         <div className="buttonBar">
-            <ButtonSmall ButtonSmall type="button" className="button">
+            <ButtonSmall bottomRounded type="button" className="button">
                 {selected ? 'Zrobione!' : 'Przypnij'}
             </ButtonSmall>
-            <ButtonSmall type="button" className="button">
+            <ButtonSmall bottomRounded type="button" className="button">
                 {selected ? 'Odepnij' : 'Usuń'}
             </ButtonSmall>
-            <ButtonSmall type="button" className="button">
+            <ButtonSmall bottomRounded type="button" className="button">
                 Więcej
             </ButtonSmall>
         </div>

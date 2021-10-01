@@ -1,16 +1,10 @@
 import styled from 'styled-components';
 
 export const CardSimpleStyles = styled.div`
-    /* padding: var(--spacingRegular); */
-    /* height: var(--cardHeight); */
-    /* height: 600px; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-
-    .picture {
-    }
 
     .textBlock {
         padding: var(--cardPadding);

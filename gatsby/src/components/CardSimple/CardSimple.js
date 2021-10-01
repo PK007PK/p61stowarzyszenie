@@ -23,20 +23,3 @@ const CardSimple = ({ data }) => {
 };
 
 export default CardSimple;
-
-/*
-projectName
-                        projectSubtitle
-                        projectImage {
-                            asset {
-                                gatsbyImageData(width: 400)
-                            }
-                        }
-                        backgroundColor
-                        color
-                        pageSlug
-                        group
-                        tags {
-                            name
-                        }
-*/

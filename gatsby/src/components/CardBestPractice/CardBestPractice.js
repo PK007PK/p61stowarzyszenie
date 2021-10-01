@@ -10,13 +10,13 @@ const CardToDo = ({ selected }) => (
         </h4>
 
         <div className="buttonBar">
-            <ButtonSmall type="button" className="button">
+            <ButtonSmall bottomRounded type="button" className="button">
                 Zrobione!
             </ButtonSmall>
-            <ButtonSmall type="button" className="button">
+            <ButtonSmall bottomRounded type="button" className="button">
                 {selected ? 'Odepnij' : 'Usuń'}
             </ButtonSmall>
-            <ButtonSmall type="button" className="button">
+            <ButtonSmall bottomRounded type="button" className="button">
                 Więcej
             </ButtonSmall>
         </div>

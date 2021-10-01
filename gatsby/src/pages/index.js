@@ -13,6 +13,7 @@ import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import SectionDuties from '../components/SectionDuties/SectionDuties';
 import SearchInput from '../components/SearchInput/SearchInput';
 import SectionBestPractices from '../components/SectionBestPractices/SectionBestPractices';
+import CardNewsletter from '../components/CardNewsletter/CardNewsletter';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
@@ -85,6 +86,7 @@ const IndexPage = ({ data, pageContext }) => {
                 <BootsRow id="blog" between>
                     <BootsColumn md={7}>{blogSection}</BootsColumn>
                     <BootsColumn md={4}>
+                        <CardNewsletter />
                         <SectionDuties />
                         <SectionBestPractices />
                     </BootsColumn>

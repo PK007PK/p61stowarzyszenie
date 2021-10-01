@@ -12,11 +12,13 @@ export const ButtonSmallStyle = styled.button`
     justify-content: center;
 
     &:first-child {
-        border-radius: 0 0 0 10px;
+        ${({ bottomRounded }) => (bottomRounded ? 'border-radius: 0 0 0 10px' : null)};
+        ${({ topRounded }) => (topRounded ? 'border-radius: 0 0 0 10px' : null)};
     }
 
     &:last-child {
-        border-radius: 0 0 10px 0;
+        ${({ bottomRounded }) => (bottomRounded ? 'border-radius: 0 0 10px 0' : null)};
+        ${({ topRounded }) => (topRounded ? 'border-radius: 0 10px 0 0' : null)};
     }
 
     &:hover {

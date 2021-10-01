@@ -15,11 +15,11 @@ export const SectionDutiesStyle = styled.section`
         margin: 50px 0 25px;
     }
 
-    .link {
-        margin-left: var(--spacingRegular);
+    .links {
+        display: flex;
     }
 
-    .cards {
-        /* margin-top: 50px; */
+    .link {
+        margin-left: var(--spacingRegular);
     }
 `;
