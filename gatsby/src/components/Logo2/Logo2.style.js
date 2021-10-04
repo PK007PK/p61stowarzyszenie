@@ -25,7 +25,7 @@ export const StyledLogo2 = styled.div`
 
         span {
             /* color: #e43b3b; */
-            color: #47894b;
+            color: #2e7d32;
         }
     }
 

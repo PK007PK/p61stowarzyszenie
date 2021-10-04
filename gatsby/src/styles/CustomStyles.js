@@ -8,8 +8,7 @@ const CustomStyles = createGlobalStyle`
 }
 
 .lead {
-  font-size: 24px;
-  letter-spacing: -5%;
+  font-size: var(--fontSizeLead);
   font-weight: 400;
 }
 

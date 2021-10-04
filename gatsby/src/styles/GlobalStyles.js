@@ -5,7 +5,8 @@ const colors = `
     --colorLightGray: #F4F4F4;
     --colorMediumGray: #E9ECEF;
     --colorDarkGray: #343A40;
-    --colorActive: #47894b;
+    --colorActive: #2E7D32;
+    --colorActiveBright: #2E7D32;
     --colorBlack: #00000;
 `;
 
@@ -22,7 +23,7 @@ const fontSizes = `
     --fontSizeXSmall: 12px;
     --fontSizeSmall: 14px;
     --fontSizeRegular: 16px;
-    --fontSizeLead: 20px;
+    --fontSizeLead: 18px;
     --fontSizeBig1: 32px;
     --fontSizeBig2: 40px;
     --fontSizeBig3: 50px;
@@ -35,6 +36,7 @@ const fx = `
     --animationBasic: 0.4s;
     --shadowBackground: rgb(0 0 0) 0 -200px 90px -110px inset;
     --shadowBackground2: rgb(0 0 0) 0 -220px 90px -110px inset;
+    --txtShadow: 0 1px 1px rgb(0 0 0 / 20%);
 `;
 
 const cardVariables = `

@@ -1,13 +1,13 @@
 import React from 'react';
-import { BootsContainer } from 'src/components/BootsElements/BootsElements';
+
 import { SearchInputStyle } from './SearchInput.Style';
+import Heading from '../Heading/Heading';
 
 const SearchInput = () => (
-    <BootsContainer>
-        <SearchInputStyle>
-            <input placeholder="Wyszukaj..." />
-        </SearchInputStyle>
-    </BootsContainer>
+    <SearchInputStyle>
+        <h3>Wyszukaj w serwisie:</h3>
+        <input placeholder="Wyszukaj..." />
+    </SearchInputStyle>
 );
 
 export default SearchInput;

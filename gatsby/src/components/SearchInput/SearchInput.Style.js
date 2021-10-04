@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const SearchInputStyle = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: var(--spacingMedium) 0;
-
+    margin-top: var(--spacingSmall);
+    height: 100%;
+    text-align: center;
+    margin-right: 10px;
     input {
-        width: 350px;
+        width: 100%;
+        margin-top: var(--spacingSmall);
         padding: 10px 25px;
     }
 `;

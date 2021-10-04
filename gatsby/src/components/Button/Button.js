@@ -1,22 +1,10 @@
-import React, { useContext } from 'react';
 import styled from 'styled-components';
-import AppContext from 'src/AppProvider';
 
-const StyledButton = styled.button`
-    color: var(--red);
-    ${({ theme }) => theme.media.lgAbove} {
-        color: red;
-    }
+export const ButtonStyle = styled.button`
+    background-color: var(--colorActiveBright);
+    color: white;
+    padding: var(--spacingSmall) var(--spacingMedium);
+    border: none;
+    text-shadow: var(--txtShadow);
+    font-size: var(--fontSizeLead);
 `;
-
-const Button = (props) => {
-    const { toogleIsActive, isActive } = useContext(AppContext);
-
-    return (
-        <StyledButton {...props} className="zx" onClick={toogleIsActive}>
-            {isActive ? 'Active' : 'Inactive'}
-        </StyledButton>
-    );
-};
-
-export default Button;

@@ -1,12 +1,13 @@
-import React from 'react';
-import { Pagination } from 'react-instantsearch-dom';
+import React, { useState } from 'react';
+import { ButtonBigStyle } from 'src/components/ButtonBig/ButtonBig.style';
 import ButtonSmall from 'src/components/ButtonSmall/ButtonSmall';
+import { FaTasks } from '@react-icons/all-files/fa/FaTasks';
 import CardToDo from '../CardToDo/CardToDo';
 import PaginationPlaceholder from '../PaginationPlaceholder/PaginationPlaceholder';
 import { SectionDutiesStyle } from './SectionDuties.style';
 
-const SectionDuties = ({ style, className }) => (
-    <SectionDutiesStyle style={style} className={className}>
+const Back = () => (
+    <>
         <div className="topBar">
             <h2>Twoje obowiązki</h2>
             <div className="links">
@@ -28,7 +29,31 @@ const SectionDuties = ({ style, className }) => (
             <CardToDo />
         </div>
         <PaginationPlaceholder />
-    </SectionDutiesStyle>
+    </>
 );
+
+const SectionDuties = ({ style, className }) => {
+    const [open, setOpen] = useState(false);
+    return (
+        <div style={style} className={className}>
+            {!open && (
+                <ButtonBigStyle className="openBtn" type="button" onClick={() => setOpen(!open)}>
+                    <div className="innerWrapper">
+                        <FaTasks className="icon" />
+                        Twoje obowiązki
+                    </div>
+                </ButtonBigStyle>
+            )}
+            {open && (
+                <SectionDutiesStyle>
+                    <buttom className="closeBtn" type="button" onClick={() => setOpen(!open)}>
+                        X
+                    </buttom>
+                    <Back />
+                </SectionDutiesStyle>
+            )}
+        </div>
+    );
+};
 
 export default SectionDuties;

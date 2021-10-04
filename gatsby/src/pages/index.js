@@ -12,6 +12,7 @@ import SectionOurProjects from '../components/SectionOurProjects/SectionOurProje
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import SearchInput from '../components/SearchInput/SearchInput';
 import AsideIndex from '../components/AsideIndex/AsideIndex';
+import { ButtonStyle } from '../components/Button/Button';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
@@ -43,31 +44,8 @@ const IndexPage = ({ data, pageContext }) => {
         <div>
             <h1>{title}</h1>
             <p className="lead">{description}</p>
+            <ButtonStyle>Poznaj nas</ButtonStyle>
         </div>
-    );
-
-    const blogSection = (
-        <>
-            <CategoryFilter />
-            <TagsFilter />
-            <Pagination
-                pageSize={pagesInSet}
-                totalCount={postsToDisplay.totalCount}
-                currentPage={pageContext.currentPage || 1}
-                skip={pageContext.skip}
-                base={pageContext.dirName}
-                style={{ marginBottom: '25px' }}
-            />
-            <PostsToDisplay data={postsToDisplay.nodes.slice(0, pagesInSet)} />
-            <Pagination
-                pageSize={pagesInSet}
-                totalCount={postsToDisplay.totalCount}
-                currentPage={pageContext.currentPage || 1}
-                skip={pageContext.skip}
-                base={pageContext.dirName}
-                style={{ marginBottom: '25px' }}
-            />
-        </>
     );
 
     return (
@@ -79,10 +57,37 @@ const IndexPage = ({ data, pageContext }) => {
             />
             <SectionHero leftComponent={textBlock} />
             <SectionOurProjects />
-            <SearchInput />
+
             <BootsContainer>
                 <BootsRow id="blog" between>
-                    <BootsColumn md={7}>{blogSection}</BootsColumn>
+                    <BootsColumn md={7}>
+                        <CategoryFilter />
+                        <TagsFilter />
+                        <Pagination
+                            pageSize={pagesInSet}
+                            totalCount={postsToDisplay.totalCount}
+                            currentPage={pageContext.currentPage || 1}
+                            skip={pageContext.skip}
+                            base={pageContext.dirName}
+                            style={{ marginBottom: '25px' }}
+                        />
+                    </BootsColumn>
+                    <BootsColumn md={4}>
+                        <SearchInput />
+                    </BootsColumn>
+                </BootsRow>
+                <BootsRow id="blog" between>
+                    <BootsColumn md={7}>
+                        <PostsToDisplay data={postsToDisplay.nodes.slice(0, pagesInSet)} />
+                        <Pagination
+                            pageSize={pagesInSet}
+                            totalCount={postsToDisplay.totalCount}
+                            currentPage={pageContext.currentPage || 1}
+                            skip={pageContext.skip}
+                            base={pageContext.dirName}
+                            style={{ marginBottom: '25px' }}
+                        />
+                    </BootsColumn>
                     <BootsColumn md={4}>
                         <AsideIndex />
                     </BootsColumn>
