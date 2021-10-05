@@ -18,5 +18,13 @@ export default {
       type: 'text',
       rows: 2,
     },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 };

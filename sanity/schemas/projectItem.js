@@ -14,7 +14,25 @@ export default {
       type: 'string',
     },
     {
-      title: 'Page slug',
+      name: 'projectImage',
+      title: 'Project image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      title: 'Background color',
+      name: 'backgroundColor',
+      type: 'string',
+    },
+    {
+      title: 'Color',
+      name: 'color',
+      type: 'string',
+    },
+    {
+      title: 'Page link',
       name: 'pageSlug',
       type: 'string',
     },
