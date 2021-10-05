@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonBigStyle } from 'src/components/ButtonBig/ButtonBig.style';
+import { ButtonStyle } from 'src/components/Button/Button';
 import ButtonSmall from 'src/components/ButtonSmall/ButtonSmall';
 import { FaTasks } from '@react-icons/all-files/fa/FaTasks';
 import CardToDo from '../CardToDo/CardToDo';
@@ -37,12 +37,12 @@ const SectionDuties = ({ style, className }) => {
     return (
         <div style={style} className={className}>
             {!open && (
-                <ButtonBigStyle className="openBtn" type="button" onClick={() => setOpen(!open)}>
+                <ButtonStyle full className="openBtn" type="button" onClick={() => setOpen(!open)}>
                     <div className="innerWrapper">
                         <FaTasks className="icon" />
                         Twoje obowiązki
                     </div>
-                </ButtonBigStyle>
+                </ButtonStyle>
             )}
             {open && (
                 <SectionDutiesStyle>

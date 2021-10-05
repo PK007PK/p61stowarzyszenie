@@ -6,7 +6,8 @@ const colors = `
     --colorMediumGray: #E9ECEF;
     --colorDarkGray: #343A40;
     --colorActive: #2E7D32;
-    --colorActiveBright: #2E7D32;
+    --colorActivePrimary: #2E7D32;
+    --colorActiveSecondary: #DC3545;
     --colorBlack: #00000;
 `;
 
@@ -23,7 +24,7 @@ const fontSizes = `
     --fontSizeXSmall: 12px;
     --fontSizeSmall: 14px;
     --fontSizeRegular: 16px;
-    --fontSizeLead: 18px;
+    --fontSizeLead: 20px;
     --fontSizeBig1: 32px;
     --fontSizeBig2: 40px;
     --fontSizeBig3: 50px;

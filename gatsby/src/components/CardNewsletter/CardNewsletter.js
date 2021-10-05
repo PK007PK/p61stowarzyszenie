@@ -1,12 +1,12 @@
 import React from 'react';
 import { FaMailchimp } from '@react-icons/all-files/fa/FaMailchimp';
-import { ButtonBigStyle } from 'src/components/ButtonBig/ButtonBig.style';
+import { ButtonStyle } from 'src/components/Button/Button';
 
 const CardNewsletter = ({ style, className }) => (
-    <ButtonBigStyle style={style} className={`${className} newsletter`} type="button">
+    <ButtonStyle full style={style} className={`${className} newsletter`} type="button">
         <div className="innerWrapper">
             <FaMailchimp className="icon" /> Newsletter
         </div>
-    </ButtonBigStyle>
+    </ButtonStyle>
 );
 export default CardNewsletter;

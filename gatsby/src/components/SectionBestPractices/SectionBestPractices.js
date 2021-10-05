@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonBigStyle } from 'src/components/ButtonBig/ButtonBig.style';
+import { ButtonStyle } from 'src/components/Button/Button';
 import { AiOutlineSolution } from '@react-icons/all-files/ai/AiOutlineSolution';
 import ButtonSmall from '../ButtonSmall/ButtonSmall';
 import CardBestPractice from '../CardBestPractice/CardBestPractice';
@@ -31,12 +31,12 @@ const SectionBestPractices = ({ style, className }) => {
     return (
         <div style={style} className={className}>
             {!open && (
-                <ButtonBigStyle className="openBtn" type="button" onClick={() => setOpen(!open)}>
+                <ButtonStyle full className="openBtn" type="button" onClick={() => setOpen(!open)}>
                     <div className="innerWrapper">
                         <AiOutlineSolution className="icon" />
                         Dobre praktyki
                     </div>
-                </ButtonBigStyle>
+                </ButtonStyle>
             )}
             {open && (
                 <SectionBestPracticesStyle>

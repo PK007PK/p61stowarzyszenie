@@ -33,6 +33,6 @@ export const StyledLogo2 = styled.div`
         font-size: 10px;
         font-weight: 300;
         line-height: 10px;
-        letter-spacing: -0.018em;
+        letter-spacing: -0.01em;
     }
 `;

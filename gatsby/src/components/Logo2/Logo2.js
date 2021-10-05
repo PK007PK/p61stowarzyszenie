@@ -22,7 +22,7 @@ const Logo = () => (
         <div className="textBlock">
             <div className="top">Stowarzyszenie</div>
             <div className="main">
-                Eko<span>Partner</span>
+                Eko<span>Monterzy</span>
             </div>
             <div className="bottom">ekologia / transformacja energetyczna</div>
         </div>

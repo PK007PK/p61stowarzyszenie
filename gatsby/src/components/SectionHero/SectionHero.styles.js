@@ -5,11 +5,14 @@ export const StyledHeader = styled.header`
 `;
 
 export const SectionHeroStyle = styled.header`
-    display: flex;
+    /* display: flex; */
     justify-items: center;
     align-items: center;
-    /* background-color: var(--colorMediumGray); */
     height: calc(100vh - 72px);
     max-height: 700px;
     padding: var(--spacingRegular);
+
+    p {
+        margin-top: 0;
+    }
 `;

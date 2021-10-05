@@ -13,6 +13,7 @@ import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import SearchInput from '../components/SearchInput/SearchInput';
 import AsideIndex from '../components/AsideIndex/AsideIndex';
 import { ButtonStyle } from '../components/Button/Button';
+import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
@@ -38,13 +39,19 @@ const IndexPage = ({ data, pageContext }) => {
     }
 
     const { pagesInSet } = data.sanitySiteTechConfig;
-    const { title, description } = data.sanityPageDataHome;
+    const {
+        title,
+        description,
+        image: {
+            asset: { gatsbyImageData },
+        },
+    } = data.sanityPageDataHome;
 
     const textBlock = () => (
         <div>
             <h1>{title}</h1>
             <p className="lead">{description}</p>
-            <ButtonStyle>Poznaj nas</ButtonStyle>
+            <ButtonStyle secondary>Poznaj nas</ButtonStyle>
         </div>
     );
 
@@ -55,6 +62,7 @@ const IndexPage = ({ data, pageContext }) => {
                     pageContext.currentPage ? `| ${pageContext.currentPage}` : ''
                 }`}
             />
+            <HeroBackImage data={gatsbyImageData} />
             <SectionHero leftComponent={textBlock} />
             <SectionOurProjects />
 
@@ -105,6 +113,11 @@ export const pageQuery = graphql`
         sanityPageDataHome {
             title
             description
+            image {
+                asset {
+                    gatsbyImageData(width: 400)
+                }
+            }
         }
         category: allSanityBlogPosts(
             limit: $pageSize

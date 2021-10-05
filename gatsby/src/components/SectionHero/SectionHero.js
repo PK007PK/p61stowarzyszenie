@@ -1,5 +1,5 @@
 import React from 'react';
-import { BootsContainer } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import { SectionHeroStyle, StyledHeader } from './SectionHero.styles';
 
 const SectionHero = ({ leftComponent }) => {
@@ -8,7 +8,11 @@ const SectionHero = ({ leftComponent }) => {
     return (
         <StyledHeader>
             <BootsContainer>
-                <SectionHeroStyle>{textElement}</SectionHeroStyle>
+                <SectionHeroStyle>
+                    <BootsRow>
+                        <BootsColumn md={7}>{textElement}</BootsColumn>
+                    </BootsRow>
+                </SectionHeroStyle>
             </BootsContainer>
         </StyledHeader>
     );

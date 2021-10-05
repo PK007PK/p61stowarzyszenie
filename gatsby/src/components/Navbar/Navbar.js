@@ -15,7 +15,8 @@ const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 const NavStyle = styled.nav`
     padding-top: 20px;
-    /* background-color: var(--colorMediumGray); */
+    padding-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
     .innerWrapper {
         display: flex;
         justify-content: space-between;
