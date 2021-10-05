@@ -8,7 +8,9 @@ const PostsToDisplay = ({ data }) => (
         {data
             .filter((item) => item.date !== null)
             .map((item) => (
-                <CardBlogEntry key={item.slug.current} data={item} />
+                <Link key={item.slug.current} to={`/${item.slug.current}`}>
+                    <CardBlogEntry data={item} />
+                </Link>
             ))}
     </PostsToDisplayStyles>
 );

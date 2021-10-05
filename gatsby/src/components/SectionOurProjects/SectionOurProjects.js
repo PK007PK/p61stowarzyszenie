@@ -133,7 +133,7 @@ export const SectionOurProjects = () => {
                     {projectItems
                         .filter((item) => item.group.includes(group))
                         .map((item, i) => (
-                            <Link key={i} to={`/${item.pageSlug}`}>
+                            <Link key={i} to={item.pageSlug && `/${item.pageSlug}`}>
                                 <CardSimple data={item} />
                             </Link>
                         ))}

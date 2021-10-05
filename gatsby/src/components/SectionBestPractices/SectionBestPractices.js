@@ -31,7 +31,7 @@ const SectionBestPractices = ({ style, className }) => {
     return (
         <div style={style} className={className}>
             {!open && (
-                <ButtonStyle full className="openBtn" type="button" onClick={() => setOpen(!open)}>
+                <ButtonStyle secondary full className="openBtn" type="button" onClick={() => setOpen(!open)}>
                     <div className="innerWrapper">
                         <AiOutlineSolution className="icon" />
                         Dobre praktyki

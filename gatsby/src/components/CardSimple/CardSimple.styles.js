@@ -5,6 +5,8 @@ export const CardSimpleStyles = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
+    background-color: ${({ backgroundColor }) => backgroundColor || 'var(--cardDefaultBackgroundColor)'};
+    color: ${({ color }) => color || 'var(--cardDefaultColor)'};
 
     .textBlock {
         padding: var(--cardPadding);

@@ -37,7 +37,7 @@ const SectionDuties = ({ style, className }) => {
     return (
         <div style={style} className={className}>
             {!open && (
-                <ButtonStyle full className="openBtn" type="button" onClick={() => setOpen(!open)}>
+                <ButtonStyle secondary full className="openBtn" type="button" onClick={() => setOpen(!open)}>
                     <div className="innerWrapper">
                         <FaTasks className="icon" />
                         Twoje obowiązki

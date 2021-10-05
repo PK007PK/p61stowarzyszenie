@@ -43,6 +43,8 @@ const fx = `
 const cardVariables = `
     --cardHeight: 400px;
     --cardPadding: var(--spacingRegular);
+    --cardDefaultBackgroundColor: var(--colorDarkGray);
+    --cardDefaultColor: white;
 `;
 
 const GlobalStyles = createGlobalStyle`

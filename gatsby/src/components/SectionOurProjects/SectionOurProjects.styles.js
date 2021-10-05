@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const SectionOurProjectsStyles = styled.div`
-    padding: var(--spacingMedium) 0;
+    padding: var(--spacingBig1) 0 var(--spacingBig1);
+    background-color: #90a4ae;
 
     .cardContainer {
         margin-top: var(--spacingMedium);

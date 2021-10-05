@@ -9,6 +9,7 @@ import { Sling as Hamburger } from 'hamburger-react';
 import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
 
 import Logo2 from 'src/components/Logo2/Logo2';
+import Logo3 from 'src/components/Logo3/Logo3';
 import Search from 'src/components/search';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
@@ -53,6 +54,7 @@ export default function Navbar() {
                 <div className="innerWrapper">
                     <Link style={{ textDecoration: 'none' }} className="logoWrapper" to="/">
                         <Logo2 />
+                        {/* <Logo3 /> */}
                     </Link>
 
                     <ul className="menuList">

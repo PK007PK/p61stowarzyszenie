@@ -15,6 +15,11 @@ export async function createBlogPages({ graphql, actions, reporter }) {
                         slug {
                             current
                         }
+                        image {
+                            asset {
+                                gatsbyImageData
+                            }
+                        }
                     }
                 }
                 sanitySiteTechConfig {

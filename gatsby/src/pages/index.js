@@ -14,6 +14,7 @@ import SearchInput from '../components/SearchInput/SearchInput';
 import AsideIndex from '../components/AsideIndex/AsideIndex';
 import { ButtonStyle } from '../components/Button/Button';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
+import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
@@ -64,9 +65,10 @@ const IndexPage = ({ data, pageContext }) => {
             />
             <HeroBackImage data={gatsbyImageData} />
             <SectionHero leftComponent={textBlock} />
+            <SectionStatistics />
             <SectionOurProjects />
 
-            <BootsContainer>
+            <BootsContainer style={{ marginTop: '50px' }}>
                 <BootsRow id="blog" between>
                     <BootsColumn md={7}>
                         <CategoryFilter />
