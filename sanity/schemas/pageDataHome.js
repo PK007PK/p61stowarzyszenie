@@ -26,5 +26,13 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'statisticsBackground',
+      title: 'Statistics background',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 };

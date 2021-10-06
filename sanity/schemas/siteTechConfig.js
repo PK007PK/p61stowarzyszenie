@@ -12,5 +12,13 @@ export default {
       type: 'number',
       title: 'Number of article entries in single blog page',
     },
+    {
+      name: 'blankImgPLaceholder',
+      title: 'Blank img placeholder',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 };
