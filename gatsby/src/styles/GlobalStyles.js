@@ -6,8 +6,8 @@ const colors = `
     --colorMediumGray: #E9ECEF;
     --colorDarkGray: #343A40;
     --colorActive: #2E7D32;
-    --colorActivePrimary: #2E7D32;
-    --colorActiveSecondary: #DC3545;
+    --colorActivePrimary: #00B74A;
+    --colorActiveSecondary: #DD2C00;
     --colorBlack: #00000;
 `;
 
@@ -38,6 +38,7 @@ const fx = `
     --shadowBackground: rgb(0 0 0) 0 -200px 90px -110px inset;
     --shadowBackground2: rgb(0 0 0) 0 -220px 90px -110px inset;
     --txtShadow: 0 1px 1px rgb(0 0 0 / 20%);
+    --hoverShadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
 `;
 
 const cardVariables = `

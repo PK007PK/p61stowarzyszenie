@@ -22,7 +22,7 @@ const CustomStyles = createGlobalStyle`
       height: 1px;
       bottom: -3px;
       left: 0;
-      background-color: var(--colorActive2);
+      background-color: var(--colorActiveSecondary);
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.1s ease-in-out;

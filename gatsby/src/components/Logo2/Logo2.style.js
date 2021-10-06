@@ -24,10 +24,12 @@ export const StyledLogo2 = styled.div`
         line-height: ${({ small }) => (small ? '18px' : '33px')};
         letter-spacing: -0.03em;
         color: #134c0a;
+        color: #00b74a;
 
         span {
             /* color: #e43b3b; */
             color: #2e7d32;
+            color: var(--colorActiveSecondary);
         }
     }
 

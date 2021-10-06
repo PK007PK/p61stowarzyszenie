@@ -6,7 +6,7 @@ export const CategoryFilterStyle = styled.div`
         text-decoration: none;
 
         &:hover {
-            color: var(--colorActive);
+            color: var(--colorActiveSecondary);
         }
     }
 `;

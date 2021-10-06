@@ -5,7 +5,7 @@ export const HeroBackImageStyle = styled.div`
     top: 0;
     left: 0;
     height: 100vh;
-    max-height: 840px;
+    /* max-height: 840px; */
     width: 100%;
     z-index: -1;
     overflow: hidden;

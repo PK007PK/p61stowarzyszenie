@@ -15,6 +15,8 @@ import AsideIndex from '../components/AsideIndex/AsideIndex';
 import { ButtonStyle } from '../components/Button/Button';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
+import TextBlockIndex from '../components/TextBlockIndex/TextBlockIndex';
+import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
 
 const IndexPage = ({ data, pageContext }) => {
     if (pageContext.dirName === undefined) {
@@ -48,14 +50,6 @@ const IndexPage = ({ data, pageContext }) => {
         },
     } = data.sanityPageDataHome;
 
-    const textBlock = () => (
-        <div>
-            <h1>{title}</h1>
-            <p className="lead">{description}</p>
-            <ButtonStyle secondary>Poznaj nas</ButtonStyle>
-        </div>
-    );
-
     return (
         <Layout>
             <SEO
@@ -64,7 +58,11 @@ const IndexPage = ({ data, pageContext }) => {
                 }`}
             />
             <HeroBackImage data={gatsbyImageData} />
-            <SectionHero leftComponent={textBlock} />
+            <HeroBreakingNews
+                text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
+                link="link"
+            />
+            <SectionHero leftComponent={() => <TextBlockIndex />} />
             <SectionStatistics />
             <SectionOurProjects />
 

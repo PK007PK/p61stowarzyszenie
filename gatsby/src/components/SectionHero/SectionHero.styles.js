@@ -9,8 +9,8 @@ export const SectionHeroStyle = styled.header`
     justify-items: center;
     align-items: center;
     height: calc(100vh - 112px);
-    max-height: 700px;
-    padding: var(--spacingRegular);
+    /* max-height: 700px; */
+    /* padding: var(--spacingRegular); */
     position: relative;
 
     .firstRow {

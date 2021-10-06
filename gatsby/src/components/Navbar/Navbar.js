@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import AppContext from 'src/AppProvider';
 
-import { BootsContainer } from 'src/components/BootsElements/BootsElements';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import { Sling as Hamburger } from 'hamburger-react';
 import MenuDropDown from 'src/components/MenuDropDown/MenuDropDown';
 
@@ -51,27 +51,42 @@ export default function Navbar() {
     return (
         <NavStyle>
             <BootsContainer>
-                <div className="innerWrapper">
-                    <Link style={{ textDecoration: 'none' }} className="logoWrapper" to="/">
-                        <Logo2 />
-                        {/* <Logo3 /> */}
-                    </Link>
+                <BootsRow>
+                    <BootsColumn>
+                        <div className="innerWrapper">
+                            <Link style={{ textDecoration: 'none' }} className="logoWrapper" to="/">
+                                <Logo2 />
+                                {/* <Logo3 /> */}
+                            </Link>
 
-                    <ul className="menuList">
-                        <li>
-                            <Link to="/test">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/test">O nas</Link>
-                        </li>
-                        <li>
-                            <Link to="/test">Terminarz</Link>
-                        </li>
-                        <Search indices={searchIndices} />
-                    </ul>
-                    {/* <Hamburger toggled={isMenuActive} toggle={toogleIsMenuActive} /> */}
-                    {isMenuActive && <MenuDropDown />}
-                </div>
+                            <ul className="menuList">
+                                <li>
+                                    <Link to="/" className="fx-txt-underline">
+                                        Home
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/test" className="fx-txt-underline">
+                                        O nas
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/test" className="fx-txt-underline">
+                                        Terminarz
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/test" className="fx-txt-underline">
+                                        Kontakt
+                                    </Link>
+                                </li>
+                                <Search indices={searchIndices} />
+                            </ul>
+                            {/* <Hamburger toggled={isMenuActive} toggle={toogleIsMenuActive} /> */}
+                            {isMenuActive && <MenuDropDown />}
+                        </div>
+                    </BootsColumn>
+                </BootsRow>
             </BootsContainer>
         </NavStyle>
     );

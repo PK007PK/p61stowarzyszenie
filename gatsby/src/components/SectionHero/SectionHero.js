@@ -3,14 +3,15 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsEleme
 import { SectionHeroStyle, StyledHeader } from './SectionHero.styles';
 
 const SectionHero = ({ leftComponent }) => {
-    const LeftComponent = leftComponent || null;
-    const textElement = leftComponent && <LeftComponent />;
+    const LeftComponent = leftComponent;
     return (
         <StyledHeader>
             <BootsContainer>
                 <SectionHeroStyle>
                     <BootsRow className="firstRow">
-                        <BootsColumn md={7}>{textElement}</BootsColumn>
+                        <BootsColumn md={7}>
+                            <LeftComponent />
+                        </BootsColumn>
                     </BootsRow>
                 </SectionHeroStyle>
             </BootsContainer>

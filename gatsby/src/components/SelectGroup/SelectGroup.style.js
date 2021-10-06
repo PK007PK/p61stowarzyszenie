@@ -11,7 +11,7 @@ export const SelectGroupStyle = styled.div`
 export const StyledButton = styled.button`
     font-size: var(--fontSizeLead);
     cursor: pointer;
-    background-color: #90a4ae;
+    background-color: #b0bec5;
     border: none;
     color: ${({ selected }) => (selected ? `var(--colorWhite)` : 'none')};
 
