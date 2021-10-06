@@ -28,6 +28,7 @@ const CardSimple = ({ data }) => {
     return (
         <CardSimpleStyles color={color} backgroundColor={backgroundColor}>
             <GatsbyImage
+                className="image"
                 image={imgSource || placeholder}
                 placeholder="blurred"
                 alt={title}

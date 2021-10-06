@@ -11,15 +11,15 @@ export const SelectGroupStyle = styled.div`
 export const StyledButton = styled.button`
     font-size: var(--fontSizeLead);
     cursor: pointer;
-    background-color: #b0bec5;
+    background-color: #eceff1;
     border: none;
-    color: ${({ selected }) => (selected ? `var(--colorWhite)` : 'none')};
+    color: ${({ selected }) => (selected ? `var(--colorActiveSecondary)` : 'none')};
 
     &:first-of-type {
         padding-left: 0;
     }
 
     &:hover {
-        color: var(--colorWhite);
+        color: var(--colorActiveSecondary);
     }
 `;

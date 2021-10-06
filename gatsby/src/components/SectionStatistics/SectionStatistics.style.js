@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 export const SectionStatisticsStyle = styled.section`
     position: relative;
-    background-color: #cfd8dc;
+    /* background-color: #cfd8dc; */
+    /* background-color: #b2dfdb; */
+    background-color: #00bfa5;
     padding: var(--spacingBig2) 0 var(--spacingBig1) 0;
     text-align: center;
     p,

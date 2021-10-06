@@ -7,16 +7,18 @@ export const CardSimpleStyles = styled.div`
     position: relative;
     background-color: ${({ backgroundColor }) => backgroundColor || 'var(--cardDefaultBackgroundColor)'};
     color: ${({ color }) => color || 'var(--cardDefaultColor)'};
-
+    .image {
+        height: 200px;
+    }
     .textBlock {
         padding: var(--cardPadding);
         text-align: center;
-        position: absolute;
+        /* position: absolute; */
         bottom: 0;
         left: 0;
         width: 100%;
         height: 170px;
-        box-shadow: var(--shadowBackground2);
+        /* box-shadow: var(--shadowBackground2); */
         color: white;
         display: flex;
         align-items: center;
