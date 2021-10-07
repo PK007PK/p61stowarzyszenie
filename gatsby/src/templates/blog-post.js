@@ -5,8 +5,8 @@ import BlockContent from '@sanity/block-content-to-react';
 import Layout from 'src/components/Layout/Layout';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SEO from '../components/SEO/SEO';
-import { ButtonStyle } from '../components/Button/Button';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
+import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
 
 const BlogPostTemplate = ({ data }) => {
     const { previous, next } = data;
@@ -19,6 +19,7 @@ const BlogPostTemplate = ({ data }) => {
             asset: { gatsbyImageData },
         },
     } = data.sanityBlogPosts;
+
     const siteTitle = data.site.siteMetadata?.title || `Title`;
 
     const textBlock = () => (
@@ -35,6 +36,10 @@ const BlogPostTemplate = ({ data }) => {
             <article className="blog-post" itemScope itemType="http://schema.org/Article">
                 <HeroBackImage data={gatsbyImageData} />
                 <SectionHero leftComponent={textBlock} />
+                <HeroBreakingNews
+                    text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
+                    link="link"
+                />
                 <BootsContainer>
                     <BootsRow>
                         <BootsColumn md={7}>

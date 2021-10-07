@@ -1,6 +1,7 @@
 import React from 'react';
 import { GrDocumentPdf } from '@react-icons/all-files/gr/GrDocumentPdf';
 import iconPdf from 'src/assets/images/pdfSvg.svg';
+import { Link } from 'gatsby';
 import { ButtonStyle } from '../Button/Button';
 import { TextBlockIndexStyle } from './TextBlockIndex.style';
 
@@ -22,13 +23,17 @@ const TextBlockIndex = ({ style, className }) => (
             Wspieramy lokalne społeczności w obszarze ekologii, transformacji energetycznej, zrównoważonego rozwoju.
         </p>
         <div className="bottomButtonsBar">
-            <ButtonStyle className="bottomBtn" secondary>
-                Poznaj nas
-            </ButtonStyle>
-            <ButtonStyle className="bottomBtn" padding="0 16px 0 16px">
-                <img className="pdfIcon" src={iconPdf} alt="Broszura PDF EkoMonterzy" />
-                {/* <GrDocumentPdf className="icon" style={{ color: 'white !important' }} /> */}
-            </ButtonStyle>
+            <Link to="/onas">
+                <ButtonStyle className="bottomBtn" secondary>
+                    Poznaj nas
+                </ButtonStyle>
+            </Link>
+            <a href="/Broszura.pdf" target="_blank" rel="noopener noreferrer">
+                <ButtonStyle className="bottomBtn" padding="0 16px 0 16px">
+                    {' '}
+                    <img className="pdfIcon" src={iconPdf} alt="Broszura PDF EkoMonterzy" />
+                </ButtonStyle>{' '}
+            </a>
         </div>
     </TextBlockIndexStyle>
 );

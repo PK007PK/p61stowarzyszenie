@@ -12,7 +12,6 @@ import SectionOurProjects from '../components/SectionOurProjects/SectionOurProje
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import SearchInput from '../components/SearchInput/SearchInput';
 import AsideIndex from '../components/AsideIndex/AsideIndex';
-import { ButtonStyle } from '../components/Button/Button';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
 import TextBlockIndex from '../components/TextBlockIndex/TextBlockIndex';

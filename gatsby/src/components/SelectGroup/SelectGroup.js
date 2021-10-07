@@ -15,7 +15,7 @@ const SelectGroup = ({ title, style }) => {
                     className="button"
                     type="button"
                 >
-                    Dla mieszkańców
+                    Dla obywateli
                 </StyledButton>
                 <StyledButton
                     selected={group === 'gminy'}
@@ -25,14 +25,14 @@ const SelectGroup = ({ title, style }) => {
                 >
                     Dla gmin
                 </StyledButton>
-                <StyledButton
+                {/* <StyledButton
                     selected={group === 'przedsiębiorstwa'}
                     onClick={() => setGroup('przedsiębiorstwa')}
                     className="button"
                     type="button"
                 >
                     Dla przedsiębiorców
-                </StyledButton>
+                </StyledButton> */}
             </div>
         </SelectGroupStyle>
     );

@@ -17,13 +17,10 @@ export const TextBlockIndexStyle = styled.div`
         align-items: center;
         font-weight: 300;
         font-size: 18px;
-        /* color: var(--colorActivePrimary); */
     }
 
     .hash {
         color: var(--colorActiveSecondary);
-        /* font-size: 30px;
-        font-weight: 300; */
     }
 
     .bottomButtonsBar {

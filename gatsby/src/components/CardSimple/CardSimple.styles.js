@@ -6,7 +6,6 @@ export const CardSimpleStyles = styled.div`
     justify-content: flex-start;
     position: relative;
     background-color: ${({ backgroundColor }) => backgroundColor || 'var(--cardDefaultBackgroundColor)'};
-    color: ${({ color }) => color || 'var(--cardDefaultColor)'};
     .image {
         height: 200px;
     }
@@ -19,7 +18,8 @@ export const CardSimpleStyles = styled.div`
         width: 100%;
         height: 170px;
         /* box-shadow: var(--shadowBackground2); */
-        color: white;
+        /* color: white; */
+        color: ${({ color }) => color || 'var(--cardDefaultColor)'};
         display: flex;
         align-items: center;
     }

@@ -56,9 +56,7 @@ export default function Navbar() {
                         <div className="innerWrapper">
                             <Link style={{ textDecoration: 'none' }} className="logoWrapper" to="/">
                                 <Logo2 />
-                                {/* <Logo3 /> */}
                             </Link>
-
                             <ul className="menuList">
                                 <li>
                                     <Link to="/" className="fx-txt-underline">
@@ -66,17 +64,17 @@ export default function Navbar() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/test" className="fx-txt-underline">
+                                    <Link to="/onas" className="fx-txt-underline">
                                         O nas
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/test" className="fx-txt-underline">
-                                        Terminarz
+                                    <Link to="/" className="fx-txt-underline">
+                                        Katalog dotacji
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/test" className="fx-txt-underline">
+                                    <Link to="/kontakt" className="fx-txt-underline">
                                         Kontakt
                                     </Link>
                                 </li>

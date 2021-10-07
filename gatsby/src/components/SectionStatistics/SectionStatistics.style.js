@@ -2,9 +2,7 @@ import styled from 'styled-components';
 
 export const SectionStatisticsStyle = styled.section`
     position: relative;
-    /* background-color: #cfd8dc; */
-    /* background-color: #b2dfdb; */
-    background-color: #00bfa5;
+    background-color: #006064;
     padding: var(--spacingBig2) 0 var(--spacingBig1) 0;
     text-align: center;
     p,
@@ -18,7 +16,6 @@ export const SectionStatisticsStyle = styled.section`
         left: 0;
         width: 100%;
         height: 100%;
-        /* z-index: -1; */
         opacity: 0.2;
     }
 
@@ -27,12 +24,13 @@ export const SectionStatisticsStyle = styled.section`
         position: relative;
         padding: 50px var(--cardPadding) var(--cardPadding) var(--cardPadding);
         border: 1px solid gray;
+        background-color: #cfd8dc;
 
         .iconContainer {
             position: absolute;
             top: -30px;
             right: 50%;
-            background-color: white;
+            background-color: #cfd8dc;
             width: 60px;
             height: 60px;
             display: flex;
@@ -49,7 +47,9 @@ export const SectionStatisticsStyle = styled.section`
         .number {
             font-size: var(--fontSizeBig3);
             color: var(--colorActiveSecondary);
+            color: white;
             font-weight: 300;
+            text-shadow: var(--txtShadow);
         }
     }
 `;

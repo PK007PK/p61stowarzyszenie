@@ -49,9 +49,9 @@ const SectionStatistics = () => {
                             <p className="lead">
                                 <span className="number">22</span>
                                 <br />
-                                Liczba obsługiwanych
+                                obsługiwane
                                 <br />
-                                gmin
+                                gminy
                             </p>
                         </div>
                     </BootsColumn>
@@ -63,7 +63,7 @@ const SectionStatistics = () => {
                             <p className="lead">
                                 <span className="number">521</span>
                                 <br />
-                                Ilość spotkań
+                                spotkań
                                 <br />z mieszkańcami
                             </p>
                         </div>
