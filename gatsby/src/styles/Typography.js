@@ -12,8 +12,13 @@ const Typography = createGlobalStyle`
   }
 
   h1 {
-    font-size: var(--fontSizeBig2);
+    font-size: var(--fontSizeBig1);
     line-height: 140%;
+
+    ${({ theme }) => theme.media.smAbove} {
+      font-size: var(--fontSizeBig2);
+    }
+    
   }
 
   h2 {

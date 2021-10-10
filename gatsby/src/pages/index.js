@@ -62,8 +62,8 @@ const IndexPage = ({ data, pageContext }) => {
                 link="link"
             />
             <SectionHero leftComponent={() => <TextBlockIndex />} />
-            {/* <SectionStatistics />
-            <SectionOurProjects />
+            {/* <SectionStatistics /> */}
+            {/* <SectionOurProjects />
 
             <BootsContainer style={{ marginTop: '50px' }}>
                 <BootsRow id="blog" between>
