@@ -4,10 +4,22 @@ export const GalleryItemStyle = styled.div`
     display: flex;
 
     .imageThumb {
-        background-size: ${({ testimonials }) => (testimonials ? 'contain' : 'cover')};
+        background-size: ${({ testimonials }) => (testimonials ? 'cover' : 'cover')};
 
         ${({ theme }) => theme.media.smAbove} {
+            height: ${({ testimonials }) => (testimonials ? '100vh' : '350px')};
+            width: ${({ testimonials }) => (testimonials ? '80vw' : null)};
+            margin: 0 auto;
+        }
+
+        ${({ theme }) => theme.media.mdAbove} {
             height: ${({ testimonials }) => (testimonials ? '120vh' : '350px')};
+            width: ${({ testimonials }) => (testimonials ? '80vw' : null)};
+            margin: 0 auto;
+        }
+
+        ${({ theme }) => theme.media.lgAbove} {
+            height: ${({ testimonials }) => (testimonials ? '100vh' : '350px')};
             width: ${({ testimonials }) => (testimonials ? '40vw' : null)};
             margin: 0 auto;
         }

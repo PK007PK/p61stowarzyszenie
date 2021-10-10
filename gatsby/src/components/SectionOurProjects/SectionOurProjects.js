@@ -77,26 +77,31 @@ export const SectionOurProjects = () => {
         initialSlide: 0,
         nextArrow: <RightNavButton />,
         prevArrow: <LeftNavButton />,
+
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true,
+                    slidesToScroll: 1,
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 992,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2,
+                    slidesToScroll: 1,
                 },
             },
             {
-                breakpoint: 480,
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
