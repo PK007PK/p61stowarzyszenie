@@ -56,7 +56,7 @@ export const HeroBreakingNewsStyle = styled.div`
     .phone {
         margin-left: 20px;
         font-weight: 400;
-        display: flex;
+        /* display: inline-flex; */
         flex-wrap: nowrap;
         justify-content: center;
     }

@@ -4,8 +4,8 @@ import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { SectionStatisticsStyle } from './SectionStatistics.style';
-import Statistics from './Statistics';
 import GalleryCarousel from '../GalleryCarousel/GalleryCarousel';
+import Statistics from '../Statistics/Statistics';
 
 const SectionStatistics = () => {
     const data = useStaticQuery(graphql`

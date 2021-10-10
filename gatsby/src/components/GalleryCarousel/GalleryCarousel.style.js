@@ -9,4 +9,8 @@ export const GalleryCarouselStyles = styled.div`
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px;
     }
+
+    button::before {
+        color: white !important;
+    }
 `;

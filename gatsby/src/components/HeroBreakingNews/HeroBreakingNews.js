@@ -14,8 +14,8 @@ const HeroBreakingNews = () => {
                             <BootsColumn>
                                 <div className="card">
                                     <p>
-                                        Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera
-                                        pod telefonem:
+                                        Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Zadzwoń,
+                                        pomożemy:
                                         <span className="phone">737-179-717</span>
                                     </p>
                                     <button onClick={() => setIsClose(true)} type="button" className="close">

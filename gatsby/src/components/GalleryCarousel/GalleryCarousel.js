@@ -12,7 +12,7 @@ import GalleryItem from '../GalleryItem/GalleryItem';
 
 const StyledArrowLeft = styled.div`
     display: none;
-    ${({ theme }) => theme.media.smAbove} {
+    ${({ theme }) => theme.media.xsAbove} {
         display: block;
         position: absolute;
         z-index: 1;
@@ -24,25 +24,33 @@ const StyledArrowLeft = styled.div`
     }
 
     .arrowIco {
-        width: 40px;
-        height: 400px;
-        width: 0;
-        height: 0;
+        display: none;
+        ${({ theme }) => theme.media.xsAbove} {
+            display: block;
+            width: 40px;
+            height: 400px;
+        }
     }
 `;
 
 const StyledArrowRight = styled.div`
-    position: absolute;
-    z-index: 1;
-    right: -25px;
-    top: 50px;
-    cursor: pointer;
-    top: 50%;
-    transform: translateY(-50%);
-
+    display: none;
+    ${({ theme }) => theme.media.xsAbove} {
+        position: absolute;
+        z-index: 1;
+        right: -25px;
+        top: 50px;
+        cursor: pointer;
+        top: 50%;
+        transform: translateY(-50%);
+    }
     .arrowIco {
-        width: 40px;
-        height: 400px;
+        display: none;
+        ${({ theme }) => theme.media.xsAbove} {
+            display: block;
+            width: 40px;
+            height: 400px;
+        }
     }
 `;
 
@@ -64,6 +72,12 @@ function RightNavButton(props) {
     );
 }
 
+// xs: 576,
+// sm: 768,
+// md: 992,
+// lg: 1200,
+// xl: 1550,
+
 const GalleryCarousel = ({ testimonials, gallery }) => {
     const settings = {
         dots: true,
@@ -76,7 +90,7 @@ const GalleryCarousel = ({ testimonials, gallery }) => {
         prevArrow: <LeftNavButton />,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
@@ -85,7 +99,7 @@ const GalleryCarousel = ({ testimonials, gallery }) => {
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 992,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
@@ -93,7 +107,14 @@ const GalleryCarousel = ({ testimonials, gallery }) => {
                 },
             },
             {
-                breakpoint: 480,
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,

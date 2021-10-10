@@ -9,7 +9,7 @@ const SectionHero = ({ leftComponent }) => {
             <BootsContainer>
                 <SectionHeroStyle>
                     <BootsRow className="firstRow">
-                        <BootsColumn sm={9}>
+                        <BootsColumn xs={9} sm={9} md={8}>
                             <LeftComponent />
                         </BootsColumn>
                     </BootsRow>

@@ -9,9 +9,12 @@ export const SectionHeroStyle = styled.header`
     justify-items: center;
     align-items: center;
     position: relative;
-
+    min-height: calc(100vh - 98px);
     ${({ theme }) => theme.media.smAbove} {
-        height: calc(100vh - 112px);
+    }
+
+    ${({ theme }) => theme.media.mdAbove} {
+        min-height: calc(100vh - 112px);
     }
 
     p {

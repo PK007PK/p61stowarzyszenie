@@ -5,8 +5,11 @@ export const GalleryItemStyle = styled.div`
 
     .imageThumb {
         background-size: ${({ testimonials }) => (testimonials ? 'contain' : 'cover')};
-        height: ${({ testimonials }) => (testimonials ? '120vh' : '277px')};
-        width: ${({ testimonials }) => (testimonials ? '40vw' : null)};
-        margin: 0 auto;
+
+        ${({ theme }) => theme.media.smAbove} {
+            height: ${({ testimonials }) => (testimonials ? '120vh' : '350px')};
+            width: ${({ testimonials }) => (testimonials ? '40vw' : null)};
+            margin: 0 auto;
+        }
     }
 `;
