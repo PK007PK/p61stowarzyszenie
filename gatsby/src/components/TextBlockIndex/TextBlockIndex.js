@@ -9,15 +9,9 @@ const TextBlockIndex = ({ style, className }) => (
     <TextBlockIndexStyle style={style} className={className}>
         <h1 className="title">Stowarzyszenie EkoMonterzy</h1>
         <div className="tagBar">
-            <div className="tagContainer">
-                <span className="hash">#</span>technologie
-            </div>
-            <div className="tagContainer">
-                <span className="hash">#</span>dotacje dla samorządu i obywateli
-            </div>
-            <div className="tagContainer">
-                <span className="hash">#</span>doradztwo
-            </div>
+            <div className="tagContainer">#doradztwo</div>
+            <div className="tagContainer">#dotacje dla samorządu</div>
+            <div className="tagContainer">#dotacje dla obywateli</div>
         </div>
         <p className="lead">
             Wspieramy lokalne społeczności w obszarze ekologii, transformacji energetycznej, zrównoważonego rozwoju.

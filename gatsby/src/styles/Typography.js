@@ -13,6 +13,7 @@ const Typography = createGlobalStyle`
 
   h1 {
     font-size: var(--fontSizeBig2);
+    line-height: 140%;
   }
 
   h2 {

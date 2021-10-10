@@ -68,11 +68,11 @@ export default function Navbar() {
                                         O nas
                                     </Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link to="/" className="fx-txt-underline">
                                         Katalog dotacji
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li>
                                     <Link to="/kontakt" className="fx-txt-underline">
                                         Kontakt

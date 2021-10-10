@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
 export const HeroBreakingNewsStyle = styled.div`
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    width: 100%;
+    display: none;
+    ${({ theme }) => theme.media.mdAbove} {
+        display: block;
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 
     p {
         margin: 0;
@@ -39,16 +44,20 @@ export const HeroBreakingNewsStyle = styled.div`
     }
 
     .card {
-        display: inline-block;
+        display: block;
         padding: var(--cardPadding) var(--spacingMedium);
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: white;
         box-shadow: var(--hoverShadow);
         font-weight: 100;
         position: relative;
+        text-align: center;
     }
 
     .phone {
         margin-left: 20px;
         font-weight: 400;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
     }
 `;

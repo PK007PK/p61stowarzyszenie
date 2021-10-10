@@ -11,7 +11,7 @@ export const SelectGroupStyle = styled.div`
 export const StyledButton = styled.button`
     font-size: var(--fontSizeLead);
     cursor: pointer;
-    background-color: white;
+    background-color: ${({ backgroundColor }) => backgroundColor || 'white'};
     border: none;
     color: ${({ selected }) => (selected ? `var(--colorActiveSecondary)` : 'none')};
 

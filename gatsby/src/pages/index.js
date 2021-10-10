@@ -12,9 +12,9 @@ import SectionOurProjects from '../components/SectionOurProjects/SectionOurProje
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import SearchInput from '../components/SearchInput/SearchInput';
 import AsideIndex from '../components/AsideIndex/AsideIndex';
-import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
 import TextBlockIndex from '../components/TextBlockIndex/TextBlockIndex';
+import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
 
 const IndexPage = ({ data, pageContext }) => {
@@ -62,7 +62,7 @@ const IndexPage = ({ data, pageContext }) => {
                 link="link"
             />
             <SectionHero leftComponent={() => <TextBlockIndex />} />
-            <SectionStatistics />
+            {/* <SectionStatistics />
             <SectionOurProjects />
 
             <BootsContainer style={{ marginTop: '50px' }}>
@@ -99,7 +99,7 @@ const IndexPage = ({ data, pageContext }) => {
                         <AsideIndex />
                     </BootsColumn>
                 </BootsRow>
-            </BootsContainer>
+            </BootsContainer> */}
         </Layout>
     );
 };

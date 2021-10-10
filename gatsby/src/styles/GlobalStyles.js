@@ -38,6 +38,7 @@ const fx = `
     --shadowBackground: rgb(0 0 0) 0 -200px 90px -110px inset;
     --shadowBackground2: rgb(0 0 0) 0 -220px 90px -110px inset;
     --txtShadow: 0 1px 1px rgb(0 0 0 / 20%);
+    --txtShadowStrong: 0 1px 1px rgb(0 0 0 / 60%);
     --hoverShadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
 `;
 

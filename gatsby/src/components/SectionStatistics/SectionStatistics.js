@@ -1,12 +1,11 @@
-import React from 'react';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import React, { useState } from 'react';
+import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 
-import { MdLocationCity } from '@react-icons/all-files/md/MdLocationCity';
-import { BsFillPeopleFill } from '@react-icons/all-files/bs/BsFillPeopleFill';
-import { GrDocumentStore } from '@react-icons/all-files/gr/GrDocumentStore';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { SectionStatisticsStyle } from './SectionStatistics.style';
+import Statistics from './Statistics';
+import GalleryCarousel from '../GalleryCarousel/GalleryCarousel';
 
 const SectionStatistics = () => {
     const data = useStaticQuery(graphql`
@@ -29,8 +28,10 @@ const SectionStatistics = () => {
         },
     } = data;
 
+    const [selected, setSelected] = useState('stats');
+
     return (
-        <SectionStatisticsStyle Tag="section">
+        <SectionStatisticsStyle>
             <GatsbyImage
                 className="backgroundImage"
                 image={gatsbyImageData}
@@ -40,49 +41,22 @@ const SectionStatistics = () => {
                 quality={50}
             />
             <BootsContainer>
-                <BootsRow>
-                    <BootsColumn md={4}>
-                        <div className="cardContainer">
-                            <div className="iconContainer">
-                                <MdLocationCity className="icon" />
-                            </div>
-                            <p className="lead">
-                                <span className="number">22</span>
-                                <br />
-                                obsługiwane
-                                <br />
-                                gminy
-                            </p>
-                        </div>
-                    </BootsColumn>
-                    <BootsColumn md={4}>
-                        <div className="cardContainer">
-                            <div className="iconContainer">
-                                <BsFillPeopleFill className="icon" />
-                            </div>
-                            <p className="lead">
-                                <span className="number">521</span>
-                                <br />
-                                spotkań
-                                <br />z mieszkańcami
-                            </p>
-                        </div>
-                    </BootsColumn>
-                    <BootsColumn md={4}>
-                        <div className="cardContainer">
-                            <div className="iconContainer">
-                                <GrDocumentStore className="icon" />
-                            </div>
-                            <p className="lead">
-                                <span className="number">1221</span>
-                                <br />
-                                wykonane wnioski
-                                <br />o dotacje
-                            </p>
-                        </div>
-                    </BootsColumn>
-                </BootsRow>
+                <div className="titleBar">
+                    <h2 className="title">Stowarzyszenie</h2>
+                    <button onClick={() => setSelected('stats')} className="btn" type="button">
+                        Statystyki
+                    </button>
+                    <button onClick={() => setSelected('gallery')} className="btn" type="button">
+                        Galeria
+                    </button>
+                    <button onClick={() => setSelected('testimonial')} className="btn" type="button">
+                        Referencje
+                    </button>
+                </div>
             </BootsContainer>
+            {selected === 'stats' && <Statistics />}
+            {selected === 'testimonial' && <GalleryCarousel testimonials />}
+            {selected === 'gallery' && <GalleryCarousel gallery />}
         </SectionStatisticsStyle>
     );
 };

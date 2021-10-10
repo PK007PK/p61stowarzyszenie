@@ -8,14 +8,8 @@ export const SectionHeroStyle = styled.header`
     display: flex;
     justify-items: center;
     align-items: center;
-    height: calc(100vh - 112px);
-    /* max-height: 700px; */
-    /* padding: var(--spacingRegular); */
+    /* height: calc(100vh - 112px); */
     position: relative;
-
-    .firstRow {
-        /* margin-bottom: 100px; */
-    }
 
     p {
         margin-top: 0;
