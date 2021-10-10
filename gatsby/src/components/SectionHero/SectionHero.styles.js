@@ -8,8 +8,11 @@ export const SectionHeroStyle = styled.header`
     display: flex;
     justify-items: center;
     align-items: center;
-    /* height: calc(100vh - 112px); */
     position: relative;
+
+    ${({ theme }) => theme.media.smAbove} {
+        height: calc(100vh - 112px);
+    }
 
     p {
         margin-top: 0;
