@@ -1,13 +1,15 @@
-import styled from 'styled-components';
-
-export const StyledHeader = styled.header`
-    /* background-color: var(--colorMediumGray); */
-`;
+import styled, { css } from 'styled-components';
 
 export const SectionHeroStyle = styled.header`
     display: flex;
     justify-items: center;
-    align-items: center;
+    align-items: ${({ blogPost }) => (blogPost ? 'flex-end' : 'center')};
+    ${({ blogPost }) =>
+        blogPost &&
+        css`
+            padding-bottom: 100px;
+        `};
+
     position: relative;
     min-height: calc(100vh - 98px);
     ${({ theme }) => theme.media.smAbove} {

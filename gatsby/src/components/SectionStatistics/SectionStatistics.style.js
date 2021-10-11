@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionStatisticsStyle = styled.section`
     position: relative;
-    background-color: #006064;
+    background-color: orange;
     padding: var(--spacingBig1) 0 var(--spacingBig1) 0;
     p,
     span {
@@ -24,14 +24,14 @@ export const SectionStatisticsStyle = styled.section`
         cursor: pointer;
         background-color: inherit;
         border: none;
-        color: white;
+        color: black;
 
         &:first-of-type {
             padding-left: 0;
         }
 
         &:hover {
-            color: var(--colorBlack);
+            color: white;
         }
     }
 
@@ -51,12 +51,13 @@ export const SectionStatisticsStyle = styled.section`
         padding: 50px var(--cardPadding) var(--cardPadding) var(--cardPadding);
         border: 1px solid gray;
         background-color: #cfd8dc;
+        background-color: white;
 
         .iconContainer {
             position: absolute;
             top: -30px;
             right: 50%;
-            background-color: #cfd8dc;
+            background-color: white;
             width: 60px;
             height: 60px;
             display: flex;
@@ -73,7 +74,7 @@ export const SectionStatisticsStyle = styled.section`
         .number {
             font-size: var(--fontSizeBig3);
             color: var(--colorActiveSecondary);
-            color: white;
+            color: red;
             font-weight: 300;
             text-shadow: var(--txtShadow);
         }

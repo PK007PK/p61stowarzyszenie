@@ -12,15 +12,13 @@ export const CardSimpleStyles = styled.div`
     .textBlock {
         padding: var(--cardPadding);
         text-align: center;
-        /* position: absolute; */
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 170px;
-        /* box-shadow: var(--shadowBackground2); */
-        /* color: white; */
+        height: 350px;
         color: ${({ color }) => color || 'var(--cardDefaultColor)'};
         display: flex;
         align-items: center;
+        text-shadow: var(--txtShadow);
     }
 `;

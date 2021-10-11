@@ -49,6 +49,10 @@ const cardVariables = `
     --cardDefaultColor: white;
 `;
 
+const inputsVariables = `
+    --paddingInput: 5px;
+`;
+
 const GlobalStyles = createGlobalStyle`
 /* @font-face {
     font-family: 'radnika_next';
@@ -64,6 +68,7 @@ html {
     ${fontSizes}
     ${fx}
     ${cardVariables}
+    ${inputsVariables}
     
     scroll-behavior: smooth;
     box-sizing: border-box;

@@ -5,9 +5,9 @@ export const GalleryItemStyle = styled.div`
 
     .imageThumb {
         background-size: ${({ testimonials }) => (testimonials ? 'cover' : 'cover')};
+        height: ${({ testimonials }) => (testimonials ? '100vh' : '350px')};
 
         ${({ theme }) => theme.media.smAbove} {
-            height: ${({ testimonials }) => (testimonials ? '100vh' : '350px')};
             width: ${({ testimonials }) => (testimonials ? '80vw' : null)};
             margin: 0 auto;
         }

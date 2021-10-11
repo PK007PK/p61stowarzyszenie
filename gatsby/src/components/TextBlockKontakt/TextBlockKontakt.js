@@ -3,10 +3,10 @@ import { GrDocumentPdf } from '@react-icons/all-files/gr/GrDocumentPdf';
 import iconPdf from 'src/assets/images/pdfSvg.svg';
 import { Link } from 'gatsby';
 import { ButtonStyle } from '../Button/Button';
-import { TextBlockONasStyle } from './TextBlockONas.style';
+import { TextBlockKontaktStyle } from './TextBlockKontakt.style';
 
 const TextBlockONas = ({ style, className }) => (
-    <TextBlockONasStyle style={style} className={className}>
+    <TextBlockKontaktStyle style={style} className={className}>
         <h1 className="title">O nas</h1>
         <div className="tagBar">
             {/* <div className="tagContainer">
@@ -17,7 +17,7 @@ const TextBlockONas = ({ style, className }) => (
             Wspieramy lokalne społeczności w obszarze ekologii, transformacji energetycznej, zrównoważonego rozwoju.
         </p>
         <div className="bottomButtonsBar" />
-    </TextBlockONasStyle>
+    </TextBlockKontaktStyle>
 );
 
 export default TextBlockONas;

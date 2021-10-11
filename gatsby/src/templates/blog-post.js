@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data }) => {
         <div>
             <h1>{name}</h1>
             <p className="lead">{lead}</p>
-            <time>{date}</time>
+            <time className="lead">{date}</time>
         </div>
     );
 
@@ -35,13 +35,13 @@ const BlogPostTemplate = ({ data }) => {
             <SEO title={name} description={lead} />
             <article className="blog-post" itemScope itemType="http://schema.org/Article">
                 <HeroBackImage data={gatsbyImageData} />
-                <SectionHero leftComponent={textBlock} />
-                <HeroBreakingNews
+                <SectionHero blogPost leftComponent={textBlock} />
+                {/* <HeroBreakingNews
                     text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
                     link="link"
-                />
+                /> */}
                 <BootsContainer>
-                    <BootsRow>
+                    <BootsRow style={{ marginTop: '50px' }}>
                         <BootsColumn md={7}>
                             <BlockContent blocks={_rawRichText} dataset="production" url="" projectId="9311goma" />
                         </BootsColumn>

@@ -43,13 +43,28 @@ const SectionStatistics = () => {
             <BootsContainer>
                 <div className="titleBar">
                     <h2 className="title">Stowarzyszenie</h2>
-                    <button onClick={() => setSelected('stats')} className="btn" type="button">
+                    <button
+                        onClick={() => setSelected('stats')}
+                        style={selected === 'stats' ? { color: 'white' } : null}
+                        className="btn"
+                        type="button"
+                    >
                         Statystyki
                     </button>
-                    <button onClick={() => setSelected('gallery')} className="btn" type="button">
+                    <button
+                        onClick={() => setSelected('gallery')}
+                        style={selected === 'gallery' ? { color: 'white' } : null}
+                        className="btn"
+                        type="button"
+                    >
                         Galeria
                     </button>
-                    <button onClick={() => setSelected('testimonial')} className="btn" type="button">
+                    <button
+                        onClick={() => setSelected('testimonial')}
+                        style={selected === 'testimonial' ? { color: 'white' } : null}
+                        className="btn"
+                        type="button"
+                    >
                         Referencje
                     </button>
                 </div>

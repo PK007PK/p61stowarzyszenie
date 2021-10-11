@@ -17,7 +17,7 @@ import TextBlockIndex from '../components/TextBlockIndex/TextBlockIndex';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
 
-const IndexPage = ({ data, pageContext }) => {
+const IndexPage = ({ data, pageContext, location }) => {
     if (pageContext.dirName === undefined) {
         pageContext.dirName = `/`;
     }
@@ -52,7 +52,7 @@ const IndexPage = ({ data, pageContext }) => {
     return (
         <Layout>
             <SEO
-                title={`Blog page ${pageContext.sellectionName ? `| ${pageContext.sellectionName}` : ''} ${
+                title={`EkoMonterzy ${pageContext.sellectionName ? `| ${pageContext.sellectionName}` : ''} ${
                     pageContext.currentPage ? `| ${pageContext.currentPage}` : ''
                 }`}
             />
@@ -62,14 +62,14 @@ const IndexPage = ({ data, pageContext }) => {
                 link="link"
             />
             <SectionHero leftComponent={() => <TextBlockIndex />} />
-            <SectionStatistics />
+            {/* <SectionStatistics /> */}
             <SectionOurProjects />
 
-            {/* <BootsContainer style={{ marginTop: '50px' }}>
+            <BootsContainer style={{ marginTop: '50px' }}>
                 <BootsRow id="blog" between>
                     <BootsColumn md={7}>
-                        <CategoryFilter />
-                        <TagsFilter />
+                        <CategoryFilter location={location} />
+                        <TagsFilter location={location} />
                         <Pagination
                             pageSize={pagesInSet}
                             totalCount={postsToDisplay.totalCount}
@@ -77,6 +77,7 @@ const IndexPage = ({ data, pageContext }) => {
                             skip={pageContext.skip}
                             base={pageContext.dirName}
                             style={{ marginBottom: '25px' }}
+                            location={location}
                         />
                     </BootsColumn>
                     <BootsColumn md={4}>
@@ -99,7 +100,7 @@ const IndexPage = ({ data, pageContext }) => {
                         <AsideIndex />
                     </BootsColumn>
                 </BootsRow>
-            </BootsContainer> */}
+            </BootsContainer>
         </Layout>
     );
 };

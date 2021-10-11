@@ -4,22 +4,21 @@ import SEO from 'src/components/SEO/SEO';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
+import FormContact from 'src/components/FormContact/FormContact';
 import BlockContent from '@sanity/block-content-to-react';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
 import TextBlockONas from '../components/TextBlockONas/TextBlockONas';
-import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
-import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 
-const ONasPage = ({ data }) => {
+const KontaktPage = ({ data }) => {
     const {
         title,
         description,
-        _rawRichText,
         image: {
             asset: { gatsbyImageData },
         },
-    } = data.sanityONasPage;
+        _rawRichText,
+    } = data.sanityKontaktPage;
 
     const Description = () => (
         <>
@@ -27,20 +26,16 @@ const ONasPage = ({ data }) => {
             <p className="lead">{description}</p>
         </>
     );
+
     return (
         <Layout>
-            <SEO title="O nas" />
+            <SEO title="Kontakt" />
             <HeroBackImage data={gatsbyImageData} />
-            <HeroBreakingNews
-                text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
-                link="link"
-            />
             <SectionHero leftComponent={() => <Description />} />
-            <SEO title="Informacje o stowarzyszeniu" />
-            <SectionStatistics />
+
             <BootsContainer>
-                <BootsRow>
-                    <BootsColumn style={{ marginTop: '50px' }} md={7}>
+                <BootsRow between style={{ marginTop: '50px' }}>
+                    <BootsColumn className="lead" md={6}>
                         <BlockContent
                             blocks={_rawRichText}
                             dataset="production"
@@ -48,16 +43,18 @@ const ONasPage = ({ data }) => {
                             projectId={process.env.SANITY_PROJECT_ID}
                         />
                     </BootsColumn>
+                    <BootsColumn className="lead" md={5}>
+                        <FormContact />
+                    </BootsColumn>
                 </BootsRow>
             </BootsContainer>
-            <SectionOurProjects />
         </Layout>
     );
 };
 
 export const pageQuery = graphql`
     query {
-        sanityONasPage {
+        sanityKontaktPage {
             title
             description
             image {
@@ -70,4 +67,4 @@ export const pageQuery = graphql`
     }
 `;
 
-export default ONasPage;
+export default KontaktPage;
