@@ -32,10 +32,9 @@ const KontaktPage = ({ data }) => {
             <SEO title="Kontakt" />
             <HeroBackImage data={gatsbyImageData} />
             <SectionHero leftComponent={() => <Description />} />
-
             <BootsContainer>
                 <BootsRow between style={{ marginTop: '50px' }}>
-                    <BootsColumn className="lead" md={6}>
+                    <BootsColumn md={6}>
                         <BlockContent
                             blocks={_rawRichText}
                             dataset="production"
@@ -43,7 +42,7 @@ const KontaktPage = ({ data }) => {
                             projectId={process.env.SANITY_PROJECT_ID}
                         />
                     </BootsColumn>
-                    <BootsColumn className="lead" md={5}>
+                    <BootsColumn md={5}>
                         <FormContact />
                     </BootsColumn>
                 </BootsRow>

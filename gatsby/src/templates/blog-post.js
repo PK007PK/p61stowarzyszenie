@@ -7,6 +7,7 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsEleme
 import SEO from '../components/SEO/SEO';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
+import AsideBlogPostSwitch from '../components/AsideBlogPostSwitch/AsideBlogPostSwitch';
 
 const BlogPostTemplate = ({ data }) => {
     const { previous, next } = data;
@@ -18,6 +19,7 @@ const BlogPostTemplate = ({ data }) => {
         image: {
             asset: { gatsbyImageData },
         },
+        components,
     } = data.sanityBlogPosts;
 
     const siteTitle = data.site.siteMetadata?.title || `Title`;
@@ -29,21 +31,21 @@ const BlogPostTemplate = ({ data }) => {
             <time className="lead">{date}</time>
         </div>
     );
-
+    const componentsArray = components.map((item) => item.sanityId);
+    console.log(componentsArray);
     return (
         <Layout>
             <SEO title={name} description={lead} />
             <article className="blog-post" itemScope itemType="http://schema.org/Article">
                 <HeroBackImage data={gatsbyImageData} />
                 <SectionHero blogPost leftComponent={textBlock} />
-                {/* <HeroBreakingNews
-                    text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
-                    link="link"
-                /> */}
                 <BootsContainer>
-                    <BootsRow style={{ marginTop: '50px' }}>
+                    <BootsRow between style={{ marginTop: '50px' }}>
                         <BootsColumn md={7}>
                             <BlockContent blocks={_rawRichText} dataset="production" url="" projectId="9311goma" />
+                        </BootsColumn>
+                        <BootsColumn md={4}>
+                            <AsideBlogPostSwitch data={componentsArray} />
                         </BootsColumn>
                     </BootsRow>
                 </BootsContainer>
@@ -99,6 +101,9 @@ export const pageQuery = graphql`
                 asset {
                     gatsbyImageData
                 }
+            }
+            components {
+                sanityId
             }
         }
         previous: sanityBlogPosts(id: { eq: $previousPostId }) {
