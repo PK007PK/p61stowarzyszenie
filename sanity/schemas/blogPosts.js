@@ -62,6 +62,12 @@ export default {
       type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
     },
+    {
+      name: 'components',
+      title: 'Opcjonalne komponenty',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'blogPostsComponents' }] }],
+    },
   ],
   preview: {
     select: {

@@ -10,6 +10,7 @@ import pageDataHome from './pageDataHome';
 import pageDataBlog from './pageDataBlog';
 import blogPosts from './blogPosts';
 import blogPostsCategories from './blogPostsCategories';
+import blogPostsComponents from './blogPostsComponents';
 import blogPostsTags from './blogPostsTags';
 import projectItem from './projectItem';
 import allProjectsData from './allProjectsData';
@@ -34,6 +35,7 @@ export default createSchema({
     pageDataBlog,
     blogPosts,
     blogPostsCategories,
+    blogPostsComponents,
     blogPostsTags,
     projectItem,
     allProjectsData,

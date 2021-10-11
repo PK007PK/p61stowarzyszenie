@@ -55,6 +55,8 @@ export default () =>
             'allProjectsData',
             'pageDataHome',
             'pageDataBlog',
+            'oNasPage',
+            'kontaktPage',
             'gallery',
             'testimonials',
           ].includes(item.getId())
