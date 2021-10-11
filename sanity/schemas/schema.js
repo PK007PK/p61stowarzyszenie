@@ -13,6 +13,12 @@ import blogPostsCategories from './blogPostsCategories';
 import blogPostsTags from './blogPostsTags';
 import projectItem from './projectItem';
 import allProjectsData from './allProjectsData';
+import galleryItem from './galleryItem';
+import gallery from './gallery';
+import testimonials from './testimonials';
+import testimonialItem from './testimonialItem';
+import oNasPage from './oNasPage';
+import kontaktPage from './kontaktPage';
 
 export default createSchema({
   // We name our schema
@@ -22,6 +28,8 @@ export default createSchema({
   types: schemaTypes.concat([
     siteSettings,
     siteTechConfig,
+    gallery,
+    galleryItem,
     pageDataHome,
     pageDataBlog,
     blogPosts,
@@ -29,5 +37,9 @@ export default createSchema({
     blogPostsTags,
     projectItem,
     allProjectsData,
+    testimonials,
+    testimonialItem,
+    oNasPage,
+    kontaktPage,
   ]),
 });

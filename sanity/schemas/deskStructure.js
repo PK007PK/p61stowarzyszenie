@@ -20,6 +20,22 @@ export default () =>
           S.document().schemaType('pageDataHome').documentId('pageDataHome')
         ),
       S.listItem()
+        .title('Strona "O nas"')
+        .child(S.document().schemaType('oNasPage').documentId('oNasPage')),
+      S.listItem()
+        .title('Strona "Kontakt"')
+        .child(
+          S.document().schemaType('kontaktPage').documentId('kontaktPage')
+        ),
+      S.listItem()
+        .title('Referencje')
+        .child(
+          S.document().schemaType('testimonials').documentId('testimonials')
+        ),
+      S.listItem()
+        .title('Gallery')
+        .child(S.document().schemaType('gallery').documentId('gallery')),
+      S.listItem()
         .title('All projects data')
         .child(
           S.document()
@@ -39,6 +55,8 @@ export default () =>
             'allProjectsData',
             'pageDataHome',
             'pageDataBlog',
+            'gallery',
+            'testimonials',
           ].includes(item.getId())
       ),
     ]);
