@@ -9,4 +9,9 @@ export const CategoryFilterStyle = styled.div`
             color: var(--colorActiveSecondary);
         }
     }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+    }
 `;

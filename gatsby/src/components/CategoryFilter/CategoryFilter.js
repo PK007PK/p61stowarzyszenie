@@ -26,15 +26,17 @@ export default function CategoryFilter({ location }) {
             >
                 <h2>Aktualności</h2>
             </Link>
-            {categories.map((category) => (
-                <Link
-                    to={`/${category.slug.current}/1#blog`}
-                    style={checkLocation.includes(category.slug.current) ? { color: 'red' } : null}
-                    key={category.slug.current}
-                >
-                    {category.name}
-                </Link>
-            ))}
+            <div className="links">
+                {categories.map((category) => (
+                    <Link
+                        to={`/${category.slug.current}/1#blog`}
+                        style={checkLocation.includes(category.slug.current) ? { color: 'red' } : null}
+                        key={category.slug.current}
+                    >
+                        {category.name}
+                    </Link>
+                ))}
+            </div>
         </CategoryFilterStyle>
     );
 }
