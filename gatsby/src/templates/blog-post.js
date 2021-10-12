@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import SectionHero from 'src/components/SectionHero/SectionHero';
+import SectionBlogPostHero from 'src/components/SectionBlogPostHero/SectionBlogPostHero';
 import BlockContent from '@sanity/block-content-to-react';
 import Layout from 'src/components/Layout/Layout';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SEO from '../components/SEO/SEO';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
-import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
 import AsideBlogPostSwitch from '../components/AsideBlogPostSwitch/AsideBlogPostSwitch';
+import SocialShare from '../components/SocialShare/SocialShare';
 
 const BlogPostTemplate = ({ data }) => {
     const { previous, next } = data;
@@ -26,26 +26,24 @@ const BlogPostTemplate = ({ data }) => {
 
     const textBlock = () => (
         <div>
+            <time className="lead">{date}</time>
             <h1>{name}</h1>
             <p className="lead">{lead}</p>
-            <time className="lead">{date}</time>
         </div>
     );
     const componentsArray = components.map((item) => item.sanityId);
-    console.log(componentsArray);
     return (
         <Layout>
             <SEO title={name} description={lead} />
             <article className="blog-post" itemScope itemType="http://schema.org/Article">
-                <HeroBackImage data={gatsbyImageData} />
-                <SectionHero blogPost leftComponent={textBlock} />
+                <SectionBlogPostHero leftComponent={textBlock} data={gatsbyImageData} />
                 <BootsContainer>
                     <BootsRow between style={{ marginTop: '50px' }}>
                         <BootsColumn md={7}>
                             <BlockContent blocks={_rawRichText} dataset="production" url="" projectId="9311goma" />
                         </BootsColumn>
                         <BootsColumn md={4}>
-                            <AsideBlogPostSwitch data={componentsArray} />
+                            <AsideBlogPostSwitch title={name} excerpt={lead} data={componentsArray} />
                         </BootsColumn>
                     </BootsRow>
                 </BootsContainer>

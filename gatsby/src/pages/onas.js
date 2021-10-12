@@ -31,10 +31,10 @@ const ONasPage = ({ data }) => {
         <Layout>
             <SEO title="O nas" />
             <HeroBackImage data={gatsbyImageData} />
-            <HeroBreakingNews
+            {/* <HeroBreakingNews
                 text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
                 link="link"
-            />
+            /> */}
             <SectionHero leftComponent={() => <Description />} />
             <SEO title="Informacje o stowarzyszeniu" />
             <SectionStatistics />

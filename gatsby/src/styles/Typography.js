@@ -9,11 +9,11 @@ const Typography = createGlobalStyle`
   h1,h2,h3,h4,h5,h6 {
     font-weight: 400;
     margin: 0;
+    line-height: 140%;
   }
 
   h1 {
     font-size: var(--fontSizeBig1);
-    line-height: 140%;
 
     ${({ theme }) => theme.media.smAbove} {
       font-size: var(--fontSizeBig2);

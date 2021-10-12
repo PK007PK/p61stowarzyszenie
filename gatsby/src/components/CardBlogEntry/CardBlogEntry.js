@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CardBlogEntryStyle } from './CardBlogEntry.style';
 
-const CardBlogEntry = ({ data }) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const CardBlogEntry = React.forwardRef(({ data }) => {
     const {
         name,
         lead,
@@ -11,8 +15,28 @@ const CardBlogEntry = ({ data }) => {
             asset: { gatsbyImageData },
         },
     } = data;
+    let wrapper = useRef(null);
+    useEffect(() => {
+        gsap.set(wrapper, { autoAlpha: 0 });
+
+        const cardAnimation = gsap.timeline({ defaults: { ease: 'power3.inOut' } }).fromTo(
+            wrapper,
+            { autoAlpha: 0 },
+            {
+                duration: 0.7,
+                autoAlpha: 1,
+            }
+        );
+
+        ScrollTrigger.create({
+            trigger: wrapper,
+            animation: cardAnimation,
+            start: 'center bottom',
+        });
+    }, []);
+
     return (
-        <CardBlogEntryStyle>
+        <CardBlogEntryStyle ref={(el) => (wrapper = el)}>
             <div className="imageBar">
                 <GatsbyImage
                     className="picture"
@@ -34,6 +58,6 @@ const CardBlogEntry = ({ data }) => {
             </div>
         </CardBlogEntryStyle>
     );
-};
+});
 
 export default CardBlogEntry;

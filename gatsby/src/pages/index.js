@@ -57,10 +57,10 @@ const IndexPage = ({ data, pageContext, location }) => {
                 }`}
             />
             <HeroBackImage data={gatsbyImageData} />
-            <HeroBreakingNews
+            {/* <HeroBreakingNews
                 text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
                 link="link"
-            />
+            /> */}
             <SectionHero leftComponent={() => <TextBlockIndex />} />
             {/* <SectionStatistics /> */}
             <SectionOurProjects />
