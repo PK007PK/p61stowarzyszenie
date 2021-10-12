@@ -37,8 +37,12 @@ export const NavbarStyle = styled.nav`
     }
 
     .desktopLinksWrapper {
-        display: flex;
-        align-items: center;
+        display: none;
+        margin-left: auto;
+        ${({ theme }) => theme.media.mdAbove} {
+            display: flex;
+            align-items: center;
+        }
     }
 
     .burgerWrapper {

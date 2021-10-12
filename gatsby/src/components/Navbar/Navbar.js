@@ -28,15 +28,15 @@ export default function Navbar() {
                                 className="logoWrapper"
                                 to="/"
                             >
-                                <Logo2 />
+                                <Logo2 small />
                             </Link>
 
                             <div className="desktopLinksWrapper">
                                 <MenuItemsWrapper />
                                 <Search indices={searchIndices} />
-                                <div className="burgerWrapper">
-                                    <Hamburger toggled={isMenuActive} toggle={toogleIsMenuActive} />
-                                </div>
+                            </div>
+                            <div className="burgerWrapper">
+                                <Hamburger toggled={isMenuActive} toggle={toogleIsMenuActive} />
                             </div>
                             {isMenuActive && <MenuDropDown />}
                         </div>

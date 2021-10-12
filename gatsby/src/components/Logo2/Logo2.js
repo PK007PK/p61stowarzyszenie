@@ -2,8 +2,8 @@ import React from 'react';
 import logoSign from '../../assets/images/logoSignSvg3.svg';
 import { StyledLogo2 } from './Logo2.style';
 
-const Logo = () => (
-    <StyledLogo2>
+const Logo = ({ small }) => (
+    <StyledLogo2 small={small}>
         <img className="sign" src={logoSign} alt="Stowarzyszenie EkoPartner" />
         <div className="textBlock">
             <div className="top">Stowarzyszenie</div>
