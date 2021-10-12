@@ -11,8 +11,9 @@ const AsideBlogPostSwitch = ({ data, name, lead }) => (
             switch (item) {
                 case 0:
                     return (
-                        <Link key={i} className="item" target="blank" as="a" to="https://forms.gle/4QUN4zjsnFQXMLt3A">
+                        <Link key={i} target="blank" as="a" to="https://forms.gle/4QUN4zjsnFQXMLt3A">
                             <CardSimple
+                                className="item"
                                 data={{
                                     projectName:
                                         'Potrzebujesz pomocy z uzyskaniem dotacji, realizacją inwestycji? Wypełnij formularz. Oddzwonimy',
@@ -23,6 +24,18 @@ const AsideBlogPostSwitch = ({ data, name, lead }) => (
                     );
                 case 1:
                     return <SocialShare className="item" title={name} excerpt={lead} messengerID={1234} />;
+                case 2:
+                    return (
+                        <a key={i} target="blank" href="/EkoMonterzy-Czyste-Powietrze.pdf">
+                            <CardSimple
+                                className="item"
+                                data={{
+                                    projectName: 'Pobierz PDF',
+                                    backgroundColor: 'var(--colorActiveSecondary)',
+                                }}
+                            />
+                        </a>
+                    );
                 default:
                     break;
             }

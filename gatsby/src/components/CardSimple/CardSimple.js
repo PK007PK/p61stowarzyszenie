@@ -3,7 +3,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { CardSimpleStyles } from './CardSimple.styles.js';
 
-const CardSimple = ({ data }) => {
+const CardSimple = ({ data, className }) => {
     const query = useStaticQuery(graphql`
         {
             sanitySiteTechConfig {
@@ -25,7 +25,7 @@ const CardSimple = ({ data }) => {
     const { projectName: title, projectImage, color, backgroundColor } = data;
     const imgSource = projectImage?.asset?.gatsbyImageData;
     return (
-        <CardSimpleStyles color={color} backgroundColor={backgroundColor}>
+        <CardSimpleStyles color={color} backgroundColor={backgroundColor} className={className}>
             {/* <GatsbyImage
                 className="image"
                 image={imgSource || placeholder}

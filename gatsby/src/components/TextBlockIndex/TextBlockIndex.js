@@ -24,7 +24,6 @@ const TextBlockIndex = ({ style, className }) => (
             </Link>
             <a href="/Broszura.pdf" target="_blank" rel="noopener noreferrer">
                 <ButtonStyle className="bottomBtn" padding="0 16px 0 16px">
-                    {' '}
                     <img className="pdfIcon" src={iconPdf} alt="Broszura PDF EkoMonterzy" />
                 </ButtonStyle>{' '}
             </a>

@@ -21,6 +21,7 @@ export const CardBlogEntryStyle = styled.div`
         height: var(--cardHeight);
         width: 100%;
         transition: var(--transitionBasic);
+
         &:hover {
             transform: scale(1.02);
         }
