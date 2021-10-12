@@ -72,3 +72,39 @@ const BlogPostTemplate = ({ data }) => {
 };
 
 export default BlogPostTemplate;
+
+export const pageQuery = graphql`
+    query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+        sanityBlogPosts(id: { eq: $id }) {
+            id
+            date
+            name
+            _rawRichText
+            image {
+                asset {
+                    gatsbyImageData
+                }
+            }
+            components {
+                sanityId
+            }
+        }
+        previous: sanityBlogPosts(id: { eq: $previousPostId }) {
+            slug {
+                current
+            }
+            name
+        }
+        next: sanityBlogPosts(id: { eq: $nextPostId }) {
+            slug {
+                current
+            }
+            name
+        }
+    }
+`;
