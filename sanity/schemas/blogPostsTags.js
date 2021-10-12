@@ -24,6 +24,11 @@ export default {
         maxLength: 100,
       },
     },
+    {
+      name: 'position',
+      title: 'Position',
+      type: 'number',
+    },
   ],
   preview: {
     select: {

@@ -20,6 +20,8 @@ import testimonials from './testimonials';
 import testimonialItem from './testimonialItem';
 import oNasPage from './oNasPage';
 import kontaktPage from './kontaktPage';
+import menuData from './menuData';
+import menuItem from './menuItem';
 
 export default createSchema({
   // We name our schema
@@ -43,5 +45,7 @@ export default createSchema({
     testimonialItem,
     oNasPage,
     kontaktPage,
+    menuData,
+    menuItem,
   ]),
 });

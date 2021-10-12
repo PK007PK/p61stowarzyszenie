@@ -15,6 +15,9 @@ export default () =>
           S.document().schemaType('siteTechConfig').documentId('siteTechConfig')
         ),
       S.listItem()
+        .title('Menu strony"')
+        .child(S.document().schemaType('menuData').documentId('menuData')),
+      S.listItem()
         .title('Home page')
         .child(
           S.document().schemaType('pageDataHome').documentId('pageDataHome')
