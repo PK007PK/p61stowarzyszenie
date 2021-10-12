@@ -10,7 +10,7 @@ const Layout = ({ children }) => (
         <GlobalStyles />
         <Typography />
         <CustomStyles />
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Footer />
     </>
