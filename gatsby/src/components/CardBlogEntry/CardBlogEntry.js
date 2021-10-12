@@ -2,19 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Logo2 from 'src/components/Logo2/Logo2';
 import { CardBlogEntryStyle } from './CardBlogEntry.style';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CardBlogEntry = React.forwardRef(({ data }) => {
-    const {
-        name,
-        lead,
-        date,
-        image: {
-            asset: { gatsbyImageData },
-        },
-    } = data;
+    const { name, lead, date } = data;
+
+    const gatsbyImageData = data?.image?.asset?.gatsbyImageData;
+
     let wrapper = useRef(null);
     useEffect(() => {
         gsap.set(wrapper, { autoAlpha: 0 });
@@ -38,14 +35,18 @@ const CardBlogEntry = React.forwardRef(({ data }) => {
     return (
         <CardBlogEntryStyle ref={(el) => (wrapper = el)}>
             <div className="imageBar">
-                <GatsbyImage
-                    className="picture"
-                    image={gatsbyImageData}
-                    placeholder="blurred"
-                    alt={name}
-                    formats={['auto', 'webp']}
-                    quality={50}
-                />
+                {gatsbyImageData ? (
+                    <GatsbyImage
+                        className="picture"
+                        image={gatsbyImageData}
+                        placeholder="blurred"
+                        alt={name}
+                        formats={['auto', 'webp']}
+                        quality={50}
+                    />
+                ) : (
+                    <Logo2 />
+                )}
                 <div className="titleBar">
                     <h3 className="title">{name}</h3>
                 </div>

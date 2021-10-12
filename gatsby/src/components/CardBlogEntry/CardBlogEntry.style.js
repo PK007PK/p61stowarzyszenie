@@ -9,6 +9,12 @@ export const CardBlogEntryStyle = styled.div`
     .imageBar {
         position: relative;
         overflow: hidden;
+        height: var(--cardHeight);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgray;
     }
 
     .picture {

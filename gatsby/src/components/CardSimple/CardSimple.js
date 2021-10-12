@@ -1,6 +1,5 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import Logo3 from 'src/components/Logo3/Logo3';
 import { useStaticQuery, graphql } from 'gatsby';
 import { CardSimpleStyles } from './CardSimple.styles.js';
 

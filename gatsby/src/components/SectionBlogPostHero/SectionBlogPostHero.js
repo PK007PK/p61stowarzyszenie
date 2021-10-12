@@ -1,6 +1,7 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import Logo2 from 'src/components/Logo2/Logo2';
 import { SectionBlogPostHeroStyle } from './SectionBlogPostHero.style';
 
 const SectionBlogPostHero = ({ leftComponent, data }) => {
@@ -13,13 +14,19 @@ const SectionBlogPostHero = ({ leftComponent, data }) => {
                         <LeftComponent />
                     </BootsColumn>
                     <BootsColumn md={6}>
-                        <GatsbyImage
-                            className="pict"
-                            image={data}
-                            formats={['auto', 'webp']}
-                            quality={100}
-                            height={500}
-                        />
+                        <div className="imgWrapper">
+                            {data ? (
+                                <GatsbyImage
+                                    className="pict"
+                                    image={data}
+                                    formats={['auto', 'webp']}
+                                    quality={100}
+                                    height={500}
+                                />
+                            ) : (
+                                <Logo2 />
+                            )}
+                        </div>
                     </BootsColumn>
                 </BootsRow>
             </SectionBlogPostHeroStyle>

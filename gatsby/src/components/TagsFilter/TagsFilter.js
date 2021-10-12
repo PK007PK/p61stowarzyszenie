@@ -5,7 +5,7 @@ import { TagFilterStyle } from './TagFilter.style';
 export default function TagsFilter({ location }) {
     const data = useStaticQuery(graphql`
         query {
-            allSanityBlogPostsTags(sort: { order: ASC, fields: name }) {
+            allSanityBlogPostsTags(sort: { order: ASC, fields: position }) {
                 nodes {
                     name
                     slug {

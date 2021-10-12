@@ -4,10 +4,6 @@ export const TextBlockIndexStyle = styled.div`
     /* background-color: rgba(255, 255, 255, 0.9); */
     padding: var(--cardPadding);
 
-    ${({ theme }) => theme.media.smAbove} {
-        padding: none;
-        margin-bottom: 40px;
-    }
     .title {
         margin-bottom: 0px;
     }

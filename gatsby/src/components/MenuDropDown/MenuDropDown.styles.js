@@ -8,8 +8,9 @@ export const MenuDropDownStyles = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: black;
+    background-color: var(--colorWhite);
     height: 100vh;
+    text-align: center;
 
     .container {
         height: 100%;
@@ -18,21 +19,76 @@ export const MenuDropDownStyles = styled.div`
         justify-content: center;
     }
 
+    nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        ${({ theme }) => theme.media.smAbove} {
+            display: block;
+        }
+        padding: 0;
+        padding-left: 0;
+        margin-left: 0;
+        min-width: 150px;
+        flex-grow: 1;
+        font-size: 14px;
+
+        ${({ theme }) => theme.media.smAbove} {
+            font-size: 16px;
+        }
+    }
+
     li {
-        margin-bottom: 40px;
         display: block;
+        margin-bottom: 10px;
+        margin-right: 20px;
+
+        ${({ theme }) => theme.media.smAbove} {
+            margin-right: 0px;
+            margin-bottom: var(--spacingRegular);
+        }
     }
 
-    .linkWrapper {
-        position: relative;
+    .title {
+        font-size: 18px;
+        text-align: left;
+
+        ${({ theme }) => theme.media.smAbove} {
+            text-align: center;
+            font-size: var(--fontSizeBig1);
+        }
     }
 
+    @keyframes emerge {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .title,
     a {
         opacity: 0;
+        animation-name: emerge;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
 
     .colorWrapper1 {
-        background-color: red;
+        background-color: var(--colorActivePrimary);
+        height: 30vh;
+    }
+    .colorWrapper2 {
+        background-color: var(--colorActiveSecondary);
         height: 30vh;
     }
 `;

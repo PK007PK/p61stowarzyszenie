@@ -5,22 +5,12 @@ import BlockContent from '@sanity/block-content-to-react';
 import Layout from 'src/components/Layout/Layout';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SEO from '../components/SEO/SEO';
-import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import AsideBlogPostSwitch from '../components/AsideBlogPostSwitch/AsideBlogPostSwitch';
-import SocialShare from '../components/SocialShare/SocialShare';
 
 const BlogPostTemplate = ({ data }) => {
     const { previous, next } = data;
-    const {
-        name,
-        lead,
-        date,
-        _rawRichText,
-        image: {
-            asset: { gatsbyImageData },
-        },
-        components,
-    } = data.sanityBlogPosts;
+    const { name, lead, date, _rawRichText, components } = data.sanityBlogPosts;
+    const gatsbyImageData = data?.sanityBlogPosts?.image?.asset?.gatsbyImageData;
 
     const siteTitle = data.site.siteMetadata?.title || `Title`;
 
@@ -82,39 +72,3 @@ const BlogPostTemplate = ({ data }) => {
 };
 
 export default BlogPostTemplate;
-
-export const pageQuery = graphql`
-    query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-        sanityBlogPosts(id: { eq: $id }) {
-            id
-            date
-            name
-            _rawRichText
-            image {
-                asset {
-                    gatsbyImageData
-                }
-            }
-            components {
-                sanityId
-            }
-        }
-        previous: sanityBlogPosts(id: { eq: $previousPostId }) {
-            slug {
-                current
-            }
-            name
-        }
-        next: sanityBlogPosts(id: { eq: $nextPostId }) {
-            slug {
-                current
-            }
-            name
-        }
-    }
-`;

@@ -14,7 +14,8 @@ const AsideBlogPostSwitch = ({ data, name, lead }) => (
                         <Link key={i} className="item" target="blank" as="a" to="https://forms.gle/4QUN4zjsnFQXMLt3A">
                             <CardSimple
                                 data={{
-                                    projectName: 'Potrzebujesz pomocy? Wypełnij formularz. Oddzwonimy',
+                                    projectName:
+                                        'Potrzebujesz pomocy z uzyskaniem dotacji, realizacją inwestycji? Wypełnij formularz. Oddzwonimy',
                                     backgroundColor: 'orange',
                                 }}
                             />

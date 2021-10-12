@@ -9,10 +9,13 @@ export function AppProvider({ children }) {
     const toogleIsActive = () => setIsActive((prevValue) => !prevValue);
     const [isMenuActive, setIsMenuActive] = useState(false);
     const toogleIsMenuActive = () => setIsMenuActive((prevValue) => !prevValue);
+    const diseableMenu = () => setIsMenuActive(false);
     const [group, setGroup] = useState('mieszkańcy');
 
     return (
-        <AppContext.Provider value={{ isActive, toogleIsActive, isMenuActive, toogleIsMenuActive, group, setGroup }}>
+        <AppContext.Provider
+            value={{ isActive, toogleIsActive, isMenuActive, toogleIsMenuActive, diseableMenu, group, setGroup }}
+        >
             <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </AppContext.Provider>
     );

@@ -2,34 +2,13 @@ import styled, { css } from 'styled-components';
 
 export const SectionHeroStyle = styled.header`
     display: flex;
-    justify-items: center;
-    align-items: ${({ blogPost }) => (blogPost ? 'flex-end' : 'center')};
-    ${({ blogPost }) =>
-        blogPost &&
-        css`
-            padding-bottom: 100px;
-        `};
-
+    align-items: center;
     position: relative;
-    min-height: calc(100vh - 98px);
-    ${({ theme }) => theme.media.smAbove} {
-    }
-
-    ${({ theme }) => theme.media.mdAbove} {
-        min-height: calc(100vh - 112px);
-    }
+    min-height: 100vh;
+    padding-top: 100px;
+    /* padding-bottom: 100px; */
 
     p {
         margin-top: 0;
-    }
-
-    .secondRow {
-        position: absolute;
-        bottom: 100px;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        box-shadow: ${({ theme }) => theme.elevation.dp1};
-        padding: var(--cardPadding);
     }
 `;

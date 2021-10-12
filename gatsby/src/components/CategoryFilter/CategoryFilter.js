@@ -5,7 +5,7 @@ import { CategoryFilterStyle } from './CategoryFilter.style';
 export default function CategoryFilter({ location }) {
     const data = useStaticQuery(graphql`
         {
-            allSanityBlogPostsCategories(sort: { order: ASC, fields: name }) {
+            allSanityBlogPostsCategories(sort: { order: ASC, fields: position }) {
                 nodes {
                     name
                     slug {

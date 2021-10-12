@@ -1,72 +1,85 @@
 import React, { useEffect, useRef, useContext } from 'react';
-import { Link } from 'gatsby';
 import { gsap } from 'gsap';
+
 import AppContext from 'src/AppProvider';
-import { menuShow, menuHide, staggerLinks, textIntro, hoverLink, hoverExit } from 'src/utils/animate';
-import { BootsContainer } from 'src/components/BootsElements/BootsElements';
+
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { MenuDropDownStyles } from './MenuDropDown.styles';
 
 const Menu = () => {
     const { toogleIsMenuActive, isMenuActive } = useContext(AppContext);
+    const data = useStaticQuery(graphql`
+        query QueryMenuItems2 {
+            sanityMenuData {
+                menuItems {
+                    pageSlug
+                    pageName
+                }
+            }
+            allSanityBlogPostsCategories(sort: { order: ASC, fields: position }) {
+                nodes {
+                    name
+                    position
+                    slug {
+                        current
+                    }
+                }
+            }
+            allSanityBlogPostsTags(sort: { order: ASC, fields: position }) {
+                nodes {
+                    name
+                    position
+                    slug {
+                        current
+                    }
+                }
+            }
+        }
+    `);
+    const menuData = data.sanityMenuData.menuItems;
+    const categories = data.allSanityBlogPostsCategories.nodes;
+    const tags = data.allSanityBlogPostsTags.nodes;
 
-    // create refs for our DOM elements
     let menuWrapper = useRef(null);
-    let link1 = useRef(null);
-    let link2 = useRef(null);
-    let link3 = useRef(null);
 
     useEffect(() => {
         gsap.to(menuWrapper, { duration: 0.3, css: { display: 'block', top: 0 } });
-        gsap.to(link1, { duration: 0.2, delay: 0.3, css: { opacity: 1, bottom: 0 } });
-        gsap.to(link2, { duration: 0.2, delay: 0.4, css: { opacity: 1, bottom: 0 } });
-        gsap.to(link3, { duration: 0.2, delay: 0.5, css: { opacity: 1, bottom: 0 } });
     }, [isMenuActive]);
 
+    const Submenu = ({ data, name }) => (
+        <div>
+            <h2 className="title">{name}</h2>
+            <ul>
+                {data.map((item, i) => (
+                    <li key={i}>
+                        <Link
+                            className="fx-txt-underline"
+                            to={item.pageSlug || `/${item.slug.current}/1#blog`}
+                            onClick={toogleIsMenuActive}
+                        >
+                            {item.pageName || item.name}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
     return (
         <MenuDropDownStyles ref={(el) => (menuWrapper = el)}>
             <BootsContainer className="container">
                 <nav>
-                    <ul>
-                        <li>
-                            <div className="linkWrapper">
-                                <Link
-                                    ref={(el) => (link1 = el)}
-                                    onMouseEnter={(e) => hoverLink(e)}
-                                    onMouseOut={(e) => hoverExit(e)}
-                                    onClick={() => toogleIsMenuActive(false)}
-                                    to="/"
-                                >
-                                    Home
-                                </Link>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="linkWrapper">
-                                <Link
-                                    ref={(el) => (link2 = el)}
-                                    onMouseEnter={(e) => hoverLink(e)}
-                                    onMouseOut={(e) => hoverExit(e)}
-                                    onClick={() => toogleIsMenuActive(false)}
-                                    to="/blog/1"
-                                >
-                                    Blog
-                                </Link>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="linkWrapper">
-                                <Link
-                                    onMouseEnter={(e) => hoverLink(e)}
-                                    onMouseOut={(e) => hoverExit(e)}
-                                    to="/kontakt"
-                                    onClick={() => toogleIsMenuActive(false)}
-                                    ref={(el) => (link3 = el)}
-                                >
-                                    Kontakt
-                                </Link>
-                            </div>
-                        </li>
-                    </ul>
+                    <BootsRow>
+                        <BootsColumn sm={4}>
+                            <Submenu name="Strony" data={menuData} />
+                        </BootsColumn>
+                        <BootsColumn sm={4}>
+                            <Submenu name="Kategorie" data={categories} />
+                        </BootsColumn>
+                        <BootsColumn sm={4}>
+                            <Submenu name="Tagi" data={tags} />
+                        </BootsColumn>
+                    </BootsRow>
                 </nav>
             </BootsContainer>
             <div className="colorWrapper1" />
