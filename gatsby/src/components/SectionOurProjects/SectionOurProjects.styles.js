@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SectionOurProjectsStyles = styled.div`
     padding: var(--spacingBig1) 0 var(--spacingBig1);
+    overflow: hidden;
 
     .cardContainer {
         margin-top: var(--spacingMedium);
