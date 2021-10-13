@@ -6,6 +6,7 @@ import Layout from 'src/components/Layout/Layout';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SEO from '../components/SEO/SEO';
 import AsideBlogPostSwitch from '../components/AsideBlogPostSwitch/AsideBlogPostSwitch';
+import { ArticleStyling } from '../components/ArticleStyling/ArticleStyling';
 
 const BlogPostTemplate = ({ data }) => {
     const { previous, next } = data;
@@ -25,7 +26,7 @@ const BlogPostTemplate = ({ data }) => {
     return (
         <Layout>
             <SEO title={name} description={lead} />
-            <article className="blog-post" itemScope itemType="http://schema.org/Article">
+            <ArticleStyling className="blog-post" itemScope itemType="http://schema.org/Article">
                 <SectionBlogPostHero leftComponent={textBlock} data={gatsbyImageData} />
                 <BootsContainer>
                     <BootsRow between style={{ marginTop: '50px' }}>
@@ -38,7 +39,7 @@ const BlogPostTemplate = ({ data }) => {
                     </BootsRow>
                 </BootsContainer>
                 <hr style={{ marginTop: '50px' }} />
-            </article>
+            </ArticleStyling>
             <BootsContainer>
                 <nav className="blog-post-nav">
                     <ul

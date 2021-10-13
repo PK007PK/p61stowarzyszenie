@@ -8,6 +8,7 @@ import TagsFilter from 'src/components/TagsFilter/TagsFilter';
 import Pagination from 'src/components/Pagination/Pagination';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SectionHero from 'src/components/SectionHero/SectionHero';
+import Search from 'src/components/search';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import SearchInput from '../components/SearchInput/SearchInput';
@@ -16,6 +17,8 @@ import SectionStatistics from '../components/SectionStatistics/SectionStatistics
 import TextBlockIndex from '../components/TextBlockIndex/TextBlockIndex';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
+
+const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 const IndexPage = ({ data, pageContext, location }) => {
     if (pageContext.dirName === undefined) {
@@ -81,7 +84,9 @@ const IndexPage = ({ data, pageContext, location }) => {
                         />
                     </BootsColumn>
                     <BootsColumn md={4}>
-                        <SearchInput />
+                        {/* <SearchInput /> */}
+                        <h3 style={{ marginTop: 'var(--spacingSmall)', textAlign: 'center' }}>Wyszukaj w serwisie</h3>
+                        <Search staticInput indices={searchIndices} />
                     </BootsColumn>
                 </BootsRow>
                 <BootsRow id="blog" between>

@@ -17,11 +17,27 @@ const closed = css`
     padding-left: 1em;
 `;
 
+const ifStaticPlaceholder = css`
+    width: 100%;
+    margin: 0;
+    cursor: text;
+    background: white;
+`;
+
+const ifStaticInput = css`
+    outline: none;
+    border: 1px solid gray;
+    font-size: 1em;
+    transition: 100ms;
+    border-radius: 0px;
+    padding: 10px 25px;
+`;
+
 export default styled(SearchBox)`
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    margin-bottom: 0;
+    margin-bottom: ${({ staticInput }) => (staticInput ? 'var(--spacingMedium)' : '0')};
 
     .SearchInput {
         outline: none;
@@ -30,10 +46,13 @@ export default styled(SearchBox)`
         transition: 100ms;
         border-radius: 2px;
         color: ${({ theme }) => theme.foreground};
+        ${({ staticInput }) => (staticInput ? ifStaticInput : null)}
+
         ::placeholder {
             color: ${({ theme }) => theme.faded};
         }
         ${({ hasFocus }) => (hasFocus ? open : closed)}
+        ${({ staticInput }) => (staticInput ? ifStaticPlaceholder : null)}
     }
 
     .SearchIcon {
@@ -41,5 +60,11 @@ export default styled(SearchBox)`
         margin: 0.3em;
         color: ${({ theme }) => theme.foreground};
         pointer-events: none;
+
+        ${({ staticInput }) =>
+            staticInput &&
+            css`
+                display: none;
+            `}
     }
 `;
