@@ -2,11 +2,15 @@ import styled from 'styled-components';
 
 export const NewsletterStyle = styled.div`
     text-align: center;
-    padding: var(--cardPadding);
+    padding: var(--spacingMedium) var(--cardPadding);
     position: relative;
     box-shadow: ${({ theme }) => theme.elevation.dp1};
     margin-bottom: var(--spacingMedium);
+    background-color: lightgray;
+    position: relative;
+`;
 
+export const CustomFormStyle = styled.div`
     .openBtn {
         cursor: pointer;
     }
@@ -23,15 +27,16 @@ export const NewsletterStyle = styled.div`
         align-items: center;
         background-color: white;
         border: 1px solid black;
+        z-index: 100;
     }
 
-    .heading1 {
-        margin: 25px 0;
-    }
-
-    .heading2 {
-        margin: 50px 0 25px;
+    input {
+        width: 100%;
+        outline: none;
+        border: 1px solid gray;
+        font-size: 1em;
+        transition: 100ms;
+        border-radius: 0px;
+        padding: 10px 25px;
     }
 `;
-
-export const CustomFormStyle = styled.div``;

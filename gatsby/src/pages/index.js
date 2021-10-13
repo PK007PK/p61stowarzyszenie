@@ -90,7 +90,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                     </BootsColumn>
                 </BootsRow>
                 <BootsRow id="blog" between>
-                    <BootsColumn md={7}>
+                    <BootsColumn md={8}>
                         <PostsToDisplay data={postsToDisplay.nodes.slice(0, pagesInSet)} />
                         <Pagination
                             pageSize={pagesInSet}

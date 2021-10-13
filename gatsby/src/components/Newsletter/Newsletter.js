@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 import { FaMailchimp } from '@react-icons/all-files/fa/FaMailchimp';
 import { ButtonStyle } from 'src/components/Button/Button';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import { render } from 'react-dom';
 import { NewsletterStyle, CustomFormStyle } from './NewsletterStyle';
-
-// const url = '//xxxx.us13.list-manage.com/subscribe/post?u=zefzefzef&id=fnfgn';
-const url = 'https://ekomonterzy.us5.list-manage.com/subscribe/post?u=5443f38031d07f8510839e39d&amp;id=9032a099ae';
 
 const CustomForm = ({ status, message, onValidated }) => {
     let email;
@@ -20,69 +18,59 @@ const CustomForm = ({ status, message, onValidated }) => {
         });
 
     return (
-        <CustomFormStyle>
+        <NewsletterStyle>
+            <h3>Newsletter</h3>
+            <p>Jeżeli chcesz być powiadamiany o ważnych wydarzeniach zapisz się do newslettera</p>
             {status === 'sending' && <div style={{ color: 'blue' }}>sending...</div>}
             {status === 'error' && <div style={{ color: 'red' }} dangerouslySetInnerHTML={{ __html: message }} />}
             {status === 'success' && <div style={{ color: 'green' }} dangerouslySetInnerHTML={{ __html: message }} />}
-            <input ref={(node) => (name = node)} type="text" placeholder="Your name" />
+            <input ref={(node) => (name = node)} type="text" placeholder="Imię..." />
             <br />
-            <input ref={(node) => (email = node)} type="email" placeholder="Your email" />
+            <input ref={(node) => (email = node)} type="email" placeholder="Email..." />
             <br />
             <ButtonStyle full type="button" onClick={submit}>
-                Submit
+                Wyślij
             </ButtonStyle>
-        </CustomFormStyle>
+        </NewsletterStyle>
     );
 };
 
-const Back = () => (
-    <>
-        <div className="topBar">
-            <h3 className="heading1">Newsletter</h3>
-            <MailchimpSubscribe
-                url={url}
-                render={({ subscribe, status, message }) => (
-                    <div>
-                        <CustomForm onSubmitted={(formData) => subscribe(formData)} />
-                        {status === 'sending' && <div style={{ color: 'blue' }}>sending...</div>}
-                        {status === 'error' && (
-                            <div style={{ color: 'red' }} dangerouslySetInnerHTML={{ __html: message }} />
-                        )}
-                        {status === 'success' && <div style={{ color: 'green' }}>Subscribed !</div>}
-                    </div>
-                )}
-            />
-        </div>
-    </>
-);
-
-const Newsletter = ({ style, className }) => {
+const Newsletter = ({ className, style }) => {
     const [open, setOpen] = useState(false);
+    const url = 'https://ekomonterzy.us5.list-manage.com/subscribe/post?u=5443f38031d07f8510839e39d&amp;id=9032a099ae';
     return (
         <div style={style} className={className}>
             {!open && (
-                <ButtonStyle
-                    onClick={() => setOpen(!open)}
-                    secondary
-                    full
-                    style={style}
-                    className={`${className} newsletter`}
-                    type="button"
-                >
+                <ButtonStyle secondary full className="openBtn" type="button" onClick={() => setOpen(!open)}>
                     <div className="innerWrapper">
-                        <FaMailchimp className="icon" /> Newsletter
+                        <FaMailchimp className="icon" />
+                        Newsletter
                     </div>
                 </ButtonStyle>
             )}
             {open && (
-                <NewsletterStyle>
+                <CustomFormStyle>
                     <buttom className="closeBtn" type="button" onClick={() => setOpen(!open)}>
                         X
                     </buttom>
-                    <Back />
-                </NewsletterStyle>
+
+                    <MailchimpSubscribe
+                        url={url}
+                        render={({ subscribe, status, message }) => (
+                            <CustomForm
+                                status={status}
+                                message={message}
+                                onValidated={(formData) => subscribe(formData)}
+                            />
+                        )}
+                    />
+                </CustomFormStyle>
             )}
         </div>
     );
 };
+
 export default Newsletter;
+
+// const url =
+//             'https://ekomonterzy.us5.list-manage.com/subscribe/post?u=5443f38031d07f8510839e39d&amp;id=9032a099ae';
