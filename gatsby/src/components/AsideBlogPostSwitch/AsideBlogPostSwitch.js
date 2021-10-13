@@ -30,7 +30,7 @@ const AsideBlogPostSwitch = ({ data, name, lead }) => (
                             <CardSimple
                                 className="item"
                                 data={{
-                                    projectName: 'Pobierz PDF',
+                                    projectName: 'Program "Czyste Powietrze". Najważniejsze informacje. Pobierz PDF',
                                     backgroundColor: 'var(--colorActiveSecondary)',
                                 }}
                             />
