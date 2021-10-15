@@ -6,6 +6,7 @@ export const CardBlogEntry2Style = styled.div`
 
     ${({ theme }) => theme.media.smAbove} {
         display: flex;
+        flex-direction: ${({ small }) => (small ? 'column' : 'row')};
     }
 
     .imgWrapper,
@@ -14,7 +15,7 @@ export const CardBlogEntry2Style = styled.div`
         width: 100%;
 
         ${({ theme }) => theme.media.smAbove} {
-            width: 300px;
+            width: ${({ small }) => (small ? '100%' : '300px')};
         }
 
         background-position: cover;
@@ -31,5 +32,9 @@ export const CardBlogEntry2Style = styled.div`
 
     .textWrapper {
         padding: var(--cardPadding);
+    }
+
+    .title {
+        font-size: ${({ small }) => (small ? '15px' : '25px')} !important;
     }
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { MenuItemsWrapperStyles } from './MenuItemsWrapper.style';
 
-const MenuItemsWrapper = ({ styles, className }) => {
+const MenuItemsWrapper = ({ styles, className, onClick }) => {
     const data = useStaticQuery(graphql`
         query QueryMenuItems {
             sanityMenuData {
@@ -19,7 +19,12 @@ const MenuItemsWrapper = ({ styles, className }) => {
             <MenuItemsWrapperStyles styles={styles} className={className}>
                 {menuData.map((item, i) => (
                     <li key={i}>
-                        <Link className="fx-txt-underline" activeClassName="active" to={item.pageSlug}>
+                        <Link
+                            className="fx-txt-underline"
+                            onClick={onClick}
+                            activeClassName="active"
+                            to={item.pageSlug}
+                        >
                             {item.pageName}
                         </Link>
                     </li>

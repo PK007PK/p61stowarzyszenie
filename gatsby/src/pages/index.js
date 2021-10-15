@@ -11,12 +11,9 @@ import SectionHero from 'src/components/SectionHero/SectionHero';
 import Search from 'src/components/search';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
-import SearchInput from '../components/SearchInput/SearchInput';
 import AsideIndex from '../components/AsideIndex/AsideIndex';
-import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
-import TextBlockIndex from '../components/TextBlockIndex/TextBlockIndex';
+import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
-import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
@@ -46,11 +43,12 @@ const IndexPage = ({ data, pageContext, location }) => {
     const { pagesInSet } = data.sanitySiteTechConfig;
     const {
         title,
+        tags: heroTags,
         description,
         image: {
             asset: { gatsbyImageData },
         },
-    } = data.sanityPageDataHome;
+    } = data.sanityPageHome;
 
     return (
         <Layout>
@@ -60,12 +58,11 @@ const IndexPage = ({ data, pageContext, location }) => {
                 }`}
             />
             <HeroBackImage data={gatsbyImageData} />
-            {/* <HeroBreakingNews
-                text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
-                link="link"
-            /> */}
-            <SectionHero leftComponent={() => <TextBlockIndex />} />
-            {/* <SectionStatistics /> */}
+            <SectionHero
+                leftComponent={() => (
+                    <HeroTextBlock homePage title={title} heroTags={heroTags} description={description} />
+                )}
+            />
             <SectionOurProjects />
 
             <BootsContainer style={{ marginTop: '50px' }}>
@@ -84,7 +81,6 @@ const IndexPage = ({ data, pageContext, location }) => {
                         />
                     </BootsColumn>
                     <BootsColumn md={3}>
-                        {/* <SearchInput /> */}
                         <h3 style={{ marginTop: 'var(--spacingSmall)', textAlign: 'center' }}>Wyszukaj w serwisie</h3>
                         <Search staticInput indices={searchIndices} />
                     </BootsColumn>
@@ -115,8 +111,9 @@ export const pageQuery = graphql`
         sanitySiteTechConfig {
             pagesInSet
         }
-        sanityPageDataHome {
+        sanityPageHome {
             title
+            tags
             description
             image {
                 asset {

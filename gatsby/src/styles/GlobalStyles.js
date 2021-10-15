@@ -71,7 +71,7 @@ html {
     ${cardVariables}
     ${inputsVariables}
     
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     box-sizing: border-box;
     font-size: 10px;
 }

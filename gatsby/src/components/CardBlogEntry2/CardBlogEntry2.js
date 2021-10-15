@@ -7,8 +7,8 @@ import { CardBlogEntry2Style } from './CardBlogEntry2.style';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CardBlogEntry2 = React.forwardRef(({ data }) => {
-    const { name, lead, date } = data;
+const CardBlogEntry2 = React.forwardRef(({ data, small }) => {
+    const { name, date } = data;
 
     const gatsbyImageData = data?.image?.asset?.gatsbyImageData;
 
@@ -33,7 +33,7 @@ const CardBlogEntry2 = React.forwardRef(({ data }) => {
     }, []);
 
     return (
-        <CardBlogEntry2Style ref={(el) => (wrapper = el)}>
+        <CardBlogEntry2Style small={small} ref={(el) => (wrapper = el)}>
             <div className="imgWrapper">
                 {gatsbyImageData ? (
                     <GatsbyImage

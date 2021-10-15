@@ -6,6 +6,7 @@ import AppContext from 'src/AppProvider';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { MenuDropDownStyles } from './MenuDropDown.styles';
+import CardBlogEntry2 from '../CardBlogEntry2/CardBlogEntry2';
 
 const Menu = () => {
     const { toogleIsMenuActive, isMenuActive } = useContext(AppContext);
@@ -35,11 +36,27 @@ const Menu = () => {
                     }
                 }
             }
+            allSanityBlogPosts(limit: 3, sort: { order: DESC, fields: date }) {
+                nodes {
+                    name
+                    lead
+                    date(formatString: "")
+                    slug {
+                        current
+                    }
+                    image {
+                        asset {
+                            gatsbyImageData(width: 400)
+                        }
+                    }
+                }
+            }
         }
     `);
     const menuData = data.sanityMenuData.menuItems;
     const categories = data.allSanityBlogPostsCategories.nodes;
     const tags = data.allSanityBlogPostsTags.nodes;
+    const posts = data.allSanityBlogPosts.nodes;
 
     let menuWrapper = useRef(null);
 
@@ -80,7 +97,15 @@ const Menu = () => {
                             <Submenu name="Tagi" data={tags} />
                         </BootsColumn>
                     </BootsRow>
+                    <BootsRow className="posts">
+                        {posts.map((item, i) => (
+                            <BootsColumn key={i} sm={4}>
+                                <CardBlogEntry2 small data={item} />
+                            </BootsColumn>
+                        ))}
+                    </BootsRow>
                 </nav>
+                <BootsRow />
             </BootsContainer>
             <div className="colorWrapper1" />
             <div className="colorWrapper2" />

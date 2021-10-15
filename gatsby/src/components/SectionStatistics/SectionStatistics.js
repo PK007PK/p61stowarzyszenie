@@ -10,7 +10,7 @@ import Statistics from '../Statistics/Statistics';
 const SectionStatistics = () => {
     const data = useStaticQuery(graphql`
         {
-            sanityPageDataHome {
+            sanityPageHome {
                 statisticsBackground {
                     asset {
                         gatsbyImageData
@@ -21,7 +21,7 @@ const SectionStatistics = () => {
     `);
 
     const {
-        sanityPageDataHome: {
+        sanityPageHome: {
             statisticsBackground: {
                 asset: { gatsbyImageData },
             },

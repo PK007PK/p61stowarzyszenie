@@ -8,6 +8,7 @@ const HeroBackImage = ({ data }) => (
         <GatsbyImage
             imgClassName="pict"
             className="back"
+            alt=""
             image={data}
             formats={['auto', 'webp']}
             quality={100}

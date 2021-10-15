@@ -6,8 +6,9 @@ export const NewsletterStyle = styled.div`
     position: relative;
     box-shadow: ${({ theme }) => theme.elevation.dp1};
     margin-bottom: var(--spacingMedium);
-    background-color: lightgray;
+    background-color: rgba(0, 96, 100, 0.3);
     position: relative;
+    border-radius: var(--borderRadius);
 `;
 
 export const CustomFormStyle = styled.div`
@@ -38,5 +39,26 @@ export const CustomFormStyle = styled.div`
         transition: 100ms;
         border-radius: 0px;
         padding: 10px 25px;
+    }
+`;
+
+export const OpeningButton = styled.button`
+    height: 180px;
+    background-color: #006064;
+    width: 100%;
+    border-radius: var(--borderRadius);
+    color: white;
+    font-size: var(--fontSizeLead);
+
+    .innerWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon {
+        width: 40px;
+        height: 50px;
+        margin-right: 10px;
     }
 `;

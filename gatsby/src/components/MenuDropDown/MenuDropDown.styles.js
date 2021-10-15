@@ -13,10 +13,20 @@ export const MenuDropDownStyles = styled.div`
     text-align: center;
 
     .container {
-        height: 100%;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        ${({ theme }) => theme.media.smAbove} {
+            margin-top: 100px;
+        }
+    }
+
+    .posts {
+        display: none;
+        ${({ theme }) => theme.media.smAbove} {
+            display: flexk;
+        }
     }
 
     nav {
@@ -24,7 +34,6 @@ export const MenuDropDownStyles = styled.div`
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        justify-content: space-around;
     }
 
     ul {

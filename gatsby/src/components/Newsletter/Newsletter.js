@@ -1,9 +1,8 @@
-import React, { Component, useState } from 'react';
-import { FaMailchimp } from '@react-icons/all-files/fa/FaMailchimp';
+import React, { useState } from 'react';
+import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
 import { ButtonStyle } from 'src/components/Button/Button';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
-import { render } from 'react-dom';
-import { NewsletterStyle, CustomFormStyle } from './NewsletterStyle';
+import { NewsletterStyle, CustomFormStyle, OpeningButton } from './NewsletterStyle';
 
 const CustomForm = ({ status, message, onValidated }) => {
     let email;
@@ -41,12 +40,12 @@ const Newsletter = ({ className, style }) => {
     return (
         <div style={style} className={className}>
             {!open && (
-                <ButtonStyle secondary full className="openBtn" type="button" onClick={() => setOpen(!open)}>
+                <OpeningButton secondary full className="openBtn" type="button" onClick={() => setOpen(!open)}>
                     <div className="innerWrapper">
-                        <FaMailchimp className="icon" />
+                        <GiLetterBomb className="icon" />
                         Newsletter
                     </div>
-                </ButtonStyle>
+                </OpeningButton>
             )}
             {open && (
                 <CustomFormStyle>
@@ -71,6 +70,3 @@ const Newsletter = ({ className, style }) => {
 };
 
 export default Newsletter;
-
-// const url =
-//             'https://ekomonterzy.us5.list-manage.com/subscribe/post?u=5443f38031d07f8510839e39d&amp;id=9032a099ae';

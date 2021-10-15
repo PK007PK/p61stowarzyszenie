@@ -6,20 +6,20 @@ import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
-import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
-import TextBlockONas from '../components/TextBlockONas/TextBlockONas';
 import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
+import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 
 const ONasPage = ({ data }) => {
     const {
         title,
+        tags: heroTags,
         description,
         _rawRichText,
         image: {
             asset: { gatsbyImageData },
         },
-    } = data.sanityONasPage;
+    } = data.sanityPageONas;
 
     const Description = () => (
         <>
@@ -31,11 +31,11 @@ const ONasPage = ({ data }) => {
         <Layout>
             <SEO title="O nas" />
             <HeroBackImage data={gatsbyImageData} />
-            {/* <HeroBreakingNews
-                text="Uwaga! Dotacje na: wymianę pieców, pompy ciepła, panele fotowoltaiczne. Dyżur ekspera pod telefonem: 666 666 666"
-                link="link"
-            /> */}
-            <SectionHero leftComponent={() => <Description />} />
+            <SectionHero
+                leftComponent={() => (
+                    <HeroTextBlock homePage title={title} heroTags={heroTags} description={description} />
+                )}
+            />
             <SEO title="Informacje o stowarzyszeniu" />
             <SectionStatistics />
             <BootsContainer>
@@ -57,8 +57,9 @@ const ONasPage = ({ data }) => {
 
 export const pageQuery = graphql`
     query {
-        sanityONasPage {
+        sanityPageONas {
             title
+            tags
             description
             image {
                 asset {

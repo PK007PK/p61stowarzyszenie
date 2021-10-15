@@ -7,18 +7,18 @@ import { graphql } from 'gatsby';
 import FormContact from 'src/components/FormContact/FormContact';
 import BlockContent from '@sanity/block-content-to-react';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
-import HeroBreakingNews from '../components/HeroBreakingNews/HeroBreakingNews';
-import TextBlockONas from '../components/TextBlockONas/TextBlockONas';
+import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 
 const KontaktPage = ({ data }) => {
     const {
         title,
+        tags: heroTags,
         description,
         image: {
             asset: { gatsbyImageData },
         },
         _rawRichText,
-    } = data.sanityKontaktPage;
+    } = data.sanityPageKontakt;
 
     const Description = () => (
         <>
@@ -31,7 +31,11 @@ const KontaktPage = ({ data }) => {
         <Layout>
             <SEO title="Kontakt" />
             <HeroBackImage data={gatsbyImageData} />
-            <SectionHero leftComponent={() => <Description />} />
+            <SectionHero
+                leftComponent={() => (
+                    <HeroTextBlock homePage title={title} heroTags={heroTags} description={description} />
+                )}
+            />
             <BootsContainer>
                 <BootsRow between style={{ marginTop: '50px' }}>
                     <BootsColumn md={6}>
@@ -53,8 +57,9 @@ const KontaktPage = ({ data }) => {
 
 export const pageQuery = graphql`
     query {
-        sanityKontaktPage {
+        sanityPageKontakt {
             title
+            tags
             description
             image {
                 asset {

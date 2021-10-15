@@ -32,7 +32,7 @@ export default function Navbar() {
                             </Link>
 
                             <div className="desktopLinksWrapper">
-                                <MenuItemsWrapper />
+                                <MenuItemsWrapper onClick={diseableMenu} />
                                 <Search indices={searchIndices} />
                             </div>
                             <div className="burgerWrapper">
