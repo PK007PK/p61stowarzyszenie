@@ -1,14 +1,22 @@
 import styled from 'styled-components';
 
 export const CardBlogEntry2Style = styled.div`
-    display: flex;
-    margin-bottom: var(--spacingMedium);
     position: relative;
+    margin-bottom: var(--spacingMedium);
+
+    ${({ theme }) => theme.media.smAbove} {
+        display: flex;
+    }
 
     .imgWrapper,
     .picture {
-        width: 300px;
         height: 200px;
+        width: 100%;
+
+        ${({ theme }) => theme.media.smAbove} {
+            width: 300px;
+        }
+
         background-position: cover;
         flex-shrink: 0;
         border-radius: var(--borderRadius);
