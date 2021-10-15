@@ -47,6 +47,7 @@ const cardVariables = `
     --cardPadding: var(--spacingRegular);
     --cardDefaultBackgroundColor: var(--colorDarkGray);
     --cardDefaultColor: white;
+    --borderRadius: 10px;
 `;
 
 const inputsVariables = `

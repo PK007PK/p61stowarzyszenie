@@ -70,7 +70,7 @@ const IndexPage = ({ data, pageContext, location }) => {
 
             <BootsContainer style={{ marginTop: '50px' }}>
                 <BootsRow id="blog" between>
-                    <BootsColumn md={7}>
+                    <BootsColumn md={9}>
                         <CategoryFilter location={location} />
                         <TagsFilter location={location} />
                         <Pagination
@@ -83,14 +83,14 @@ const IndexPage = ({ data, pageContext, location }) => {
                             location={location}
                         />
                     </BootsColumn>
-                    <BootsColumn md={4}>
+                    <BootsColumn md={3}>
                         {/* <SearchInput /> */}
                         <h3 style={{ marginTop: 'var(--spacingSmall)', textAlign: 'center' }}>Wyszukaj w serwisie</h3>
                         <Search staticInput indices={searchIndices} />
                     </BootsColumn>
                 </BootsRow>
                 <BootsRow id="blog" between>
-                    <BootsColumn md={8}>
+                    <BootsColumn md={9}>
                         <PostsToDisplay data={postsToDisplay.nodes.slice(0, pagesInSet)} />
                         <Pagination
                             pageSize={pagesInSet}
@@ -101,7 +101,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                             style={{ marginBottom: '25px' }}
                         />
                     </BootsColumn>
-                    <BootsColumn md={4}>
+                    <BootsColumn md={3}>
                         <AsideIndex />
                     </BootsColumn>
                 </BootsRow>

@@ -7,7 +7,7 @@ import Slider from 'react-slick';
 import ARROW_left from 'src/assets/images/arrLeft.svg';
 import ARROW_right from 'src/assets/images/arrRight.svg';
 import styled from 'styled-components';
-import CardSimple from '../CardSimple/CardSimple';
+import CardProduct from '../CardProduct/CardProduct';
 import { SectionOurProjectsStyles } from './SectionOurProjects.styles';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -146,7 +146,7 @@ export const SectionOurProjects = () => {
                         .filter((item) => item.group.includes(group))
                         .map((item, i) => (
                             <Link key={i} to={item.pageSlug && `/${item.pageSlug}`}>
-                                <CardSimple data={item} />
+                                <CardProduct data={item} />
                             </Link>
                         ))}
                 </Slider>

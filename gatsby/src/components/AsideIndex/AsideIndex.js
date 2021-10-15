@@ -7,8 +7,8 @@ import { AsideIndexStyle } from './AsideIndex.style';
 const AsideIndex = () => (
     <AsideIndexStyle>
         <Newsletter className="newsletter" />
-        <SectionDuties className="duties" />
-        <SectionBestPractices className="bestPractices" />
+        {/* <SectionDuties className="duties" />
+        <SectionBestPractices className="bestPractices" /> */}
     </AsideIndexStyle>
 );
 
