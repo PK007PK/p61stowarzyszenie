@@ -2,7 +2,7 @@ import React from 'react';
 import { RiArticleLine } from 'react-icons/ri';
 
 export default {
-  name: 'oNasPage',
+  name: 'pageONas',
   type: 'document',
   title: 'Strona "O nas"',
   icon: () => <RiArticleLine />,
@@ -10,6 +10,11 @@ export default {
     {
       name: 'title',
       title: 'Title',
+      type: 'string',
+    },
+    {
+      name: 'tags',
+      title: 'Tagi',
       type: 'string',
     },
     {

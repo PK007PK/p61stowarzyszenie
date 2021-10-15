@@ -18,17 +18,15 @@ export default () =>
         .title('Menu strony"')
         .child(S.document().schemaType('menuData').documentId('menuData')),
       S.listItem()
-        .title('Home page')
-        .child(
-          S.document().schemaType('pageDataHome').documentId('pageDataHome')
-        ),
+        .title('Strona główna')
+        .child(S.document().schemaType('pageHome').documentId('pageHome')),
       S.listItem()
         .title('Strona "O nas"')
-        .child(S.document().schemaType('oNasPage').documentId('oNasPage')),
+        .child(S.document().schemaType('pageONas').documentId('pageONas')),
       S.listItem()
         .title('Strona "Kontakt"')
         .child(
-          S.document().schemaType('kontaktPage').documentId('kontaktPage')
+          S.document().schemaType('pageKontakt').documentId('pageKontakt')
         ),
       S.listItem()
         .title('Referencje')
@@ -45,19 +43,14 @@ export default () =>
             .schemaType('allProjectsData')
             .documentId('allProjectsData')
         ),
-      S.listItem()
-        .title('Blog page')
-        .child(
-          S.document().schemaType('pageDataBlog').documentId('pageDataBlog')
-        ),
       ...S.documentTypeListItems().filter(
         (item) =>
           ![
             'siteSettings',
             'siteTechConfig',
             'allProjectsData',
-            'pageDataHome',
-            'pageDataBlog',
+            'pageHome',
+            'pageBlog',
             'oNasPage',
             'kontaktPage',
             'gallery',

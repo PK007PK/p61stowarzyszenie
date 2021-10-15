@@ -6,8 +6,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 import siteSettings from './siteSettings';
 import siteTechConfig from './siteTechConfig';
-import pageDataHome from './pageDataHome';
-import pageDataBlog from './pageDataBlog';
+import pageHome from './pageHome';
+import pageONas from './pageONas';
+import pageKontakt from './pageKontakt';
 import blogPosts from './blogPosts';
 import blogPostsCategories from './blogPostsCategories';
 import blogPostsComponents from './blogPostsComponents';
@@ -18,8 +19,6 @@ import galleryItem from './galleryItem';
 import gallery from './gallery';
 import testimonials from './testimonials';
 import testimonialItem from './testimonialItem';
-import oNasPage from './oNasPage';
-import kontaktPage from './kontaktPage';
 import menuData from './menuData';
 import menuItem from './menuItem';
 
@@ -33,8 +32,9 @@ export default createSchema({
     siteTechConfig,
     gallery,
     galleryItem,
-    pageDataHome,
-    pageDataBlog,
+    pageHome,
+    pageONas,
+    pageKontakt,
     blogPosts,
     blogPostsCategories,
     blogPostsComponents,
@@ -43,8 +43,6 @@ export default createSchema({
     allProjectsData,
     testimonials,
     testimonialItem,
-    oNasPage,
-    kontaktPage,
     menuData,
     menuItem,
   ]),
