@@ -18,7 +18,7 @@ export const CardProductStyles = styled.div`
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 200px;
+        height: 180px;
         color: ${({ color }) => color || 'var(--cardDefaultColor)'};
         display: flex;
         flex-direction: column;

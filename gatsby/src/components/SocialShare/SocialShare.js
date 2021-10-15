@@ -17,7 +17,7 @@ import { SocialShareStyle } from './SocialShare.styles';
 
 const SocialShare = ({ title, excerpt, messengerId, className }) => (
     <SocialShareStyle className={className}>
-        <h3>Poleć nasz tekst</h3>
+        <h3 className="title">Poleć nasz tekst</h3>
         <div className="iconBar">
             <FacebookShareButton
                 className="social__button"
