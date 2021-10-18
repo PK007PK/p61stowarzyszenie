@@ -9,7 +9,7 @@ import { MenuDropDownStyles } from './MenuDropDown.styles';
 import CardBlogEntry2 from '../CardBlogEntry2/CardBlogEntry2';
 
 const Menu = () => {
-    const { toogleIsMenuActive, isMenuActive } = useContext(AppContext);
+    const { toogleIsMenuActive, isMenuActive, diseableMenu } = useContext(AppContext);
     const data = useStaticQuery(graphql`
         query QueryMenuItems2 {
             sanityMenuData {
@@ -73,7 +73,7 @@ const Menu = () => {
                         <Link
                             className="fx-txt-underline"
                             to={item.pageSlug || `/${item.slug.current}/1#blog`}
-                            onClick={toogleIsMenuActive}
+                            onClick={diseableMenu}
                         >
                             {item.pageName || item.name}
                         </Link>
@@ -105,7 +105,9 @@ const Menu = () => {
                     <BootsRow className="posts">
                         {posts.map((item, i) => (
                             <BootsColumn key={i} sm={4}>
-                                <CardBlogEntry2 small data={item} />
+                                <Link onClick={diseableMenu} to={`/${item.slug.current}`}>
+                                    <CardBlogEntry2 small data={item} />
+                                </Link>
                             </BootsColumn>
                         ))}
                     </BootsRow>
