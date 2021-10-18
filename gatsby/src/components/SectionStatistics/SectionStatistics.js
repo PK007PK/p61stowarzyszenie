@@ -45,7 +45,7 @@ const SectionStatistics = () => {
                     <h2 className="title">Stowarzyszenie</h2>
                     <button
                         onClick={() => setSelected('stats')}
-                        style={selected === 'stats' ? { color: 'white' } : null}
+                        style={selected === 'stats' ? { color: `var(--colorActiveSecondary)` } : null}
                         className="btn"
                         type="button"
                     >
@@ -53,7 +53,7 @@ const SectionStatistics = () => {
                     </button>
                     <button
                         onClick={() => setSelected('gallery')}
-                        style={selected === 'gallery' ? { color: 'white' } : null}
+                        style={selected === 'gallery' ? { color: `var(--colorActiveSecondary)` } : null}
                         className="btn"
                         type="button"
                     >
@@ -61,7 +61,7 @@ const SectionStatistics = () => {
                     </button>
                     <button
                         onClick={() => setSelected('testimonial')}
-                        style={selected === 'testimonial' ? { color: 'white' } : null}
+                        style={selected === 'testimonial' ? { color: `var(--colorActiveSecondary)` } : null}
                         className="btn"
                         type="button"
                     >

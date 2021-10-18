@@ -18,14 +18,23 @@ export const MenuDropDownStyles = styled.div`
         align-items: center;
         justify-content: center;
         ${({ theme }) => theme.media.smAbove} {
-            margin-top: 100px;
+            margin-top: 50px;
         }
     }
 
+    .postsTitle {
+        display: none;
+        ${({ theme }) => theme.media.smAbove} {
+            display: block;
+            text-align: center;
+            margin-bottom: 0;
+            line-height: 100%;
+        }
+    }
     .posts {
         display: none;
         ${({ theme }) => theme.media.smAbove} {
-            display: flexk;
+            display: flex;
         }
     }
 

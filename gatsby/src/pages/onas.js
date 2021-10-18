@@ -21,12 +21,6 @@ const ONasPage = ({ data }) => {
         },
     } = data.sanityPageONas;
 
-    const Description = () => (
-        <>
-            <h1>{title}</h1>
-            <p className="lead">{description}</p>
-        </>
-    );
     return (
         <Layout>
             <SEO title="O nas" />
@@ -37,7 +31,8 @@ const ONasPage = ({ data }) => {
                 )}
             />
             <SEO title="Informacje o stowarzyszeniu" />
-            <SectionStatistics />
+
+            <SectionOurProjects />
             <BootsContainer>
                 <BootsRow>
                     <BootsColumn style={{ marginTop: '50px' }} md={7}>
@@ -50,7 +45,7 @@ const ONasPage = ({ data }) => {
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>
-            <SectionOurProjects />
+            <SectionStatistics />
         </Layout>
     );
 };

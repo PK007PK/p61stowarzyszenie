@@ -97,6 +97,11 @@ const Menu = () => {
                             <Submenu name="Tagi" data={tags} />
                         </BootsColumn>
                     </BootsRow>
+                    <BootsRow>
+                        <BootsColumn sm={4}>
+                            <h2 className="postsTitle">Najnowasze wpisy:</h2>
+                        </BootsColumn>
+                    </BootsRow>
                     <BootsRow className="posts">
                         {posts.map((item, i) => (
                             <BootsColumn key={i} sm={4}>

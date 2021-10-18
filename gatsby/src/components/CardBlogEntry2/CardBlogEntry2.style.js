@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const CardBlogEntry2Style = styled.div`
     position: relative;
@@ -32,6 +32,22 @@ export const CardBlogEntry2Style = styled.div`
 
     .textWrapper {
         padding: var(--cardPadding);
+        ${({ small }) =>
+            small &&
+            css`
+                position: absolute;
+                bottom: -55px;
+                left: 5%;
+                width: 90%;
+                min-height: 150px;
+                background-color: rgba(255, 255, 255, 0.95);
+                border: 1px solid black;
+                border-radius: var(--borderRadius);
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            `}
     }
 
     .title {

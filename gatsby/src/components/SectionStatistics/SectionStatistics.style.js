@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionStatisticsStyle = styled.section`
     position: relative;
-    background-color: orange;
+    background-color: rgba(0, 96, 100, 0.3);
     padding: var(--spacingBig1) 0 var(--spacingBig1) 0;
     p,
     span {
@@ -31,7 +31,7 @@ export const SectionStatisticsStyle = styled.section`
         }
 
         &:hover {
-            color: white;
+            color: var(--colorActiveSecondary);
         }
     }
 
@@ -42,6 +42,7 @@ export const SectionStatisticsStyle = styled.section`
     }
 
     .title {
+        color: black;
     }
 
     .cardContainer {
