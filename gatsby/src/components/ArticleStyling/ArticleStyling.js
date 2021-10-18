@@ -13,6 +13,12 @@ export const ArticleStyling = styled.article`
         margin-top: 0;
     }
 
+    p,
+    ul,
+    li {
+        font-weight: 500;
+    }
+
     ul {
         padding-left: var(--spacingMedium);
     }
