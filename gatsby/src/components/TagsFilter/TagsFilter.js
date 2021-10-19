@@ -23,7 +23,7 @@ export default function TagsFilter({ location }) {
             {tags.map((tag) => (
                 <Link
                     to={`/${tag.slug.current}/1#blog`}
-                    style={checkLocation.includes(tag.slug.current) ? { color: 'red' } : null}
+                    style={checkLocation.includes(tag.slug.current) ? { color: '#00BFA5' } : null}
                     key={tag.slug.current}
                 >
                     {tag.name}

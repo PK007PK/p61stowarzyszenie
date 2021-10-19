@@ -26,9 +26,7 @@ const ONasPage = ({ data }) => {
             <SEO title="O nas" />
             <HeroBackImage data={gatsbyImageData} />
             <SectionHero
-                leftComponent={() => (
-                    <HeroTextBlock homePage title={title} heroTags={heroTags} description={description} />
-                )}
+                leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
             />
             <SEO title="Informacje o stowarzyszeniu" />
 

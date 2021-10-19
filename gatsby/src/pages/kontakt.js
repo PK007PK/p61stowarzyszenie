@@ -32,9 +32,7 @@ const KontaktPage = ({ data }) => {
             <SEO title="Kontakt" />
             <HeroBackImage data={gatsbyImageData} />
             <SectionHero
-                leftComponent={() => (
-                    <HeroTextBlock homePage title={title} heroTags={heroTags} description={description} />
-                )}
+                leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
             />
             <BootsContainer>
                 <BootsRow between style={{ marginTop: '50px' }}>

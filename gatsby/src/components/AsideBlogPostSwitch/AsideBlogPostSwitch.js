@@ -5,7 +5,7 @@ import SocialShare from '../SocialShare/SocialShare';
 
 import { AsideBlogPostSwitchStyle } from './AsideBlogPostSwitch.style';
 
-const AsideBlogPostSwitch = ({ data, name, lead }) => (
+const AsideBlogPostSwitch = ({ data, name, excerpt }) => (
     <AsideBlogPostSwitchStyle>
         {data.map((item, i) => {
             switch (item) {
@@ -23,7 +23,7 @@ const AsideBlogPostSwitch = ({ data, name, lead }) => (
                         </Link>
                     );
                 case 1:
-                    return <SocialShare className="item" title={name} excerpt={lead} messengerID={1234} />;
+                    return <SocialShare className="item" title={name} excerpt={excerpt} messengerID={1234} />;
                 case 2:
                     return (
                         <a key={i} target="blank" href="/EkoMonterzy-Czyste-Powietrze.pdf">

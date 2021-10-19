@@ -22,7 +22,7 @@ export default function CategoryFilter({ location }) {
         <CategoryFilterStyle>
             <Link
                 to="/1#blog"
-                style={checkLocation.includes('1') || checkLocation.includes('/') ? { color: 'red' } : null}
+                style={checkLocation.includes('1') || checkLocation.includes('/') ? { color: '#00BFA5' } : null}
             >
                 <h2>Aktualności</h2>
             </Link>
@@ -30,7 +30,7 @@ export default function CategoryFilter({ location }) {
                 {categories.map((category) => (
                     <Link
                         to={`/${category.slug.current}/1#blog`}
-                        style={checkLocation.includes(category.slug.current) ? { color: 'red' } : null}
+                        style={checkLocation.includes(category.slug.current) ? { color: '#00BFA5' } : null}
                         key={category.slug.current}
                     >
                         {category.name}

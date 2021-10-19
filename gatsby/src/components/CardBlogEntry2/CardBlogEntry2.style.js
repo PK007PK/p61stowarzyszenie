@@ -3,19 +3,26 @@ import styled, { css } from 'styled-components';
 export const CardBlogEntry2Style = styled.div`
     position: relative;
     margin-bottom: var(--spacingMedium);
+    transition: var(--transitionBasic);
+    border-radius: var(--borderRadius);
 
     ${({ theme }) => theme.media.smAbove} {
         display: flex;
         flex-direction: ${({ small }) => (small ? 'column' : 'row')};
     }
 
+    &:hover {
+        box-shadow: ${({ theme }) => theme.elevation.dp18};
+    }
+
     .imgWrapper,
     .picture {
-        height: 200px;
+        height: 220px;
         width: 100%;
 
         ${({ theme }) => theme.media.smAbove} {
             width: ${({ small }) => (small ? '100%' : '300px')};
+            height: ${({ small }) => (small ? '200px' : '220px')};
         }
 
         background-position: cover;
@@ -32,6 +39,7 @@ export const CardBlogEntry2Style = styled.div`
 
     .textWrapper {
         padding: var(--cardPadding);
+
         ${({ small }) =>
             small &&
             css`

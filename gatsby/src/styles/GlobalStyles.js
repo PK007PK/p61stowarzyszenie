@@ -6,8 +6,8 @@ const colors = `
     --colorMediumGray: #E9ECEF;
     --colorDarkGray: #343A40;
     --colorActive: #2E7D32;
-    --colorActivePrimary: #00BFA5;
-    --colorActiveSecondary: #EF5350;
+    --colorActivePrimary: #006064;
+    --colorActiveSecondary: #00BFA5;
     --colorBlack: #00000;
 `;
 
