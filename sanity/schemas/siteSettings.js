@@ -21,8 +21,8 @@ export default {
       },
     },
     {
-      title: 'SVG logo / SEO version',
-      name: 'svgLogo',
+      title: 'SVG Favicon',
+      name: 'svgFavicon',
       type: 'image',
       options: {
         hotspot: true, // <-- Defaults to false
