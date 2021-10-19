@@ -9,6 +9,7 @@ export const NewsletterStyle = styled.div`
     background-color: rgba(0, 96, 100, 0.3);
     position: relative;
     border-radius: var(--borderRadius);
+    box-shadow: ${({ theme }) => theme.elevation.dp4};
 `;
 
 export const CustomFormStyle = styled.div`
@@ -49,6 +50,12 @@ export const OpeningButton = styled.button`
     border-radius: var(--borderRadius);
     color: white;
     font-size: var(--fontSizeLead);
+    border: none;
+    transition: var(--transitionBasic);
+
+    &:hover {
+        box-shadow: ${({ theme }) => theme.elevation.dp4};
+    }
 
     .innerWrapper {
         display: flex;

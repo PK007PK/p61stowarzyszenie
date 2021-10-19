@@ -9,17 +9,18 @@ const SEO = ({ children, location, title }) => {
                 title
                 description
                 lang
-                svgLogo {
+                svgFavicon {
                     _rawAsset(resolveReferences: { maxDepth: 10 })
                 }
                 sitePreviev {
                     _rawAsset(resolveReferences: { maxDepth: 10 })
                 }
+                keywords
             }
         }
     `);
 
-    const svgFavicon = data.sanitySiteSettings?.svgLogo?._rawAsset?.metadata?.lqip;
+    const svgFavicon = data.sanitySiteSettings?.svgFavicon?._rawAsset?.metadata?.lqip;
     const sitePreview = data.sanitySiteSettings?.sitePreviev?._rawAsset?.url;
 
     return (
@@ -35,6 +36,7 @@ const SEO = ({ children, location, title }) => {
             <meta charSet="utf-8" />
             <meta name="description" content={data.sanitySiteSettings?.description || 'Default description'} />
 
+            <meta name="keywords" content={data.sanitySiteSettings?.keywords || 'Default keywords'} />
             {/* Open Graph */}
             {location && <meta property="og:url" content={location.href} />}
             <meta property="og:image" content={sitePreview || null} />

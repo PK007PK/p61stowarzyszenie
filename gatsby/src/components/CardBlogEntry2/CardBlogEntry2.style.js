@@ -12,7 +12,7 @@ export const CardBlogEntry2Style = styled.div`
     }
 
     &:hover {
-        box-shadow: ${({ theme }) => theme.elevation.dp18};
+        box-shadow: ${({ theme }) => theme.elevation.dp4};
     }
 
     .imgWrapper,
