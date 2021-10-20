@@ -22,6 +22,7 @@ const SectionBlogPostHero = ({ leftComponent, data }) => {
                                     formats={['auto', 'webp']}
                                     quality={100}
                                     height={500}
+                                    alt=""
                                 />
                             ) : (
                                 <Logo2 />

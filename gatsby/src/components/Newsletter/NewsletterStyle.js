@@ -4,7 +4,6 @@ export const NewsletterStyle = styled.div`
     text-align: center;
     padding: var(--spacingMedium) var(--cardPadding);
     position: relative;
-    box-shadow: ${({ theme }) => theme.elevation.dp1};
     margin-bottom: var(--spacingMedium);
     background-color: rgba(0, 96, 100, 0.3);
     position: relative;

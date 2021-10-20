@@ -23,11 +23,12 @@ const AsideBlogPostSwitch = ({ data, name, excerpt }) => (
                         </Link>
                     );
                 case 1:
-                    return <SocialShare className="item" title={name} excerpt={excerpt} messengerID={1234} />;
+                    return <SocialShare key={i} className="item" title={name} excerpt={excerpt} messengerID={1234} />;
                 case 2:
                     return (
                         <a key={i} target="blank" href="/EkoMonterzy-Czyste-Powietrze.pdf">
                             <CardSimple
+                                key={i}
                                 className="item"
                                 data={{
                                     projectName: 'Program "Czyste Powietrze". Najważniejsze informacje. Pobierz PDF',
