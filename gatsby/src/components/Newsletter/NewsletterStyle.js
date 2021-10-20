@@ -44,9 +44,9 @@ export const CustomFormStyle = styled.div`
 
 export const OpeningButton = styled.button`
     height: 180px;
-    background-color: #006064;
     width: 100%;
     border-radius: var(--borderRadius);
+    background-color: #006064;
     color: white;
     font-size: var(--fontSizeLead);
     border: none;

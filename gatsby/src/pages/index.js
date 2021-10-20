@@ -14,7 +14,6 @@ import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import AsideIndex from '../components/AsideIndex/AsideIndex';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
-import FormCustomizable from '../components/FormCustomizable/FormCustomizable';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
@@ -100,11 +99,6 @@ const IndexPage = ({ data, pageContext, location }) => {
                     </BootsColumn>
                     <BootsColumn md={4}>
                         <AsideIndex />
-                        <FormCustomizable
-                            buttonDesc="Potrzebujesz pieca gazowego, pompy ciepła, fotowoltaiki, dotacji, oferty, porady, kompleksowej realizacji... Pomożemy!"
-                            backgroundColor="red"
-                            color="red"
-                        />
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>

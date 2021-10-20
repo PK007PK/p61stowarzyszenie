@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
-export const FormCustomizableStyle = styled.div`
+export const CardContactFormStyle = styled.div`
     position: relative;
 
     .openingButton {
-        height: 180px;
         background-color: #006064;
-        width: 100%;
-        border-radius: var(--borderRadius);
         color: white;
         font-size: var(--fontSizeLead);
+        min-height: 180px;
+        padding: var(--spacingMedium) var(--cardPadding);
+        width: 100%;
+        border-radius: var(--borderRadius);
+        font-size: var(--fontSizeRegular);
+        line-height: 1.4;
         border: none;
         transition: var(--transitionBasic);
 
@@ -21,24 +24,37 @@ export const FormCustomizableStyle = styled.div`
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
+            font-size: var(--fontSizeLead);
+
+            p {
+                /* color: black; */
+                /* font-weight: 600; */
+            }
+            p:first-child {
+                margin-top: 0;
+            }
         }
 
         .icon {
-            width: 40px;
-            height: 50px;
-            margin-right: 10px;
+            width: 50px;
+            height: 60px;
         }
     }
 
     .openedCard {
+        position: relative;
         text-align: center;
         padding: var(--spacingMedium) var(--cardPadding);
-        position: relative;
         margin-bottom: var(--spacingMedium);
         background-color: rgba(0, 96, 100, 0.3);
-        position: relative;
+
         border-radius: var(--borderRadius);
         box-shadow: ${({ theme }) => theme.elevation.dp4};
+    }
+
+    .title {
+        margin-bottom: var(--spacingRegular);
     }
 
     .openBtn {

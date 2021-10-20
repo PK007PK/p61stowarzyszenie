@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import CardSimple from '../CardSimple/CardSimple';
 import SocialShare from '../SocialShare/SocialShare';
-
+import CardContactForm from '../CardContactForm/CardConstacForm';
 import { AsideBlogPostSwitchStyle } from './AsideBlogPostSwitch.style';
 
 const AsideBlogPostSwitch = ({ data, name, excerpt }) => (
@@ -10,18 +10,7 @@ const AsideBlogPostSwitch = ({ data, name, excerpt }) => (
         {data.map((item, i) => {
             switch (item) {
                 case 0:
-                    return (
-                        <Link key={i} target="blank" as="a" to="https://forms.gle/4QUN4zjsnFQXMLt3A">
-                            <CardSimple
-                                className="item"
-                                data={{
-                                    projectName:
-                                        'Potrzebujesz pomocy z uzyskaniem dotacji, realizacją inwestycji? Wypełnij formularz. Oddzwonimy',
-                                    backgroundColor: 'orange',
-                                }}
-                            />
-                        </Link>
-                    );
+                    return <CardContactForm />;
                 case 1:
                     return <SocialShare key={i} className="item" title={name} excerpt={excerpt} messengerID={1234} />;
                 case 2:
