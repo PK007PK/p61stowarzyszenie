@@ -4,14 +4,8 @@ import { ButtonStyle } from 'src/components/Button/Button';
 import { CardContactFormStyle } from './CardContactForm.style';
 
 const Form = () => (
-    <form
-        name="general-contact-form"
-        method="post"
-        data-netlify="true"
-        onSubmit="submit"
-        data-netlify-honeypot="bot-field"
-    >
-        <input type="hidden" name="form-name" value="general-contact-form" />
+    <form name="general form" method="post" data-netlify="true" onSubmit="submit" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="general form" />
         <div hidden>
             <input name="bot-field" />
         </div>

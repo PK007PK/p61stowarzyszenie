@@ -10,7 +10,7 @@ const AsideBlogPostSwitch = ({ data, name, excerpt }) => (
         {data.map((item, i) => {
             switch (item) {
                 case 0:
-                    return <CardContactForm />;
+                    return <CardContactForm className="item" />;
                 case 1:
                     return <SocialShare key={i} className="item" title={name} excerpt={excerpt} messengerID={1234} />;
                 case 2:
