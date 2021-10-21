@@ -11,5 +11,9 @@ export const StatisticsStyle = styled.div`
         ${({ theme }) => theme.media.smAbove} {
             margin-bottom: 0px;
         }
+
+        p {
+            color: white;
+        }
     }
 `;

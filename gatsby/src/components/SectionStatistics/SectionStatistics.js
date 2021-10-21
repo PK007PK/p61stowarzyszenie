@@ -32,14 +32,14 @@ const SectionStatistics = () => {
 
     return (
         <SectionStatisticsStyle>
-            <GatsbyImage
+            {/* <GatsbyImage
                 className="backgroundImage"
                 image={gatsbyImageData}
                 placeholder="blurred"
                 alt=""
                 formats={['auto', 'webp']}
                 quality={50}
-            />
+            /> */}
             <BootsContainer>
                 <div className="titleBar">
                     <h2 className="title">Stowarzyszenie</h2>

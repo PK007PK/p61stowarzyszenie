@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionStatisticsStyle = styled.section`
     position: relative;
-    background-color: rgba(0, 96, 100, 0.3);
+    background-color: rgba(0, 96, 100, 0.1);
     padding: var(--spacingBig1) 0 var(--spacingBig1) 0;
     p,
     span {
@@ -47,12 +47,16 @@ export const SectionStatisticsStyle = styled.section`
 
     .cardContainer {
         text-align: center;
-        background-color: white;
         position: relative;
         padding: 50px var(--cardPadding) var(--cardPadding) var(--cardPadding);
-        border: 1px solid gray;
-        background-color: #cfd8dc;
-        background-color: white;
+        background-color: var(--colorActivePrimary);
+        font-weight: 900;
+        border-radius: var(--borderRadius);
+        transition: var(--transitionBasic);
+
+        &:hover {
+            box-shadow: ${({ theme }) => theme.elevation.dp4};
+        }
 
         .iconContainer {
             position: absolute;
@@ -66,6 +70,7 @@ export const SectionStatisticsStyle = styled.section`
             align-items: center;
             transform: translateX(50%);
             border: 1px solid gray;
+            border-radius: var(--borderRadius);
         }
 
         .icon {
@@ -75,7 +80,7 @@ export const SectionStatisticsStyle = styled.section`
         .number {
             font-size: var(--fontSizeBig3);
             color: var(--colorActiveSecondary);
-            color: red;
+            color: white;
             font-weight: 300;
             text-shadow: var(--txtShadow);
         }
