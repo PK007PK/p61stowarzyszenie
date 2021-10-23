@@ -10,11 +10,12 @@ const TextBlockIndex = ({ style, className, homePage, title, heroTags, descripti
         <HeroTextBlockStyle style={style} className={className}>
             <h1 className="title">{title}</h1>
             <div className="tagBar">
-                {heroTags.split(',').map((item) => (
-                    <div key={item} className="tagContainer">
-                        {item}
-                    </div>
-                ))}
+                {heroTags &&
+                    heroTags.split(',').map((item) => (
+                        <div key={item} className="tagContainer">
+                            {item}
+                        </div>
+                    ))}
             </div>
             <p className="lead">{description}</p>
             {homePage && (

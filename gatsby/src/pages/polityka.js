@@ -9,7 +9,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 
-const KontaktPage = ({ data }) => {
+const PolitykaPage = ({ data }) => {
     const {
         title,
         tags: heroTags,
@@ -18,7 +18,7 @@ const KontaktPage = ({ data }) => {
             asset: { gatsbyImageData },
         },
         _rawRichText,
-    } = data.sanityPageKontakt;
+    } = data.sanityPagePolityka;
 
     return (
         <Layout>
@@ -48,7 +48,7 @@ const KontaktPage = ({ data }) => {
 
 export const pageQuery = graphql`
     query {
-        sanityPageKontakt {
+        sanityPagePolityka {
             title
             tags
             description
@@ -62,4 +62,4 @@ export const pageQuery = graphql`
     }
 `;
 
-export default KontaktPage;
+export default PolitykaPage;

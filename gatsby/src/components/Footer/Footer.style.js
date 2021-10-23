@@ -7,5 +7,9 @@ export const FooterStyles = styled.footer`
 
     .copyright {
         text-align: left;
+
+        ${({ theme }) => theme.media.smAbove} {
+            text-align: right;
+        }
     }
 `;

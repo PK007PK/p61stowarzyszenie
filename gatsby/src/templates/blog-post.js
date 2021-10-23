@@ -29,7 +29,7 @@ const BlogPostTemplate = ({ data }) => {
             <ArticleStyling className="blog-post" itemScope itemType="http://schema.org/Article">
                 <SectionBlogPostHero leftComponent={textBlock} data={gatsbyImageData} />
                 <BootsContainer>
-                    <BootsRow between style={{ marginTop: '50px' }}>
+                    <BootsRow between style={{ margin: '50px 0 50px' }}>
                         <BootsColumn md={7}>
                             <BlockContent blocks={_rawRichText} dataset="production" url="" projectId="9311goma" />
                         </BootsColumn>

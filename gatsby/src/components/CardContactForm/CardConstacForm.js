@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosContact } from '@react-icons/all-files/io/IoIosContact';
 import { ButtonStyle } from 'src/components/Button/Button';
+import { Link } from 'gatsby';
 import { CardContactFormStyle } from './CardContactForm.style';
 
 const Form = () => {
@@ -57,6 +58,16 @@ const Form = () => {
                     Wiadomość:
                     <br /> <textarea type="email" name="message" />
                 </label>
+            </div>
+            <div className="policy">
+                <input type="checkbox" id="policy" name="policy" required />
+                <p>
+                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych w celu odpowiedzi na zadane
+                    pytanie zgodnie z zasadami ochrony danych osobowych wyrażonymi w{' '}
+                    <Link className="decorated" to="/polityka/">
+                        <strong>Polityce Prywatności.</strong>
+                    </Link>
+                </p>
             </div>
             <ButtonStyle full type="submit">
                 Wyślij

@@ -18,11 +18,16 @@ export default function CategoryFilter({ location }) {
 
     const categories = data.allSanityBlogPostsCategories.nodes;
     const checkLocation = location.pathname.split('/')[1];
+
     return (
         <CategoryFilterStyle>
             <Link
                 to="/1#blog"
-                style={checkLocation.includes('1') || checkLocation.includes('/') ? { color: '#00BFA5' } : null}
+                style={
+                    checkLocation === '' || checkLocation.includes('1') || checkLocation.includes('/')
+                        ? { color: '#00BFA5' }
+                        : null
+                }
             >
                 <h2>Aktualności</h2>
             </Link>

@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import { ButtonStyle } from '../Button/Button';
 import { FormContactStyles } from './FormContact.style';
@@ -40,6 +41,16 @@ export default function FormContact() {
                     Wiadomość:
                     <br /> <textarea type="email" name="message" />
                 </label>
+            </div>
+            <div className="policy">
+                <input type="checkbox" id="policy" name="policy" required />
+                <p>
+                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych w celu odpowiedzi na zadane
+                    pytanie zgodnie z zasadami ochrony danych osobowych wyrażonymi w{' '}
+                    <Link className="decorated" to="/polityka/">
+                        <strong>Polityce Prywatności.</strong>
+                    </Link>
+                </p>
             </div>
             <ButtonStyle full type="submit">
                 Wyślij

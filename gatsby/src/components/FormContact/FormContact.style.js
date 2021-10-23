@@ -19,4 +19,17 @@ export const FormContactStyles = styled.form`
     .wrapper {
         margin-top: 15px;
     }
+
+    .policy {
+        margin-bottom: 20px;
+
+        input {
+            margin-top: 10px;
+            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+        }
+        display: flex;
+        align-items: flex-start;
+    }
 `;

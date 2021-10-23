@@ -86,4 +86,17 @@ export const CardContactFormStyle = styled.div`
         border-radius: 0px;
         padding: 10px 25px;
     }
+
+    .policy {
+        margin-bottom: 20px;
+
+        input {
+            margin-top: 10px;
+            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+        }
+        display: flex;
+        align-items: flex-start;
+    }
 `;
