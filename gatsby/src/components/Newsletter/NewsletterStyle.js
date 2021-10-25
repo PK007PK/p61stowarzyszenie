@@ -43,6 +43,8 @@ export const CustomFormStyle = styled.div`
 
     .policy {
         margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
 
         .check {
             display: inline-block;
@@ -52,9 +54,6 @@ export const CustomFormStyle = styled.div`
             height: 20px;
             flex-shrink: 0;
         }
-
-        display: flex;
-        align-items: flex-start;
     }
 `;
 

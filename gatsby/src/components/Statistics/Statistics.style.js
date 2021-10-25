@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StatisticsStyle = styled.div`
     .cardContainer {
         margin-bottom: var(--spacingMedium);
-        min-height: 350px;
+        min-height: 250px;
         display: flex;
         justify-content: center;
         align-items: center;

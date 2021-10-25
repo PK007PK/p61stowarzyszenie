@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionStatisticsStyle = styled.section`
     position: relative;
-    background-color: rgba(0, 96, 100, 0.1);
+    background-color: rgba(0, 96, 100, 0.05);
     padding: var(--spacingBig1) 0 var(--spacingBig1) 0;
     p,
     span {

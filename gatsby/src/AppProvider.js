@@ -10,7 +10,7 @@ export function AppProvider({ children }) {
     const [isMenuActive, setIsMenuActive] = useState(false);
     const toogleIsMenuActive = () => setIsMenuActive((prevValue) => !prevValue);
     const diseableMenu = () => setIsMenuActive(false);
-    const [group, setGroup] = useState('mieszkańcy');
+    const [group, setGroup] = useState('gminy');
 
     return (
         <AppContext.Provider

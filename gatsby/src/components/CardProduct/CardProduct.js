@@ -3,7 +3,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { CardProductStyles } from './CardProduct.styles.js';
 
-const CardProduct = ({ data, className }) => {
+const CardProduct = ({ data, className, small }) => {
     const query = useStaticQuery(graphql`
         {
             sanitySiteTechConfig {
@@ -25,7 +25,7 @@ const CardProduct = ({ data, className }) => {
     const { projectName: title, projectImage, color, backgroundColor, projectSubtitle } = data;
     const imgSource = projectImage?.asset?.gatsbyImageData;
     return (
-        <CardProductStyles color={color} backgroundColor={backgroundColor} className={className}>
+        <CardProductStyles small={small} color={color} backgroundColor={backgroundColor} className={className}>
             <GatsbyImage
                 className="image"
                 image={imgSource || placeholder}

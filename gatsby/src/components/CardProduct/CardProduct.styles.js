@@ -9,7 +9,7 @@ export const CardProductStyles = styled.div`
     background-color: ${({ backgroundColor }) => backgroundColor || 'var(--cardDefaultBackgroundColor)'};
 
     .image {
-        height: 200px;
+        height: ${({ small }) => (small ? '140px' : '200px')};
         border-radius: 10px 10px 0 0;
     }
 
@@ -18,9 +18,10 @@ export const CardProductStyles = styled.div`
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 180px;
+        /* height: 180px; */
+        height: ${({ small }) => (small ? null : '200px')};
         color: ${({ color }) => color || 'var(--cardDefaultColor)'};
-        display: flex;
+        display: ${({ small }) => (small ? 'block' : 'flex')};
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;

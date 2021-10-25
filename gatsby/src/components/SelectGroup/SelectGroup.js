@@ -10,20 +10,20 @@ const SelectGroup = ({ title, style }) => {
             <h2 className="title">{title}</h2>
             <div className="buttonsWrapper">
                 <StyledButton
-                    selected={group === 'mieszkańcy'}
-                    onClick={() => setGroup('mieszkańcy')}
-                    className="button"
-                    type="button"
-                >
-                    Dla obywateli
-                </StyledButton>
-                <StyledButton
                     selected={group === 'gminy'}
                     onClick={() => setGroup('gminy')}
                     className="button"
                     type="button"
                 >
                     Dla gmin
+                </StyledButton>
+                <StyledButton
+                    selected={group === 'mieszkańcy'}
+                    onClick={() => setGroup('mieszkańcy')}
+                    className="button"
+                    type="button"
+                >
+                    Dla obywateli
                 </StyledButton>
             </div>
         </SelectGroupStyle>

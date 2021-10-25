@@ -8,7 +8,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import { ArticleStyling } from 'src/components/ArticleStyling/ArticleStyling';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
-import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
+import SectionOurProjectsVertical from '../components/SectionOurProjectsVertical/SectionOurProjectsVertical';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 
 const ONasPage = ({ data }) => {
@@ -31,9 +31,10 @@ const ONasPage = ({ data }) => {
             />
             <SEO title="Informacje o stowarzyszeniu" />
 
-            <SectionOurProjects />
+            {/* <SectionOurProjects /> */}
+            <SectionStatistics />
             <BootsContainer>
-                <BootsRow>
+                <BootsRow between>
                     <BootsColumn style={{ marginTop: '50px' }} md={7}>
                         <ArticleStyling>
                             <BlockContent
@@ -44,9 +45,11 @@ const ONasPage = ({ data }) => {
                             />
                         </ArticleStyling>
                     </BootsColumn>
+                    <BootsColumn style={{ marginTop: '50px' }} md={4}>
+                        <SectionOurProjectsVertical />
+                    </BootsColumn>
                 </BootsRow>
             </BootsContainer>
-            <SectionStatistics />
         </Layout>
     );
 };

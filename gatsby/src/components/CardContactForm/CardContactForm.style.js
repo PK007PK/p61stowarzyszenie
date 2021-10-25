@@ -93,8 +93,9 @@ export const CardContactFormStyle = styled.div`
         input {
             margin-top: 10px;
             margin-right: 15px;
-            width: 60px;
-            height: 60px;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
         }
         display: flex;
         align-items: flex-start;

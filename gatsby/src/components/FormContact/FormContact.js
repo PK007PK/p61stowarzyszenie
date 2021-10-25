@@ -44,10 +44,10 @@ export default function FormContact() {
             </div>
             <div className="policy">
                 <input className="check" type="checkbox" id="policy" name="policy" required />
-                <p>
+                <p className="text">
                     Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych w celu odpowiedzi na zadane
                     pytanie zgodnie z zasadami ochrony danych osobowych wyrażonymi w{' '}
-                    <Link className="decorated" to="/polityka/">
+                    <Link to="/polityka/">
                         <strong>Polityce Prywatności.</strong>
                     </Link>
                 </p>

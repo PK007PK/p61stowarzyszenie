@@ -42,7 +42,7 @@ const SectionStatistics = () => {
             /> */}
             <BootsContainer>
                 <div className="titleBar">
-                    <h2 className="title">Stowarzyszenie</h2>
+                    <h2 className="title">Stowarzyszenie EkoMonterzy</h2>
                     <button
                         onClick={() => setSelected('stats')}
                         style={selected === 'stats' ? { color: `var(--colorActiveSecondary)` } : null}

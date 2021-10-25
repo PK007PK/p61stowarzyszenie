@@ -23,6 +23,7 @@ const MenuItemsWrapper = ({ styles, className, onClick }) => {
                             className="fx-txt-underline"
                             onClick={onClick}
                             activeClassName="active"
+                            activeStyle={{ color: 'var(--colorActiveSecondary)' }}
                             to={item.pageSlug}
                         >
                             {item.pageName}
