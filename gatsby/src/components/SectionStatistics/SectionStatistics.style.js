@@ -43,6 +43,7 @@ export const SectionStatisticsStyle = styled.section`
 
     .title {
         color: black;
+        margin-bottom: 10px;
     }
 
     .cardContainer {

@@ -43,7 +43,7 @@ export default function FormContact() {
                 </label>
             </div>
             <div className="policy">
-                <input type="checkbox" id="policy" name="policy" required />
+                <input className="check" type="checkbox" id="policy" name="policy" required />
                 <p>
                     Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych w celu odpowiedzi na zadane
                     pytanie zgodnie z zasadami ochrony danych osobowych wyrażonymi w{' '}

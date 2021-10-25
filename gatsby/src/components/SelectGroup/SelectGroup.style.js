@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SelectGroupStyle = styled.div`
     .title {
+        margin-bottom: 10px;
     }
     .subtitle {
         margin: 0;

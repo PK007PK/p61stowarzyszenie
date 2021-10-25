@@ -40,6 +40,22 @@ export const CustomFormStyle = styled.div`
         border-radius: 0px;
         padding: 10px 25px;
     }
+
+    .policy {
+        margin-bottom: 20px;
+
+        .check {
+            display: inline-block;
+            margin-top: 20px;
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        display: flex;
+        align-items: flex-start;
+    }
 `;
 
 export const OpeningButton = styled.button`

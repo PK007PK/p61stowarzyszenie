@@ -7,7 +7,7 @@ const SelectGroup = ({ title, style }) => {
 
     return (
         <SelectGroupStyle style={style}>
-            <h2 className="heading">{title}</h2>
+            <h2 className="title">{title}</h2>
             <div className="buttonsWrapper">
                 <StyledButton
                     selected={group === 'mieszkańcy'}
@@ -25,14 +25,6 @@ const SelectGroup = ({ title, style }) => {
                 >
                     Dla gmin
                 </StyledButton>
-                {/* <StyledButton
-                    selected={group === 'przedsiębiorstwa'}
-                    onClick={() => setGroup('przedsiębiorstwa')}
-                    className="button"
-                    type="button"
-                >
-                    Dla przedsiębiorców
-                </StyledButton> */}
             </div>
         </SelectGroupStyle>
     );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { GiLetterBomb } from '@react-icons/all-files/gi/GiLetterBomb';
 import { ButtonStyle } from 'src/components/Button/Button';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import { Link } from 'gatsby';
 import { NewsletterStyle, CustomFormStyle, OpeningButton } from './NewsletterStyle';
 
 const CustomForm = ({ status, message, onValidated }) => {
@@ -27,6 +28,16 @@ const CustomForm = ({ status, message, onValidated }) => {
             <br />
             <input ref={(node) => (email = node)} type="email" placeholder="Email..." />
             <br />
+            <div className="policy">
+                <input className="check" type="checkbox" id="policy" name="policy" required />
+                <p>
+                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych w celu odpowiedzi na zadane
+                    pytanie zgodnie z zasadami ochrony danych osobowych wyrażonymi w{' '}
+                    <Link className="decorated" to="/polityka/">
+                        <strong>Polityce Prywatności.</strong>
+                    </Link>
+                </p>
+            </div>
             <ButtonStyle full type="button" onClick={submit}>
                 Wyślij
             </ButtonStyle>

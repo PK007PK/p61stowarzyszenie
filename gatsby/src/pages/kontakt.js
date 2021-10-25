@@ -6,6 +6,7 @@ import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
 import FormContact from 'src/components/FormContact/FormContact';
 import BlockContent from '@sanity/block-content-to-react';
+import { ArticleStyling } from 'src/components/ArticleStyling/ArticleStyling';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 
@@ -30,12 +31,14 @@ const KontaktPage = ({ data }) => {
             <BootsContainer>
                 <BootsRow between style={{ margin: '50px 0 50px' }}>
                     <BootsColumn md={6}>
-                        <BlockContent
-                            blocks={_rawRichText}
-                            dataset="production"
-                            url=""
-                            projectId={process.env.SANITY_PROJECT_ID}
-                        />
+                        <ArticleStyling className="blog-post">
+                            <BlockContent
+                                blocks={_rawRichText}
+                                dataset="production"
+                                url=""
+                                projectId={process.env.SANITY_PROJECT_ID}
+                            />
+                        </ArticleStyling>
                     </BootsColumn>
                     <BootsColumn md={5}>
                         <FormContact />

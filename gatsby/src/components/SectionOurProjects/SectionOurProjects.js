@@ -27,10 +27,8 @@ const StyledArrowLeft = styled.div`
     }
 
     .arrowIco {
-        /* width: 40px;
-        height: 400px; */
-        width: 0px;
-        height: 0px;
+        width: 40px;
+        height: 400px;
     }
 `;
 

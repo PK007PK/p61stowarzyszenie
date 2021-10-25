@@ -23,12 +23,15 @@ export const FormContactStyles = styled.form`
     .policy {
         margin-bottom: 20px;
 
-        input {
-            margin-top: 10px;
+        .check {
+            display: inline-block;
+            margin-top: 20px;
             margin-right: 15px;
-            width: 60px;
-            height: 60px;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
         }
+
         display: flex;
         align-items: flex-start;
     }

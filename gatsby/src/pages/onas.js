@@ -5,6 +5,7 @@ import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsEleme
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
+import { ArticleStyling } from 'src/components/ArticleStyling/ArticleStyling';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
@@ -34,12 +35,14 @@ const ONasPage = ({ data }) => {
             <BootsContainer>
                 <BootsRow>
                     <BootsColumn style={{ marginTop: '50px' }} md={7}>
-                        <BlockContent
-                            blocks={_rawRichText}
-                            dataset="production"
-                            url=""
-                            projectId={process.env.SANITY_PROJECT_ID}
-                        />
+                        <ArticleStyling>
+                            <BlockContent
+                                blocks={_rawRichText}
+                                dataset="production"
+                                url=""
+                                projectId={process.env.SANITY_PROJECT_ID}
+                            />
+                        </ArticleStyling>
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>
