@@ -147,7 +147,11 @@ export const SectionOurProjects = ({ separatedGroups }) => {
     return (
         <SectionOurProjectsStyles>
             <BootsContainer>
-                {separatedGroups && <SelectGroup style={{ marginBottom: '20px' }} title="Projekty stowarzyszenia:" />}
+                {!separatedGroups ? (
+                    <h2 style={{ marginBottom: '20px' }}>Nasze projekty</h2>
+                ) : (
+                    <SelectGroup style={{ marginBottom: '20px' }} title="Projekty stowarzyszenia:" />
+                )}
 
                 <Slider {...settings}>
                     {projectItems
