@@ -14,7 +14,7 @@ import { NavbarStyle } from './Navbar.style';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
-export default function Navbar() {
+export default function Navbar({ location }) {
     const { toogleIsMenuActive, isMenuActive, diseableMenu } = useContext(AppContext);
     return (
         <NavbarStyle isMenuActive={isMenuActive}>

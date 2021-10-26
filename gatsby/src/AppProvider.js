@@ -14,7 +14,15 @@ export function AppProvider({ children }) {
 
     return (
         <AppContext.Provider
-            value={{ isActive, toogleIsActive, isMenuActive, toogleIsMenuActive, diseableMenu, group, setGroup }}
+            value={{
+                isActive,
+                toogleIsActive,
+                isMenuActive,
+                toogleIsMenuActive,
+                diseableMenu,
+                group,
+                setGroup,
+            }}
         >
             <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </AppContext.Provider>

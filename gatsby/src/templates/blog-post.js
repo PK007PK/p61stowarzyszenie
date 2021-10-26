@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import Layout from 'src/components/Layout/Layout';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SEO from '../components/SEO/SEO';
-import AsideBlogPostSwitch from '../components/AsideBlogPostSwitch/AsideBlogPostSwitch';
+import OptionalBlogPostComponents from '../components/OptionalBlogPostComponents/OptionalBlogPostComponents';
 import { ArticleStyling } from '../components/ArticleStyling/ArticleStyling';
 
 const BlogPostTemplate = ({ data }) => {
@@ -34,7 +34,7 @@ const BlogPostTemplate = ({ data }) => {
                             <BlockContent blocks={_rawRichText} dataset="production" url="" projectId="9311goma" />
                         </BootsColumn>
                         <BootsColumn md={4}>
-                            <AsideBlogPostSwitch title={name} excerpt={lead} data={componentsArray} />
+                            <OptionalBlogPostComponents title={name} excerpt={lead} data={componentsArray} />
                         </BootsColumn>
                     </BootsRow>
                 </BootsContainer>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
 import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/SEO/SEO';
 import CategoryFilter from 'src/components/CategoryFilter/CategoryFilter';
@@ -11,9 +10,9 @@ import SectionHero from 'src/components/SectionHero/SectionHero';
 import Search from 'src/components/search';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
-import AsideIndex from '../components/AsideIndex/AsideIndex';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
 import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
+import Newsletter from '../components/Newsletter/Newsletter';
 
 const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
@@ -21,6 +20,7 @@ const IndexPage = ({ data, pageContext, location }) => {
     if (pageContext.dirName === undefined) {
         pageContext.dirName = `/`;
     }
+
     const categories = data.category;
     const tags = data.tag;
     const { allPosts } = data;
@@ -98,7 +98,7 @@ const IndexPage = ({ data, pageContext, location }) => {
                         />
                     </BootsColumn>
                     <BootsColumn md={4}>
-                        <AsideIndex />
+                        <Newsletter />
                     </BootsColumn>
                 </BootsRow>
             </BootsContainer>

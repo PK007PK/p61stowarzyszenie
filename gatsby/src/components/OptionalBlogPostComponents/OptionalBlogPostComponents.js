@@ -1,16 +1,15 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import CardSimple from '../CardSimple/CardSimple';
 import SocialShare from '../SocialShare/SocialShare';
-import CardContactForm from '../CardContactForm/CardConstacForm';
-import { AsideBlogPostSwitchStyle } from './AsideBlogPostSwitch.style';
+import CardContactForm from '../CardContactForm/CardContactForm';
+import { OptionalBlogPostComponentsStyle } from './OptionalBlogPostComponents.style';
 
-const AsideBlogPostSwitch = ({ data, name, excerpt }) => (
-    <AsideBlogPostSwitchStyle>
+const OptionalBlogPostComponents = ({ data, name, excerpt }) => (
+    <OptionalBlogPostComponentsStyle>
         {data.map((item, i) => {
             switch (item) {
                 case 0:
-                    return <CardContactForm className="item" />;
+                    return <CardContactForm key={i} className="item" />;
                 case 1:
                     return <SocialShare key={i} className="item" title={name} excerpt={excerpt} messengerID={1234} />;
                 case 2:
@@ -30,7 +29,7 @@ const AsideBlogPostSwitch = ({ data, name, excerpt }) => (
                     break;
             }
         })}
-    </AsideBlogPostSwitchStyle>
+    </OptionalBlogPostComponentsStyle>
 );
 
-export default AsideBlogPostSwitch;
+export default OptionalBlogPostComponents;

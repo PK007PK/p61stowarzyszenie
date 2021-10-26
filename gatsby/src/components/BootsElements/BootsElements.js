@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { theme } from 'src/styles/Theme';
 
 export const BootsContainer = styled.div`
   width: 100%;
@@ -43,7 +42,7 @@ export const BootsRow = styled.div`
     flex-wrap: wrap;
     margin: 0px -15px;
     position: relative;
-    justify-content: ${({ between }) => (between ? 'space-between' : null)};
+    justify-content: ${({ between }) => (between ? 'space-between' : 'flex-start')};
 `;
 
 export const BootsColumn = styled.div`

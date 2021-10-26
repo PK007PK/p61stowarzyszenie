@@ -60,9 +60,9 @@ const Newsletter = ({ className, style }) => {
             )}
             {open && (
                 <CustomFormStyle>
-                    <buttom className="closeBtn" type="button" onClick={() => setOpen(!open)}>
+                    <button className="closeBtn" type="button" onClick={() => setOpen(!open)}>
                         X
-                    </buttom>
+                    </button>
 
                     <MailchimpSubscribe
                         url={url}

@@ -75,7 +75,7 @@ function RightNavButton(props) {
     );
 }
 
-export const SectionOurProjects = ({ separatedGroups }) => {
+const SectionOurProjects = ({ separatedGroups }) => {
     const settings = {
         dots: true,
         infinite: true,
