@@ -27,8 +27,13 @@ const StyledArrowLeft = styled.div`
     }
 
     .arrowIco {
-        width: 40px;
-        height: 400px;
+        width: 0px;
+        height: 0px;
+
+        ${({ theme }) => theme.media.smAbove} {
+            width: 40px;
+            height: 400px;
+        }
     }
 `;
 
@@ -42,8 +47,13 @@ const StyledArrowRight = styled.div`
     transform: translateY(-50%);
 
     .arrowIco {
-        width: 40px;
-        height: 400px;
+        width: 0px;
+        height: 0px;
+
+        ${({ theme }) => theme.media.smAbove} {
+            width: 40px;
+            height: 400px;
+        }
     }
 `;
 
@@ -65,7 +75,7 @@ function RightNavButton(props) {
     );
 }
 
-export const SectionOurProjects = () => {
+export const SectionOurProjects = ({ separatedGroups }) => {
     const settings = {
         dots: true,
         infinite: true,
@@ -137,11 +147,11 @@ export const SectionOurProjects = () => {
     return (
         <SectionOurProjectsStyles>
             <BootsContainer>
-                <SelectGroup style={{ marginBottom: '20px' }} title="Projekty stowarzyszenia:" />
+                {separatedGroups && <SelectGroup style={{ marginBottom: '20px' }} title="Projekty stowarzyszenia:" />}
 
                 <Slider {...settings}>
                     {projectItems
-                        .filter((item) => item.group.includes(group))
+                        .filter((item) => (separatedGroups ? item.group.includes(group) : true))
                         .map((item, i) => (
                             <Link key={i} to={item.pageSlug ? `/${item.pageSlug}` : '/'}>
                                 <CardProduct data={item} />
