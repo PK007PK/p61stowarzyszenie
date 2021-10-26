@@ -10,6 +10,10 @@ export const CategoryFilterStyle = styled.div`
         }
     }
 
+    .title {
+        display: inline-block;
+    }
+
     .links {
         display: flex;
         flex-wrap: wrap;

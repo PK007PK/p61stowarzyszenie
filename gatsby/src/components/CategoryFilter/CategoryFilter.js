@@ -29,7 +29,7 @@ export default function CategoryFilter({ location }) {
                         : null
                 }
             >
-                <h2>Aktualności</h2>
+                <h2 className="title">Aktualności</h2>
             </Link>
             <div className="links">
                 {categories.map((category) => (
