@@ -33,9 +33,9 @@ const CardProduct = ({ data, className, small }) => {
                 alt={title}
                 formats={['auto', 'webp']}
                 quality={50}
-                style={{ cursor: 'grab' }}
+                style={small ? null : { cursor: 'grab' }}
             />
-            <Link to={pageSlug || '/'}>
+            <Link to={pageSlug ? `/${pageSlug}` : '/'}>
                 <div className="textBlock">
                     <h3 className="title">{title}</h3>
                     <p className="subTitle">{projectSubtitle}</p>

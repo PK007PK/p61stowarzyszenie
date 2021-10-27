@@ -35,9 +35,7 @@ export const SectionOurProjectsVertical = () => {
         <SectionOurProjectsVerticalStyles>
             <h2 className="title">Nasze projekty</h2>
             {projectItems.map((item, i) => (
-                <Link key={i} to={item.pageSlug ? `/${item.pageSlug}` : '/'}>
-                    <CardProduct small className="item" data={item} />
-                </Link>
+                <CardProduct key={i} small className="item" data={item} />
             ))}
         </SectionOurProjectsVerticalStyles>
     );
