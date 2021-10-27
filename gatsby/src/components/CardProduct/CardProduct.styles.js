@@ -7,6 +7,7 @@ export const CardProductStyles = styled.div`
     position: relative;
     border-radius: 10px 10px 10px 10px;
     background-color: ${({ backgroundColor }) => backgroundColor || 'var(--cardDefaultBackgroundColor)'};
+    transition: var(--transitionFast);
 
     .image {
         height: ${({ small }) => (small ? '140px' : '200px')};

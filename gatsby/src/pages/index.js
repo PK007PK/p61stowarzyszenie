@@ -8,6 +8,7 @@ import Pagination from 'src/components/Pagination/Pagination';
 import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import Search from 'src/components/search';
+import CooperatingCitiesCarousel from 'src/components/CooperatingCitiesCarousel/CooperatingCitiesCarousel';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
@@ -59,12 +60,11 @@ const IndexPage = ({ data, pageContext, location }) => {
             />
             <HeroBackImage data={gatsbyImageData} />
             <SectionHero
-                leftComponent={() => (
-                    <HeroTextBlock homePage title={title} heroTags={heroTags} description={description} />
-                )}
+                homePage
+                leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
             />
+            {/* <CooperatingCitiesCarousel /> */}
             <SectionOurProjects />
-
             <BootsContainer style={{ marginTop: '50px' }}>
                 <BootsRow id="blog" between>
                     <BootsColumn md={8}>

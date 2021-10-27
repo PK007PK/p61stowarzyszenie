@@ -1,14 +1,13 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import React, { useContext } from 'react';
-import { BootsContainer } from 'src/components/BootsElements/BootsElements';
-import SelectGroup from 'src/components/SelectGroup/SelectGroup';
-import AppContext from 'src/AppProvider';
+import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import Slider from 'react-slick';
 import ARROW_left from 'src/assets/images/arrLeft.svg';
 import ARROW_right from 'src/assets/images/arrRight.svg';
 import styled from 'styled-components';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import CardProduct from '../CardProduct/CardProduct';
-import { SectionOurProjectsStyles } from './SectionOurProjects.styles';
+import { CooperatingCitiesCarouselStyle } from './CooperatingCitiesCarousel.styles';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -75,12 +74,12 @@ function RightNavButton(props) {
     );
 }
 
-const SectionOurProjects = ({ separatedGroups }) => {
+const CooperatingCitiesCarousel = () => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         initialSlide: 0,
         nextArrow: <RightNavButton />,
@@ -90,21 +89,21 @@ const SectionOurProjects = ({ separatedGroups }) => {
             {
                 breakpoint: 1200,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 5,
                     slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                 },
             },
@@ -119,22 +118,14 @@ const SectionOurProjects = ({ separatedGroups }) => {
     };
     const data = useStaticQuery(graphql`
         {
-            allSanityAllProjectsData {
+            allSanityCooperatingCities {
                 nodes {
-                    projectItems {
-                        projectName
-                        projectSubtitle
+                    galleryItems {
+                        title
                         projectImage {
                             asset {
-                                gatsbyImageData(width: 400)
+                                gatsbyImageData
                             }
-                        }
-                        backgroundColor
-                        color
-                        pageSlug
-                        group
-                        tags {
-                            name
                         }
                     }
                 }
@@ -142,29 +133,34 @@ const SectionOurProjects = ({ separatedGroups }) => {
         }
     `);
 
-    const { projectItems } = data.allSanityAllProjectsData.nodes[0];
-    const { group } = useContext(AppContext);
-    return (
-        <SectionOurProjectsStyles>
-            <BootsContainer>
-                {!separatedGroups ? (
-                    <h2 style={{ marginBottom: '20px' }}>Nasze projekty</h2>
-                ) : (
-                    <SelectGroup style={{ marginBottom: '20px' }} title="Projekty stowarzyszenia:" />
-                )}
+    const { galleryItems } = data.allSanityCooperatingCities.nodes[0];
 
-                <Slider {...settings}>
-                    {projectItems
-                        .filter((item) => (separatedGroups ? item.group.includes(group) : true))
-                        .map((item, i) => (
-                            // <Link key={i} to={item.pageSlug ? `/${item.pageSlug}` : '/'}>
-                            <CardProduct key={i} data={item} />
-                            // </Link>
+    return (
+        <CooperatingCitiesCarouselStyle>
+            {/* <BootsContainer> */}
+            <BootsRow>
+                <BootsColumn sm={6} md={5} style={{ position: 'relative' }}>
+                    <h3 className="title">Nasi partnerzy:</h3>
+                    <Slider {...settings} className="slider">
+                        {galleryItems.map((item, i) => (
+                            <div key={i} className="cardContainer">
+                                <GatsbyImage
+                                    className="image"
+                                    image={item.projectImage.asset.gatsbyImageData}
+                                    placeholder="blurred"
+                                    alt={item.title}
+                                    formats={['auto', 'webp']}
+                                    quality={100}
+                                />
+                                <h4 className="cityName">{item.title}</h4>
+                            </div>
                         ))}
-                </Slider>
-            </BootsContainer>
-        </SectionOurProjectsStyles>
+                    </Slider>
+                </BootsColumn>
+            </BootsRow>
+            {/* </BootsContainer> */}
+        </CooperatingCitiesCarouselStyle>
     );
 };
 
-export default SectionOurProjects;
+export default CooperatingCitiesCarousel;

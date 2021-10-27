@@ -5,7 +5,7 @@ export const SectionHeroStyle = styled.header`
     align-items: center;
     position: relative;
     min-height: 100vh;
-    padding-top: 100px;
+    /* padding-top: 100px; */
 
     p {
         margin-top: 0;

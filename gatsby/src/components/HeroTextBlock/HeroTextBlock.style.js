@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeroTextBlockStyle = styled.div`
     /* background-color: rgba(255, 255, 255, 0.9); */
-    padding: var(--cardPadding);
+    /* padding: var(--cardPadding); */
 
     .title {
         margin-bottom: 0px;

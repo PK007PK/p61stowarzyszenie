@@ -26,15 +26,6 @@ const CardSimple = ({ data, className }) => {
     const imgSource = projectImage?.asset?.gatsbyImageData;
     return (
         <CardSimpleStyles color={color} backgroundColor={backgroundColor} className={className}>
-            {/* <GatsbyImage
-                className="image"
-                image={imgSource || placeholder}
-                placeholder="blurred"
-                alt={title}
-                formats={['auto', 'webp']}
-                quality={50}
-            /> */}
-
             <div className="textBlock">
                 <h3 className="title">{title}</h3>
             </div>
