@@ -147,7 +147,7 @@ const CooperatingCitiesCarousel = () => {
                                 <GatsbyImage
                                     className="image"
                                     image={item.projectImage.asset.gatsbyImageData}
-                                    placeholder="blurred"
+                                    placeholder="tracedSVG"
                                     alt={item.title}
                                     formats={['auto', 'webp']}
                                     quality={100}
