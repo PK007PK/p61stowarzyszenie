@@ -13,8 +13,6 @@ const BlogPostTemplate = ({ data }) => {
     const { name, lead, date, _rawRichText, components } = data.sanityBlogPosts;
     const gatsbyImageData = data?.sanityBlogPosts?.image?.asset?.gatsbyImageData;
 
-    const siteTitle = data.site.siteMetadata?.title || `Title`;
-
     const textBlock = () => (
         <div>
             <time className="lead">{date}</time>
@@ -31,7 +29,12 @@ const BlogPostTemplate = ({ data }) => {
                 <BootsContainer>
                     <BootsRow between style={{ margin: '50px 0 50px' }}>
                         <BootsColumn md={7}>
-                            <BlockContent blocks={_rawRichText} dataset="production" url="" projectId="9311goma" />
+                            <BlockContent
+                                blocks={_rawRichText}
+                                dataset="production"
+                                url=""
+                                projectId={process.env.SANITY_PROJECT_ID}
+                            />
                         </BootsColumn>
                         <BootsColumn md={4}>
                             <OptionalBlogPostComponents title={name} excerpt={lead} data={componentsArray} />

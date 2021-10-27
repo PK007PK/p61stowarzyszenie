@@ -15,11 +15,11 @@ const Statistics = () => (
                             <MdLocationCity className="icon" />
                         </div>
                         <p className="lead">
-                            <span className="number">22</span>
+                            <span className="number">20</span>
                             <br />
-                            obsługiwane
+                            obsługiwanych
                             <br />
-                            gminy
+                            gmin
                         </p>
                     </div>
                 </BootsColumn>
@@ -29,7 +29,7 @@ const Statistics = () => (
                             <BsFillPeopleFill className="icon" />
                         </div>
                         <p className="lead">
-                            <span className="number">521</span>
+                            <span className="number">960</span>
                             <br />
                             spotkań
                             <br />z mieszkańcami
@@ -42,9 +42,9 @@ const Statistics = () => (
                             <GrDocumentStore className="icon" />
                         </div>
                         <p className="lead">
-                            <span className="number">1221</span>
+                            <span className="number">600</span>
                             <br />
-                            wykonane wnioski
+                            wniosków
                             <br />o dotacje
                         </p>
                     </div>

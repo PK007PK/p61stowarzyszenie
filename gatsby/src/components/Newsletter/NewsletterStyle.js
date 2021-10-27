@@ -12,6 +12,7 @@ export const NewsletterStyle = styled.div`
 `;
 
 export const CustomFormStyle = styled.div`
+    position: relative;
     .openBtn {
         cursor: pointer;
     }

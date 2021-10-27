@@ -1,4 +1,5 @@
 import React from 'react';
+import Newsletter from 'src/components/Newsletter/Newsletter';
 import CardSimple from '../CardSimple/CardSimple';
 import SocialShare from '../SocialShare/SocialShare';
 import CardContactForm from '../CardContactForm/CardContactForm';
@@ -25,6 +26,8 @@ const OptionalBlogPostComponents = ({ data, name, excerpt }) => (
                             />
                         </a>
                     );
+                case 3:
+                    return <Newsletter key={i} className="item" />;
                 default:
                     break;
             }
