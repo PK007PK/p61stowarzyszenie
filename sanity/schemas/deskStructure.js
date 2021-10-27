@@ -5,18 +5,25 @@ export default () =>
     .title('Base')
     .items([
       S.listItem()
-        .title('settings')
+        .title('Konfiguracja strony')
         .child(
           S.document().schemaType('siteSettings').documentId('siteSettings')
         ),
       S.listItem()
-        .title('Site tech config')
+        .title('Ustawienia strony')
         .child(
           S.document().schemaType('siteTechConfig').documentId('siteTechConfig')
         ),
       S.listItem()
-        .title('Menu strony"')
+        .title('Menu strony')
         .child(S.document().schemaType('menuData').documentId('menuData')),
+      S.listItem()
+        .title('Menu usług stowarzyszenia')
+        .child(
+          S.document()
+            .schemaType('allProjectsData')
+            .documentId('allProjectsData')
+        ),
       S.listItem()
         .title('Strona główna')
         .child(S.document().schemaType('pageHome').documentId('pageHome')),
@@ -34,15 +41,15 @@ export default () =>
           S.document().schemaType('testimonials').documentId('testimonials')
         ),
       S.listItem()
-        .title('Gallery')
-        .child(S.document().schemaType('gallery').documentId('gallery')),
-      S.listItem()
-        .title('All projects data')
+        .title('Gminy')
         .child(
           S.document()
-            .schemaType('allProjectsData')
-            .documentId('allProjectsData')
+            .schemaType('cooperatingCities')
+            .documentId('cooperatingCities')
         ),
+      S.listItem()
+        .title('Galeria')
+        .child(S.document().schemaType('gallery').documentId('gallery')),
       ...S.documentTypeListItems().filter(
         (item) =>
           ![
@@ -51,10 +58,11 @@ export default () =>
             'allProjectsData',
             'pageHome',
             'pageBlog',
-            'oNasPage',
-            'kontaktPage',
+            'pageONas',
+            'pageKontakt',
             'gallery',
             'testimonials',
+            'menuData',
           ].includes(item.getId())
       ),
     ]);

@@ -17,6 +17,7 @@ import projectItem from './projectItem';
 import allProjectsData from './allProjectsData';
 import galleryItem from './galleryItem';
 import gallery from './gallery';
+import cooperatingCities from './cooperatingCities';
 import testimonials from './testimonials';
 import testimonialItem from './testimonialItem';
 import menuData from './menuData';
@@ -31,6 +32,7 @@ export default createSchema({
     siteSettings,
     siteTechConfig,
     gallery,
+    cooperatingCities,
     galleryItem,
     pageHome,
     pageONas,

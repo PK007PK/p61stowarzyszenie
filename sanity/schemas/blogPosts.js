@@ -3,7 +3,7 @@ import { RiArticleLine } from 'react-icons/ri';
 
 export default {
   name: 'blogPosts',
-  title: 'Blog posts',
+  title: 'Artykuły',
   type: 'document',
   icon: () => <RiArticleLine />,
   fields: [
