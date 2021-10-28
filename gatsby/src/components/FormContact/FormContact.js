@@ -39,14 +39,14 @@ export default function FormContact() {
             <div className="wrapper">
                 <label htmlFor="message">
                     Wiadomość:
-                    <br /> <textarea type="email" name="message" />
+                    <br /> <textarea rows="4" type="email" name="message" />
                 </label>
             </div>
             <div className="policy">
-                <input className="check" type="checkbox" id="policy" name="policy" required />
                 <p className="text">
-                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych w celu odpowiedzi na zadane
-                    pytanie zgodnie z zasadami ochrony danych osobowych wyrażonymi w{' '}
+                    <input className="check" type="checkbox" id="policy" name="policy" required />
+                    Wyrażam zgodę na przetwarzanie przez Stowarzyszenie moich danych osobowych zgodnie z zasadami
+                    ochrony danych osobowych wyrażonymi w{' '}
                     <Link to="/polityka/">
                         <strong>Polityce Prywatności.</strong>
                     </Link>

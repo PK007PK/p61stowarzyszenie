@@ -22,16 +22,17 @@ export const FormContactStyles = styled.form`
 
     .policy {
         margin-bottom: 20px;
-        display: flex;
-        align-items: flex-start;
+    }
 
-        .check {
-            display: block;
-            margin-top: 20px;
-            margin-right: 15px;
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-        }
+    .check {
+        width: 20px;
+        color: red;
+        float: left;
+        margin-top: 8px;
+    }
+
+    .text {
+        font-size: var(--fontSizeSmall);
+        text-align: left;
     }
 `;
