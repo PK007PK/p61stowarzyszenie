@@ -42,19 +42,26 @@ export const CustomFormStyle = styled.div`
         padding: 10px 25px;
     }
 
-    .policy {
+    .acceptPolicy {
+        margin-top: var(--spacingRegular);
         margin-bottom: 20px;
         display: flex;
         align-items: flex-start;
+    }
 
-        .check {
-            display: inline-block;
-            margin-top: 20px;
-            margin-right: 15px;
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-        }
+    .check {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        float: left;
+        flex-shrink: 0;
+        margin-top: 5px;
+    }
+
+    .text {
+        margin-top: 0;
+        font-size: var(--fontSizeSmall);
+        text-align: left;
     }
 `;
 

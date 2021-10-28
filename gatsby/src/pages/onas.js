@@ -10,6 +10,7 @@ import HeroBackImage from '../components/HeroBackImage/HeroBackImage';
 import SectionStatistics from '../components/SectionStatistics/SectionStatistics';
 import SectionOurProjectsVertical from '../components/SectionOurProjectsVertical/SectionOurProjectsVertical';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
+import Cooperation from '../components/Cooperation/Cooperation';
 
 const ONasPage = ({ data }) => {
     const {
@@ -43,12 +44,18 @@ const ONasPage = ({ data }) => {
                                 url=""
                                 projectId={process.env.SANITY_PROJECT_ID}
                             />
+                            <Cooperation />
                         </ArticleStyling>
                     </BootsColumn>
                     <BootsColumn style={{ marginTop: '50px' }} md={4}>
                         <SectionOurProjectsVertical />
                     </BootsColumn>
                 </BootsRow>
+                {/* <BootsRow between>
+                    <BootsColumn style={{ marginTop: '50px' }} md={7}>
+                        <Cooperation />
+                    </BootsColumn>
+                </BootsRow> */}
             </BootsContainer>
         </Layout>
     );

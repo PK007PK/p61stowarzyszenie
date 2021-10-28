@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FormContactStyles = styled.form`
+export const FormContactStyle = styled.form`
     input,
     textarea {
         width: 100%;
@@ -20,18 +20,24 @@ export const FormContactStyles = styled.form`
         margin-top: 15px;
     }
 
-    .policy {
+    .acceptPolicy {
+        margin-top: var(--spacingRegular);
         margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
     }
 
     .check {
-        width: 20px;
-        color: red;
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
         float: left;
-        margin-top: 8px;
+        flex-shrink: 0;
+        margin-top: 5px;
     }
 
     .text {
+        margin-top: 0;
         font-size: var(--fontSizeSmall);
         text-align: left;
     }

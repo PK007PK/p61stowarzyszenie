@@ -1,12 +1,11 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
+import { BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import Slider from 'react-slick';
 import ARROW_left from 'src/assets/images/arrLeft.svg';
 import ARROW_right from 'src/assets/images/arrRight.svg';
 import styled from 'styled-components';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import CardProduct from '../CardProduct/CardProduct';
 import { CooperatingCitiesCarouselStyle } from './CooperatingCitiesCarousel.styles';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

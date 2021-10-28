@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { ButtonStyle } from '../Button/Button';
-import { FormContactStyles } from './FormContact.style';
+import { FormContactStyle } from './FormContact.style';
 
 export default function FormContact() {
     return (
-        <FormContactStyles
+        <FormContactStyle
             name="contact v1"
             method="post"
             data-netlify="true"
@@ -39,14 +39,14 @@ export default function FormContact() {
             <div className="wrapper">
                 <label htmlFor="message">
                     Wiadomość:
-                    <br /> <textarea rows="4" type="email" name="message" />
+                    <br /> <textarea row="4" type="email" name="message" />
                 </label>
             </div>
-            <div className="policy">
+            <div className="acceptPolicy">
+                <input className="check" type="checkbox" id="policy" name="policy" required />
                 <p className="text">
-                    <input className="check" type="checkbox" id="policy" name="policy" required />
-                    Wyrażam zgodę na przetwarzanie przez Stowarzyszenie moich danych osobowych zgodnie z zasadami
-                    ochrony danych osobowych wyrażonymi w{' '}
+                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych zgodnie z zasadami ochrony
+                    danych osobowych wyrażonymi w{' '}
                     <Link to="/polityka/">
                         <strong>Polityce Prywatności.</strong>
                     </Link>
@@ -55,6 +55,6 @@ export default function FormContact() {
             <ButtonStyle full type="submit">
                 Wyślij
             </ButtonStyle>
-        </FormContactStyles>
+        </FormContactStyle>
     );
 }

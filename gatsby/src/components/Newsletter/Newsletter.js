@@ -28,12 +28,12 @@ const CustomForm = ({ status, message, onValidated }) => {
             <br />
             <input ref={(node) => (email = node)} type="email" placeholder="Email..." />
             <br />
-            <div className="policy">
+            <div className="acceptPolicy">
                 <input className="check" type="checkbox" id="policy" name="policy" required />
-                <p>
-                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych w celu odpowiedzi na zadane
-                    pytanie zgodnie z zasadami ochrony danych osobowych wyrażonymi w{' '}
-                    <Link className="decorated" to="/polityka/">
+                <p className="text">
+                    Wyrażam zgodę na przetwarzanie Stowarzyszenie moich danych osobowych zgodnie z zasadami ochrony
+                    danych osobowych wyrażonymi w{' '}
+                    <Link to="/polityka/">
                         <strong>Polityce Prywatności.</strong>
                     </Link>
                 </p>
