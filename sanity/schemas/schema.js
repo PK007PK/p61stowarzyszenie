@@ -9,6 +9,7 @@ import siteTechConfig from './siteTechConfig';
 import pageHome from './pageHome';
 import pageONas from './pageONas';
 import pageKontakt from './pageKontakt';
+import pagePolityka from './pagePolityka';
 import blogPosts from './blogPosts';
 import blogPostsCategories from './blogPostsCategories';
 import blogPostsComponents from './blogPostsComponents';
@@ -37,6 +38,7 @@ export default createSchema({
     pageHome,
     pageONas,
     pageKontakt,
+    pagePolityka,
     blogPosts,
     blogPostsCategories,
     blogPostsComponents,

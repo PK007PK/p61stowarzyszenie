@@ -36,6 +36,11 @@ export default () =>
           S.document().schemaType('pageKontakt').documentId('pageKontakt')
         ),
       S.listItem()
+        .title('Strona "Polityka"')
+        .child(
+          S.document().schemaType('pagePolityka').documentId('pagePolityka')
+        ),
+      S.listItem()
         .title('Referencje')
         .child(
           S.document().schemaType('testimonials').documentId('testimonials')
