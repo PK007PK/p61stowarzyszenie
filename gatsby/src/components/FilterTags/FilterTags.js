@@ -1,8 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import { TagFilterStyle } from './TagFilter.style';
+import { FilterTagsStyle } from './FilterTags.style';
+import pathCheck from '../../utils/pathCheck';
 
-export default function TagsFilter({ location }) {
+export default function FilterTags({ location }) {
     const data = useStaticQuery(graphql`
         query {
             allSanityBlogPostsTags(sort: { order: ASC, fields: position }) {
@@ -17,18 +18,17 @@ export default function TagsFilter({ location }) {
     `);
 
     const tags = data.allSanityBlogPostsTags.nodes;
-    const checkLocation = location.pathname.split('/')[1];
     return (
-        <TagFilterStyle>
+        <FilterTagsStyle>
             {tags.map((tag) => (
                 <Link
                     to={`/${tag.slug.current}/1#blog`}
-                    style={checkLocation.includes(tag.slug.current) ? { color: '#00BFA5' } : null}
+                    style={pathCheck(location, tag.slug.current) ? { color: '#00BFA5' } : null}
                     key={tag.slug.current}
                 >
                     {tag.name}
                 </Link>
             ))}
-        </TagFilterStyle>
+        </FilterTagsStyle>
     );
 }

@@ -2,13 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from 'src/components/Layout/Layout';
 import SEO from 'src/components/SEO/SEO';
-import CategoryFilter from 'src/components/CategoryFilter/CategoryFilter';
-import TagsFilter from 'src/components/TagsFilter/TagsFilter';
+import FilterCategory from 'src/components/FilterCategory/FilterCategory';
+import FilterTags from 'src/components/FilterTags/FilterTags';
 import Pagination from 'src/components/Pagination/Pagination';
-import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SectionHero from 'src/components/SectionHero/SectionHero';
 import Search from 'src/components/search';
-import CooperatingCitiesCarousel from 'src/components/CooperatingCitiesCarousel/CooperatingCitiesCarousel';
+import { BootsContainer, BootsRow, BootsColumn } from 'src/components/BootsElements/BootsElements';
 import SectionOurProjects from '../components/SectionOurProjects/SectionOurProjects';
 import PostsToDisplay from '../components/PostsToDisplay/PostsToDisplay';
 import HeroTextBlock from '../components/HeroTextBlock/HeroTextBlock';
@@ -63,13 +62,12 @@ const IndexPage = ({ data, pageContext, location }) => {
                 homePage
                 leftComponent={() => <HeroTextBlock title={title} heroTags={heroTags} description={description} />}
             />
-            {/* <CooperatingCitiesCarousel /> */}
             <SectionOurProjects />
             <BootsContainer style={{ marginTop: '50px' }}>
                 <BootsRow id="blog" between>
                     <BootsColumn md={8}>
-                        <CategoryFilter location={location} />
-                        <TagsFilter location={location} />
+                        <FilterCategory location={location} />
+                        <FilterTags location={location} />
                         <Pagination
                             pageSize={pagesInSet}
                             totalCount={postsToDisplay.totalCount}

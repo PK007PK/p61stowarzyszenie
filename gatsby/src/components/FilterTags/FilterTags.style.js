@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TagFilterStyle = styled.div`
+export const FilterTagsStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
 

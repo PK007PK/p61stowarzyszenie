@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CategoryFilterStyle = styled.div`
+export const FilterCategoryStyle = styled.div`
     a {
         margin-right: var(--spacingRegular);
         text-decoration: none;
