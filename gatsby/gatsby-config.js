@@ -1,13 +1,11 @@
 import dotenv from 'dotenv';
-import projectConfig from './src/projectConfig';
 
 dotenv.config({ path: '.env' });
 
 export default {
     siteMetadata: {
-        siteUrl: projectConfig.siteUrl,
+        siteUrl: process.env.URL,
     },
-
     flags: { DEV_SSR: true },
     plugins: [
         `gatsby-plugin-root-import`,
@@ -33,29 +31,6 @@ export default {
             },
             __key: `images`,
         },
-        {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-                plugins: [
-                    {
-                        resolve: `gatsby-remark-images`,
-                        options: {
-                            maxWidth: 630,
-                        },
-                    },
-                    {
-                        resolve: `gatsby-remark-responsive-iframe`,
-                        options: {
-                            wrapperStyle: `margin-bottom: 1.0725rem`,
-                        },
-                    },
-                    `gatsby-remark-prismjs`,
-                    `gatsby-remark-copy-linked-files`,
-                    `gatsby-remark-smartypants`,
-                ],
-            },
-        },
-        `gatsby-remark-copy-linked-files`,
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,
