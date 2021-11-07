@@ -44,12 +44,12 @@ export default {
                 queries: require('./src/utils/algolia-queries'),
             },
         },
-        {
-            resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-            options: {
-                devMode: true,
-            },
-        },
+        // {
+        //     resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+        //     options: {
+        //         devMode: true,
+        //     },
+        // },
         `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-google-gtag`,
