@@ -38,14 +38,11 @@
     "gatsby-plugin-image": "^1.7.1",
     "gatsby-plugin-manifest": "^3.7.1",
     "gatsby-plugin-offline": "^4.11.0",
-    "gatsby-plugin-perf-budgets": "^0.0.18",
     "gatsby-plugin-react-helmet": "^4.7.1",
     "gatsby-plugin-root-import": "^2.0.6",
     "gatsby-plugin-sharp": "^3.7.1",
     "gatsby-plugin-sitemap": "^4.3.1",
     "gatsby-plugin-styled-components": "^4.7.1",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
-    "gatsby-source-filesystem": "^3.7.1",
     "gatsby-source-sanity": "^7.0.7",
     "gatsby-transformer-sharp": "^3.7.1",
     "gsap": "^3.7.0",
@@ -75,6 +72,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gatsby-plugin-perf-budgets": "^0.0.18",
     "prettier": "^2.3.1"
   }
 }

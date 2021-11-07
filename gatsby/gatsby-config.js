@@ -23,14 +23,14 @@ export default {
                 graphqlTag: `default`,
             },
         },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `./src/assets/images/`,
-                name: `images`,
-            },
-            __key: `images`,
-        },
+        // {
+        //     resolve: `gatsby-source-filesystem`,
+        //     options: {
+        //         path: `./src/assets/images/`,
+        //         name: `images`,
+        //     },
+        //     __key: `images`,
+        // },
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-react-helmet`,
@@ -44,12 +44,6 @@ export default {
                 queries: require('./src/utils/algolia-queries'),
             },
         },
-        // {
-        //     resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-        //     options: {
-        //         devMode: true,
-        //     },
-        // },
         `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-google-gtag`,
