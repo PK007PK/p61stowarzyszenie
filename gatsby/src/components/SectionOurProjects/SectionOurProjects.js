@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import React, { useContext } from 'react';
 import { BootsContainer } from 'src/components/BootsElements/BootsElements';
 import SelectGroup from 'src/components/SelectGroup/SelectGroup';

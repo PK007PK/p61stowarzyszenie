@@ -1,6 +1,7 @@
 import React from 'react';
 import { connectSearchBox } from 'react-instantsearch-dom';
-import { Search as SearchIcon } from '@styled-icons/fa-solid';
+// import { Search as SearchIcon } from '@styled-icons/fa-solid';
+import { BiSearchAlt as SearchIcon } from '@react-icons/all-files/bi/BiSearchAlt';
 
 export default connectSearchBox(({ refine, currentRefinement, className, onFocus }) => (
     <form className={className}>
