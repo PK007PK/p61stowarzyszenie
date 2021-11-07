@@ -9,7 +9,7 @@ export default {
     flags: { DEV_SSR: true },
     plugins: [
         `gatsby-plugin-root-import`,
-        `gatsby-plugin-loadable-components-ssr`,
+        // `gatsby-plugin-loadable-components-ssr`,
         `gatsby-plugin-image`,
         `gatsby-plugin-styled-components`,
         {
