@@ -149,7 +149,7 @@ const CooperatingCitiesCarousel = () => {
                                     placeholder="tracedSVG"
                                     alt={item.title}
                                     formats={['auto', 'webp']}
-                                    quality={100}
+                                    quality={30}
                                 />
                                 <h4 className="cityName">{item.title}</h4>
                             </div>
