@@ -53,7 +53,7 @@ const IndexPage = ({ data, pageContext, location }) => {
     return (
         <Layout>
             <SEO
-                title={`EkoMonterzy ${pageContext.sellectionName ? `| ${pageContext.sellectionName}` : ''} ${
+                title={`EkoMonterzy ${pageContext.selectionName ? `| ${pageContext.selectionName}` : ''} ${
                     pageContext.currentPage ? `| ${pageContext.currentPage}` : ''
                 }`}
             />
